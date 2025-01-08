@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using FiscalApi.Common;
-using FiscalApi.Models;
-using FiscalApi.Services;
+using Fiscalapi.Common;
+using Fiscalapi.Models;
+using Fiscalapi.Services;
+
 
 namespace FiscalApi.Samples.NetFramework
 {
