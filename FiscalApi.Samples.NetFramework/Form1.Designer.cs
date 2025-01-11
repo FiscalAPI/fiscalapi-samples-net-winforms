@@ -45,15 +45,15 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ObtenerListaPaginadaInvoices = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ObtenerUltimosCertficadosValidos = new System.Windows.Forms.Button();
-            this.EliEliminaCertificado = new System.Windows.Forms.Button();
-            this.ObtenerCertificadoById = new System.Windows.Forms.Button();
-            this.CargarCertificados = new System.Windows.Forms.Button();
             this.ObtenerListaPaginada = new System.Windows.Forms.Button();
             this.BorrarPersona = new System.Windows.Forms.Button();
             this.ActualizarPersona = new System.Windows.Forms.Button();
             this.CrearPersona = new System.Windows.Forms.Button();
             this.ObtenerPersonaPorID = new System.Windows.Forms.Button();
+            this.ObtenerUltimosCertficadosValidos = new System.Windows.Forms.Button();
+            this.EliEliminaCertificado = new System.Windows.Forms.Button();
+            this.ObtenerCertificadoById = new System.Windows.Forms.Button();
+            this.CargarCertificados = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ActualizarImpuestosProducto = new System.Windows.Forms.Button();
             this.ObtenerImpuestosProducto = new System.Windows.Forms.Button();
@@ -68,15 +68,19 @@
             this.CrearApikey = new System.Windows.Forms.Button();
             this.ObtenerApikeyByID = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.ObtenerCatalogosDisponibles = new System.Windows.Forms.Button();
             this.BuscarCatalogo = new System.Windows.Forms.Button();
             this.BuscarCodigoUnidad = new System.Windows.Forms.Button();
             this.BuscarCodigoProductoServicio = new System.Windows.Forms.Button();
-            this.ObtenerCatalogosDisponibles = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.CertDefaultRefs = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // ObtenerFacturaById
@@ -238,7 +242,7 @@
             this.groupBox2.Controls.Add(this.GenerarPDFValores);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(367, 349);
+            this.groupBox2.Size = new System.Drawing.Size(367, 312);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "FACTURACION";
@@ -255,10 +259,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.ObtenerUltimosCertficadosValidos);
-            this.groupBox1.Controls.Add(this.EliEliminaCertificado);
-            this.groupBox1.Controls.Add(this.ObtenerCertificadoById);
-            this.groupBox1.Controls.Add(this.CargarCertificados);
             this.groupBox1.Controls.Add(this.ObtenerListaPaginada);
             this.groupBox1.Controls.Add(this.BorrarPersona);
             this.groupBox1.Controls.Add(this.ActualizarPersona);
@@ -266,54 +266,14 @@
             this.groupBox1.Controls.Add(this.ObtenerPersonaPorID);
             this.groupBox1.Location = new System.Drawing.Point(385, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(331, 349);
+            this.groupBox1.Size = new System.Drawing.Size(331, 312);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PERSONAS (Emisores, receptores, usuarios, clientes etc)";
             // 
-            // ObtenerUltimosCertficadosValidos
-            // 
-            this.ObtenerUltimosCertficadosValidos.Location = new System.Drawing.Point(184, 201);
-            this.ObtenerUltimosCertficadosValidos.Name = "ObtenerUltimosCertficadosValidos";
-            this.ObtenerUltimosCertficadosValidos.Size = new System.Drawing.Size(144, 50);
-            this.ObtenerUltimosCertficadosValidos.TabIndex = 9;
-            this.ObtenerUltimosCertficadosValidos.Text = "Obtener ultimos certficados validos de una persona";
-            this.ObtenerUltimosCertficadosValidos.UseVisualStyleBackColor = true;
-            this.ObtenerUltimosCertficadosValidos.Click += new System.EventHandler(this.ObtenerUltimosCertficadosValidos_Click);
-            // 
-            // EliEliminaCertificado
-            // 
-            this.EliEliminaCertificado.Location = new System.Drawing.Point(184, 139);
-            this.EliEliminaCertificado.Name = "EliEliminaCertificado";
-            this.EliEliminaCertificado.Size = new System.Drawing.Size(144, 50);
-            this.EliEliminaCertificado.TabIndex = 8;
-            this.EliEliminaCertificado.Text = "Elimina Certificado de una persona";
-            this.EliEliminaCertificado.UseVisualStyleBackColor = true;
-            this.EliEliminaCertificado.Click += new System.EventHandler(this.EliEliminaCertificado_Click);
-            // 
-            // ObtenerCertificadoById
-            // 
-            this.ObtenerCertificadoById.Location = new System.Drawing.Point(184, 86);
-            this.ObtenerCertificadoById.Name = "ObtenerCertificadoById";
-            this.ObtenerCertificadoById.Size = new System.Drawing.Size(144, 50);
-            this.ObtenerCertificadoById.TabIndex = 7;
-            this.ObtenerCertificadoById.Text = "Obtener Certificado by Id";
-            this.ObtenerCertificadoById.UseVisualStyleBackColor = true;
-            this.ObtenerCertificadoById.Click += new System.EventHandler(this.ObtenerCertificadoById_Click);
-            // 
-            // CargarCertificados
-            // 
-            this.CargarCertificados.Location = new System.Drawing.Point(184, 30);
-            this.CargarCertificados.Name = "CargarCertificados";
-            this.CargarCertificados.Size = new System.Drawing.Size(144, 50);
-            this.CargarCertificados.TabIndex = 6;
-            this.CargarCertificados.Text = "Cargar Certificados una persona";
-            this.CargarCertificados.UseVisualStyleBackColor = true;
-            this.CargarCertificados.Click += new System.EventHandler(this.CargarCertificados_Click);
-            // 
             // ObtenerListaPaginada
             // 
-            this.ObtenerListaPaginada.Location = new System.Drawing.Point(6, 86);
+            this.ObtenerListaPaginada.Location = new System.Drawing.Point(6, 142);
             this.ObtenerListaPaginada.Name = "ObtenerListaPaginada";
             this.ObtenerListaPaginada.Size = new System.Drawing.Size(144, 50);
             this.ObtenerListaPaginada.TabIndex = 5;
@@ -323,7 +283,7 @@
             // 
             // BorrarPersona
             // 
-            this.BorrarPersona.Location = new System.Drawing.Point(6, 251);
+            this.BorrarPersona.Location = new System.Drawing.Point(181, 86);
             this.BorrarPersona.Name = "BorrarPersona";
             this.BorrarPersona.Size = new System.Drawing.Size(144, 50);
             this.BorrarPersona.TabIndex = 4;
@@ -333,17 +293,17 @@
             // 
             // ActualizarPersona
             // 
-            this.ActualizarPersona.Location = new System.Drawing.Point(6, 195);
+            this.ActualizarPersona.Location = new System.Drawing.Point(181, 30);
             this.ActualizarPersona.Name = "ActualizarPersona";
             this.ActualizarPersona.Size = new System.Drawing.Size(144, 50);
             this.ActualizarPersona.TabIndex = 3;
-            this.ActualizarPersona.Text = "Actualizar persona (Datos fiscales o generales)";
+            this.ActualizarPersona.Text = "Actualizar persona";
             this.ActualizarPersona.UseVisualStyleBackColor = true;
             this.ActualizarPersona.Click += new System.EventHandler(this.ActualizarPersona_Click);
             // 
             // CrearPersona
             // 
-            this.CrearPersona.Location = new System.Drawing.Point(6, 139);
+            this.CrearPersona.Location = new System.Drawing.Point(6, 30);
             this.CrearPersona.Name = "CrearPersona";
             this.CrearPersona.Size = new System.Drawing.Size(144, 50);
             this.CrearPersona.TabIndex = 2;
@@ -353,13 +313,53 @@
             // 
             // ObtenerPersonaPorID
             // 
-            this.ObtenerPersonaPorID.Location = new System.Drawing.Point(6, 30);
+            this.ObtenerPersonaPorID.Location = new System.Drawing.Point(6, 86);
             this.ObtenerPersonaPorID.Name = "ObtenerPersonaPorID";
             this.ObtenerPersonaPorID.Size = new System.Drawing.Size(144, 50);
             this.ObtenerPersonaPorID.TabIndex = 1;
             this.ObtenerPersonaPorID.Text = "Obtener persona por ID";
             this.ObtenerPersonaPorID.UseVisualStyleBackColor = true;
             this.ObtenerPersonaPorID.Click += new System.EventHandler(this.ObtenerPersonaPorID_Click);
+            // 
+            // ObtenerUltimosCertficadosValidos
+            // 
+            this.ObtenerUltimosCertficadosValidos.Location = new System.Drawing.Point(181, 19);
+            this.ObtenerUltimosCertficadosValidos.Name = "ObtenerUltimosCertficadosValidos";
+            this.ObtenerUltimosCertficadosValidos.Size = new System.Drawing.Size(144, 50);
+            this.ObtenerUltimosCertficadosValidos.TabIndex = 9;
+            this.ObtenerUltimosCertficadosValidos.Text = "Obtener ultimos certficados validos de una persona";
+            this.ObtenerUltimosCertficadosValidos.UseVisualStyleBackColor = true;
+            this.ObtenerUltimosCertficadosValidos.Click += new System.EventHandler(this.ObtenerUltimosCertficadosValidos_Click);
+            // 
+            // EliEliminaCertificado
+            // 
+            this.EliEliminaCertificado.Location = new System.Drawing.Point(181, 131);
+            this.EliEliminaCertificado.Name = "EliEliminaCertificado";
+            this.EliEliminaCertificado.Size = new System.Drawing.Size(144, 50);
+            this.EliEliminaCertificado.TabIndex = 8;
+            this.EliEliminaCertificado.Text = "Elimina Certificado de una persona";
+            this.EliEliminaCertificado.UseVisualStyleBackColor = true;
+            this.EliEliminaCertificado.Click += new System.EventHandler(this.EliEliminaCertificado_Click);
+            // 
+            // ObtenerCertificadoById
+            // 
+            this.ObtenerCertificadoById.Location = new System.Drawing.Point(6, 75);
+            this.ObtenerCertificadoById.Name = "ObtenerCertificadoById";
+            this.ObtenerCertificadoById.Size = new System.Drawing.Size(144, 50);
+            this.ObtenerCertificadoById.TabIndex = 7;
+            this.ObtenerCertificadoById.Text = "Obtener Certificado by Id";
+            this.ObtenerCertificadoById.UseVisualStyleBackColor = true;
+            this.ObtenerCertificadoById.Click += new System.EventHandler(this.ObtenerCertificadoById_Click);
+            // 
+            // CargarCertificados
+            // 
+            this.CargarCertificados.Location = new System.Drawing.Point(6, 19);
+            this.CargarCertificados.Name = "CargarCertificados";
+            this.CargarCertificados.Size = new System.Drawing.Size(144, 50);
+            this.CargarCertificados.TabIndex = 6;
+            this.CargarCertificados.Text = "Crear certificado (cargar cert a una persona)";
+            this.CargarCertificados.UseVisualStyleBackColor = true;
+            this.CargarCertificados.Click += new System.EventHandler(this.CargarCertificados_Click);
             // 
             // groupBox3
             // 
@@ -372,7 +372,7 @@
             this.groupBox3.Controls.Add(this.ObtenerProductoById);
             this.groupBox3.Location = new System.Drawing.Point(722, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(354, 349);
+            this.groupBox3.Size = new System.Drawing.Size(354, 312);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Productos";
@@ -452,9 +452,9 @@
             this.groupBox4.Controls.Add(this.RevocaApikey);
             this.groupBox4.Controls.Add(this.CrearApikey);
             this.groupBox4.Controls.Add(this.ObtenerApikeyByID);
-            this.groupBox4.Location = new System.Drawing.Point(12, 367);
+            this.groupBox4.Location = new System.Drawing.Point(12, 330);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(367, 158);
+            this.groupBox4.Size = new System.Drawing.Size(367, 192);
             this.groupBox4.TabIndex = 19;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Api Keys";
@@ -505,12 +505,22 @@
             this.groupBox5.Controls.Add(this.BuscarCatalogo);
             this.groupBox5.Controls.Add(this.BuscarCodigoUnidad);
             this.groupBox5.Controls.Add(this.BuscarCodigoProductoServicio);
-            this.groupBox5.Location = new System.Drawing.Point(385, 367);
+            this.groupBox5.Location = new System.Drawing.Point(722, 330);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(367, 158);
+            this.groupBox5.Size = new System.Drawing.Size(354, 192);
             this.groupBox5.TabIndex = 20;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Api Keys";
+            this.groupBox5.Text = "Catalogos";
+            // 
+            // ObtenerCatalogosDisponibles
+            // 
+            this.ObtenerCatalogosDisponibles.Location = new System.Drawing.Point(11, 19);
+            this.ObtenerCatalogosDisponibles.Name = "ObtenerCatalogosDisponibles";
+            this.ObtenerCatalogosDisponibles.Size = new System.Drawing.Size(144, 50);
+            this.ObtenerCatalogosDisponibles.TabIndex = 18;
+            this.ObtenerCatalogosDisponibles.Text = "Obtener Catalogos disponibles";
+            this.ObtenerCatalogosDisponibles.UseVisualStyleBackColor = true;
+            this.ObtenerCatalogosDisponibles.Click += new System.EventHandler(this.ObtenerCatalogosDisponibles_Click);
             // 
             // BuscarCatalogo
             // 
@@ -542,21 +552,47 @@
             this.BuscarCodigoProductoServicio.UseVisualStyleBackColor = true;
             this.BuscarCodigoProductoServicio.Click += new System.EventHandler(this.BuscarCodigoProductoServicio_Click);
             // 
-            // ObtenerCatalogosDisponibles
+            // groupBox6
             // 
-            this.ObtenerCatalogosDisponibles.Location = new System.Drawing.Point(11, 19);
-            this.ObtenerCatalogosDisponibles.Name = "ObtenerCatalogosDisponibles";
-            this.ObtenerCatalogosDisponibles.Size = new System.Drawing.Size(144, 50);
-            this.ObtenerCatalogosDisponibles.TabIndex = 18;
-            this.ObtenerCatalogosDisponibles.Text = "Obtener Catalogos disponibles";
-            this.ObtenerCatalogosDisponibles.UseVisualStyleBackColor = true;
-            this.ObtenerCatalogosDisponibles.Click += new System.EventHandler(this.ObtenerCatalogosDisponibles_Click);
+            this.groupBox6.Controls.Add(this.CertDefaultRefs);
+            this.groupBox6.Controls.Add(this.button2);
+            this.groupBox6.Controls.Add(this.CargarCertificados);
+            this.groupBox6.Controls.Add(this.ObtenerCertificadoById);
+            this.groupBox6.Controls.Add(this.EliEliminaCertificado);
+            this.groupBox6.Controls.Add(this.ObtenerUltimosCertficadosValidos);
+            this.groupBox6.Location = new System.Drawing.Point(385, 330);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(331, 192);
+            this.groupBox6.TabIndex = 21;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Certificados (sellos)";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(6, 131);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(144, 50);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Obtener lista paginada";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.listarCertificados_Click);
+            // 
+            // CertDefaultRefs
+            // 
+            this.CertDefaultRefs.Location = new System.Drawing.Point(181, 75);
+            this.CertDefaultRefs.Name = "CertDefaultRefs";
+            this.CertDefaultRefs.Size = new System.Drawing.Size(144, 50);
+            this.CertDefaultRefs.TabIndex = 11;
+            this.CertDefaultRefs.Text = "Obtener ultimos id de certficados validos de una persona";
+            this.CertDefaultRefs.UseVisualStyleBackColor = true;
+            this.CertDefaultRefs.Click += new System.EventHandler(this.CertDefaultRefs_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1150, 745);
+            this.ClientSize = new System.Drawing.Size(1083, 652);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -570,6 +606,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -620,6 +657,9 @@
         private System.Windows.Forms.Button BuscarCodigoUnidad;
         private System.Windows.Forms.Button BuscarCodigoProductoServicio;
         private System.Windows.Forms.Button ObtenerCatalogosDisponibles;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button CertDefaultRefs;
     }
 }
 

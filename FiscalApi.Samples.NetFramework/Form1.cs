@@ -21,12 +21,22 @@ namespace FiscalApi.Samples.NetFramework
             Settings = new FiscalApiOptions
             {
                 ApiUrl = "https://test.fiscalapi.com",
-                ApiKey = "<sk_test_>",
+                ApiKey = "sk_test_52be6db9_6d23_4191_b39f_cd9cc9df91c2",
                 ApiVersion = "v4",
-                Tenant = "<tenant>",
-                TimeZone = "America/Mexico_City" // America/Mexico_City, by default. (iana time-zones https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+                Tenant = "102e5f13-e114-41dd-bea7-507fce177281",
+                TimeZone =
+                    "America/Mexico_City" // America/Mexico_City, by default. (iana time-zones https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
             };
 
+            Settings = new FiscalApiOptions
+            {
+                ApiUrl = "https://localhost:7173",
+                ApiKey = "sk_development_e0e47dfa_5146_40c2_b3a3_3055909a6b88",
+                ApiVersion = "v4",
+                Tenant = "e839651d-1765-4cd0-ba7f-547a4c20580f",
+                TimeZone =
+                    "America/Mexico_City" // America/Mexico_City, by default. (iana time-zones https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+            };
 
             // Create directory if not exists
             Directory.CreateDirectory(@"C:\facturas");
@@ -197,13 +207,13 @@ namespace FiscalApi.Samples.NetFramework
             // Crear instancia de FiscalApiClient
             var fiscalApi = FiscalApiClient.Create(Settings);
 
-            // Emisor
+            // Emisor KARLA FUENTE NOLASCO
             var issuer = new InvoiceIssuer
             {
                 Id = "78d380fd-1b69-4e3c-8bc0-4f57737f7d5f"
             };
 
-            // Receptor
+            // Receptor ESCUELA KEMPER URGATE
             var recipient = new InvoiceRecipient
             {
                 Id = "bef56254-0892-4558-95c3-f9c8729e4b0e"
@@ -214,8 +224,9 @@ namespace FiscalApi.Samples.NetFramework
             {
                 new InvoiceItem
                 {
-                    Id = "27808326-1824-4f3c-87fb-03ace1066f16",
-                    Quantity = 2,
+                    Id = "310301b3-1ae9-441b-b463-51a8f9ca8ba2",
+                    Quantity = 1,
+                    Discount = 10.85m,
                 },
             };
 
@@ -339,16 +350,6 @@ namespace FiscalApi.Samples.NetFramework
                 {
                     Uuid = "5FB2822E-396D-4725-8521-CDC4BDD20CCF",
                     RelationshipTypeCode = "01"
-                },
-                new RelatedInvoice
-                {
-                    Uuid = "6FB2242E-316D-4820-8922-CDC2DDD18CDF",
-                    RelationshipTypeCode = "01"
-                },
-                new RelatedInvoice
-                {
-                    Uuid = "6e289f36-2ff9-490f-8f5e-b7323d1572a9",
-                    RelationshipTypeCode = "01"
                 }
             };
 
@@ -372,53 +373,6 @@ namespace FiscalApi.Samples.NetFramework
                             TaxTypeCode = "Tasa",
                             TaxRate = 0.160000m,
                             TaxFlagCode = "T"
-                        }
-                    }
-                },
-                new InvoiceItem
-                {
-                    ItemCode = "01010101",
-                    Quantity = 1m,
-                    UnitOfMeasurementCode = "E48",
-                    Description = "Software Consultant",
-                    UnitPrice = 250.85m,
-                    TaxObjectCode = "02",
-                    ItemSku = "7506022301698",
-                    ItemTaxes = new List<InvoiceItemTax>()
-                    {
-                        new InvoiceItemTax
-                        {
-                            TaxCode = "002",
-                            TaxTypeCode = "Tasa",
-                            TaxRate = 0.160000m,
-                            TaxFlagCode = "T"
-                        }
-                    }
-                },
-                new InvoiceItem
-                {
-                    ItemCode = "01010101",
-                    Quantity = 5m,
-                    UnitOfMeasurementCode = "E48",
-                    Description = "Computer software",
-                    UnitPrice = 1250.75m,
-                    TaxObjectCode = "02",
-                    ItemSku = "7506022301699",
-                    ItemTaxes = new List<InvoiceItemTax>()
-                    {
-                        new InvoiceItemTax
-                        {
-                            TaxCode = "002",
-                            TaxTypeCode = "Tasa",
-                            TaxRate = 0.160000m,
-                            TaxFlagCode = "T"
-                        },
-                        new InvoiceItemTax
-                        {
-                            TaxCode = "002",
-                            TaxTypeCode = "Tasa",
-                            TaxRate = 0.106666m,
-                            TaxFlagCode = "R"
                         }
                     }
                 }
@@ -490,17 +444,8 @@ namespace FiscalApi.Samples.NetFramework
                 {
                     Uuid = "5FB2822E-396D-4725-8521-CDC4BDD20CCF",
                     RelationshipTypeCode = "01"
-                },
-                new RelatedInvoice
-                {
-                    Uuid = "6FB2242E-316D-4820-8922-CDC2DDD18CDF",
-                    RelationshipTypeCode = "01"
-                },
-                new RelatedInvoice
-                {
-                    Uuid = "6e289f36-2ff9-490f-8f5e-b7323d1572a9",
-                    RelationshipTypeCode = "01"
                 }
+                // otras facturas relacionadas aquí
             };
 
             // Crear una lista de productos o servicios de la factura
@@ -509,8 +454,9 @@ namespace FiscalApi.Samples.NetFramework
                 new InvoiceItem
                 {
                     Id = "310301b3-1ae9-441b-b463-51a8f9ca8ba2",
-                    Quantity = 0.5m,
+                    Quantity = 0.5m, // 50% de descuento
                 },
+                // otros productos o servicios aquí
             };
 
             // Crear la factura de egreso (nota de crédito)
@@ -522,7 +468,7 @@ namespace FiscalApi.Samples.NetFramework
                 PaymentFormCode = "03",
                 PaymentConditions = "Contado",
                 CurrencyCode = "MXN",
-                TypeCode = "E", // E para egreso (nota de crédito)
+                TypeCode = "E", // nota de crédito
                 ExpeditionZipCode = "01160",
                 Issuer = issuer,
                 Recipient = recipient,
@@ -804,6 +750,7 @@ namespace FiscalApi.Samples.NetFramework
             // pagos
             var payments = new List<InvoicePayment>()
             {
+                //pago
                 new InvoicePayment
                 {
                     PaymentDate = DateTime.Now,
@@ -816,6 +763,7 @@ namespace FiscalApi.Samples.NetFramework
                     TargetBankAccount = "1234567890",
                     PaidInvoices = new List<PaidInvoice>
                     {
+                        // factura pagada
                         new PaidInvoice
                         {
                             Uuid = "5C7B0622-01B4-4EB8-96D0-E0DEBD89FF0F",
@@ -830,6 +778,7 @@ namespace FiscalApi.Samples.NetFramework
                             TaxObjectCode = "02",
                             PaidInvoiceTaxes = new List<PaidInvoiceTax>
                             {
+                                // impuestos de la factura 
                                 new PaidInvoiceTax
                                 {
                                     TaxCode = "002",
@@ -837,96 +786,11 @@ namespace FiscalApi.Samples.NetFramework
                                     TaxRate = 0.160000m,
                                     TaxFlagCode = "T"
                                 },
-                                new PaidInvoiceTax
-                                {
-                                    TaxCode = "002",
-                                    TaxTypeCode = "Tasa",
-                                    TaxRate = 0.106667m,
-                                    TaxFlagCode = "R"
-                                },
-                                new PaidInvoiceTax
-                                {
-                                    TaxCode = "001",
-                                    TaxTypeCode = "Tasa",
-                                    TaxRate = 0.100000m,
-                                    TaxFlagCode = "R"
-                                }
+
+                                // otros impuestos 
                             }
                         },
-                        new PaidInvoice
-                        {
-                            Uuid = "0050E143-E9AC-4CBB-B7AA-B1DA79C65CA9",
-                            Series = "F",
-                            Number = "1502",
-                            CurrencyCode = "MXN",
-                            PartialityNumber = 1,
-                            SubTotal = 10000m,
-                            PreviousBalance = 9533.33m,
-                            PaymentAmount = 9533.33m,
-                            RemainingBalance = 0m,
-                            TaxObjectCode = "02",
-                            PaidInvoiceTaxes = new List<PaidInvoiceTax>
-                            {
-                                new PaidInvoiceTax
-                                {
-                                    TaxCode = "002",
-                                    TaxTypeCode = "Tasa",
-                                    TaxRate = 0.160000m,
-                                    TaxFlagCode = "T"
-                                },
-                                new PaidInvoiceTax
-                                {
-                                    TaxCode = "002",
-                                    TaxTypeCode = "Tasa",
-                                    TaxRate = 0.106667m,
-                                    TaxFlagCode = "R"
-                                },
-                                new PaidInvoiceTax
-                                {
-                                    TaxCode = "001",
-                                    TaxTypeCode = "Tasa",
-                                    TaxRate = 0.100000m,
-                                    TaxFlagCode = "R"
-                                }
-                            }
-                        },
-                        new PaidInvoice
-                        {
-                            Uuid = "E20978BC-B677-4AAE-83FC-60791EAFC69A",
-                            Series = "F",
-                            Number = "1502",
-                            CurrencyCode = "MXN",
-                            PartialityNumber = 1,
-                            SubTotal = 10000m,
-                            PreviousBalance = 9533.33m,
-                            PaymentAmount = 9533.33m,
-                            RemainingBalance = 0m,
-                            TaxObjectCode = "02",
-                            PaidInvoiceTaxes = new List<PaidInvoiceTax>
-                            {
-                                new PaidInvoiceTax
-                                {
-                                    TaxCode = "002",
-                                    TaxTypeCode = "Tasa",
-                                    TaxRate = 0.160000m,
-                                    TaxFlagCode = "T"
-                                },
-                                new PaidInvoiceTax
-                                {
-                                    TaxCode = "002",
-                                    TaxTypeCode = "Tasa",
-                                    TaxRate = 0.106667m,
-                                    TaxFlagCode = "R"
-                                },
-                                new PaidInvoiceTax
-                                {
-                                    TaxCode = "001",
-                                    TaxTypeCode = "Tasa",
-                                    TaxRate = 0.100000m,
-                                    TaxFlagCode = "R"
-                                }
-                            }
-                        }
+                        // otras facturas pagadas 
                     }
                 }
             };
@@ -1027,13 +891,13 @@ namespace FiscalApi.Samples.NetFramework
             // Crear instancia de FiscalApiClient
             var fiscalApi = FiscalApiClient.Create(Settings);
 
+            // request model
             var request = new CancelInvoiceRequest()
             {
-                Id = "6b70f2f7-f9b7-474a-9b68-532d4e2726f3", // Id factura en fiscalapi
+                Id = "630a41d1-00ce-4750-8f8c-7b36786134d0", // Id factura en fiscalapi
                 CancellationReasonCode = "01",
                 ReplacementUuid = "de841944-bd4f-4bb8-adfe-2a2282787c62",
             };
-
 
             // Cancelar la factura
             var apiResponse = await fiscalApi.Invoices.CancelAsync(request);
@@ -1223,7 +1087,7 @@ namespace FiscalApi.Samples.NetFramework
             var fiscalApi = FiscalApiClient.Create(Settings);
 
             // Send request
-            var apiResponse = await fiscalApi.Persons.GetByIdAsync("81653856-12e5-4736-8773-226136b32aff");
+            var apiResponse = await fiscalApi.Persons.GetByIdAsync("3f3478b4-60fd-459e-8bfc-f8239fc96257");
 
             // Check response
 
@@ -1283,11 +1147,10 @@ namespace FiscalApi.Samples.NetFramework
             // Create instance of FiscalApiClient
             var fiscalApi = FiscalApiClient.Create(Settings);
 
-
             // request model
             var request = new Person
             {
-                Id = "8a835630-6d61-4786-abcb-7079eef6a628",
+                Id = "30022d4c-42f4-4d3f-bf5d-cfcb402d0b16",
                 LegalName = "Personita 2",
                 SatTaxRegimeId = "601",
                 SatCfdiUseId = "G01",
@@ -1296,9 +1159,8 @@ namespace FiscalApi.Samples.NetFramework
                 Base64Photo = "base64",
             };
 
-
             // Send request
-            var apiResponse = await fiscalApi.Persons.UpdateAsync("8a835630-6d61-4786-abcb-7079eef6a628", request);
+            var apiResponse = await fiscalApi.Persons.UpdateAsync("30022d4c-42f4-4d3f-bf5d-cfcb402d0b16", request);
 
             // Check response
 
@@ -1368,12 +1230,10 @@ namespace FiscalApi.Samples.NetFramework
 
         private async void ObtenerListaPaginadaInvoices_Click(object sender, EventArgs e)
         {
-            // Obtener lista paginada
-
-            // Create instance of FiscalApiClient
+            // crea una instancia de FiscalApiClient
             var fiscalApi = FiscalApiClient.Create(Settings);
 
-            // Send request (pageNumber=1, pageSize=2)
+            // envía la petición (pageNumber=1, pageSize=2)
             var apiResponse = await fiscalApi.Invoices.GetListAsync(1, 2);
 
             // Check response
@@ -1402,7 +1262,7 @@ namespace FiscalApi.Samples.NetFramework
 
             var certificadoCsd = new TaxFile
             {
-                PersonId = "bef56254-0892-4558-95c3-f9c8729e4b0e",
+                PersonId = "984708c4-fcc0-43bd-9d30-ec017815c20e",
                 Base64File =
                     "MIIFsDCCA5igAwIBAgIUMzAwMDEwMDAwMDA1MDAwMDM0MTYwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWxpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMjMwNTE4MTE0MzUxWhcNMjcwNTE4MTE0MzUxWjCB1zEnMCUGA1UEAxMeRVNDVUVMQSBLRU1QRVIgVVJHQVRFIFNBIERFIENWMScwJQYDVQQpEx5FU0NVRUxBIEtFTVBFUiBVUkdBVEUgU0EgREUgQ1YxJzAlBgNVBAoTHkVTQ1VFTEEgS0VNUEVSIFVSR0FURSBTQSBERSBDVjElMCMGA1UELRMcRUtVOTAwMzE3M0M5IC8gVkFEQTgwMDkyN0RKMzEeMBwGA1UEBRMVIC8gVkFEQTgwMDkyN0hTUlNSTDA1MRMwEQYDVQQLEwpTdWN1cnNhbCAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtmecO6n2GS0zL025gbHGQVxznPDICoXzR2uUngz4DqxVUC/w9cE6FxSiXm2ap8Gcjg7wmcZfm85EBaxCx/0J2u5CqnhzIoGCdhBPuhWQnIh5TLgj/X6uNquwZkKChbNe9aeFirU/JbyN7Egia9oKH9KZUsodiM/pWAH00PCtoKJ9OBcSHMq8Rqa3KKoBcfkg1ZrgueffwRLws9yOcRWLb02sDOPzGIm/jEFicVYt2Hw1qdRE5xmTZ7AGG0UHs+unkGjpCVeJ+BEBn0JPLWVvDKHZAQMj6s5Bku35+d/MyATkpOPsGT/VTnsouxekDfikJD1f7A1ZpJbqDpkJnss3vQIDAQABox0wGzAMBgNVHRMBAf8EAjAAMAsGA1UdDwQEAwIGwDANBgkqhkiG9w0BAQsFAAOCAgEAFaUgj5PqgvJigNMgtrdXZnbPfVBbukAbW4OGnUhNrA7SRAAfv2BSGk16PI0nBOr7qF2mItmBnjgEwk+DTv8Zr7w5qp7vleC6dIsZFNJoa6ZndrE/f7KO1CYruLXr5gwEkIyGfJ9NwyIagvHHMszzyHiSZIA850fWtbqtythpAliJ2jF35M5pNS+YTkRB+T6L/c6m00ymN3q9lT1rB03YywxrLreRSFZOSrbwWfg34EJbHfbFXpCSVYdJRfiVdvHnewN0r5fUlPtR9stQHyuqewzdkyb5jTTw02D2cUfL57vlPStBj7SEi3uOWvLrsiDnnCIxRMYJ2UA2ktDKHk+zWnsDmaeleSzonv2CHW42yXYPCvWi88oE1DJNYLNkIjua7MxAnkNZbScNw01A6zbLsZ3y8G6eEYnxSTRfwjd8EP4kdiHNJftm7Z4iRU7HOVh79/lRWB+gd171s3d/mI9kte3MRy6V8MMEMCAnMboGpaooYwgAmwclI2XZCczNWXfhaWe0ZS5PmytD/GDpXzkX0oEgY9K/uYo5V77NdZbGAjmyi8cE2B2ogvyaN2XfIInrZPgEffJ4AB7kFA2mwesdLOCh0BLD9itmCve3A1FGR4+stO2ANUoiI3w3Tv2yQSg4bjeDlJ08lXaaFCLW2peEXMXjQUk7fmpb5MNuOUTW6BE=",
                 FileType = FileType.CertificateCsd,
@@ -1412,7 +1272,7 @@ namespace FiscalApi.Samples.NetFramework
 
             var clavePrivadaCsd = new TaxFile
             {
-                PersonId = "bef56254-0892-4558-95c3-f9c8729e4b0e",
+                PersonId = "984708c4-fcc0-43bd-9d30-ec017815c20e",
                 Base64File =
                     "MIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIAgEAAoIBAQACAggAMBQGCCqGSIb3DQMHBAgwggS/AgEAMASCBMh4EHl7aNSCaMDA1VlRoXCZ5UUmqErAbucoZQObOaLUEm+I+QZ7Y8Giupo+F1XWkLvAsdk/uZlJcTfKLJyJbJwsQYbSpLOCLataZ4O5MVnnmMbfG//NKJn9kSMvJQZhSwAwoGLYDm1ESGezrvZabgFJnoQv8Si1nAhVGTk9FkFBesxRzq07dmZYwFCnFSX4xt2fDHs1PMpQbeq83aL/PzLCce3kxbYSB5kQlzGtUYayiYXcu0cVRu228VwBLCD+2wTDDoCmRXtPesgrLKUR4WWWb5N2AqAU1mNDC+UEYsENAerOFXWnmwrcTAu5qyZ7GsBMTpipW4Dbou2yqQ0lpA/aB06n1kz1aL6mNqGPaJ+OqoFuc8Ugdhadd+MmjHfFzoI20SZ3b2geCsUMNCsAd6oXMsZdWm8lzjqCGWHFeol0ik/xHMQvuQkkeCsQ28PBxdnUgf7ZGer+TN+2ZLd2kvTBOk6pIVgy5yC6cZ+o1Tloql9hYGa6rT3xcMbXlW+9e5jM2MWXZliVW3ZhaPjptJFDbIfWxJPjz4QvKyJk0zok4muv13Iiwj2bCyefUTRz6psqI4cGaYm9JpscKO2RCJN8UluYGbbWmYQU+Int6LtZj/lv8p6xnVjWxYI+rBPdtkpfFYRp+MJiXjgPw5B6UGuoruv7+vHjOLHOotRo+RdjZt7NqL9dAJnl1Qb2jfW6+d7NYQSI/bAwxO0sk4taQIT6Gsu/8kfZOPC2xk9rphGqCSS/4q3Os0MMjA1bcJLyoWLp13pqhK6bmiiHw0BBXH4fbEp4xjSbpPx4tHXzbdn8oDsHKZkWh3pPC2J/nVl0k/yF1KDVowVtMDXE47k6TGVcBoqe8PDXCG9+vjRpzIidqNo5qebaUZu6riWMWzldz8x3Z/jLWXuDiM7/Yscn0Z2GIlfoeyz+GwP2eTdOw9EUedHjEQuJY32bq8LICimJ4Ht+zMJKUyhwVQyAER8byzQBwTYmYP5U0wdsyIFitphw+/IH8+v08Ia1iBLPQAeAvRfTTIFLCs8foyUrj5Zv2B/wTYIZy6ioUM+qADeXyo45uBLLqkN90Rf6kiTqDld78NxwsfyR5MxtJLVDFkmf2IMMJHTqSfhbi+7QJaC11OOUJTD0v9wo0X/oO5GvZhe0ZaGHnm9zqTopALuFEAxcaQlc4R81wjC4wrIrqWnbcl2dxiBtD73KW+wcC9ymsLf4I8BEmiN25lx/OUc1IHNyXZJYSFkEfaxCEZWKcnbiyf5sqFSSlEqZLc4lUPJFAoP6s1FHVcyO0odWqdadhRZLZC9RCzQgPlMRtji/OXy5phh7diOBZv5UYp5nb+MZ2NAB/eFXm2JLguxjvEstuvTDmZDUb6Uqv++RdhO5gvKf/AcwU38ifaHQ9uvRuDocYwVxZS2nr9rOwZ8nAh+P2o4e0tEXjxFKQGhxXYkn75H3hhfnFYjik/2qunHBBZfcdG148MaNP6DjX33M238T9Zw/GyGx00JMogr2pdP4JAErv9a5yt4YR41KGf8guSOUbOXVARw6+ybh7+meb7w4BeTlj3aZkv8tVGdfIt3lrwVnlbzhLjeQY6PplKp3/a5Kr5yM0T4wJoKQQ6v3vSNmrhpbuAtKxpMILe8CQoo=",
                 FileType = FileType.PrivateKeyCsd,
@@ -1422,8 +1282,8 @@ namespace FiscalApi.Samples.NetFramework
 
 
             // Send requests
-            var apiResponseCer = await fiscalApi.Persons.AddTaxFileAsync(certificadoCsd);
-            var apiResponseKey = await fiscalApi.Persons.AddTaxFileAsync(clavePrivadaCsd);
+            var apiResponseCer = await fiscalApi.TaxFiles.CreateAsync(certificadoCsd);
+            var apiResponseKey = await fiscalApi.TaxFiles.CreateAsync(clavePrivadaCsd);
 
             // Check responses
             if (apiResponseCer.Succeeded)
@@ -1456,10 +1316,8 @@ namespace FiscalApi.Samples.NetFramework
             // Create instance of FiscalApiClient
             var fiscalApi = FiscalApiClient.Create(Settings);
 
-            var personId = "31c5c154-e534-4317-b40b-f8aeb281b9f6";
-            var taxFileId = "0df1a7f5-05b8-428b-a1eb-1f24b70ae5c5";
             // Send request
-            var apiResponse = await fiscalApi.Persons.GetTaxFileAsync(personId, taxFileId);
+            var apiResponse = await fiscalApi.TaxFiles.GetByIdAsync("ada2ed06-d060-4fb5-948d-16903f3844ee");
 
             // Check response
 
@@ -1484,11 +1342,8 @@ namespace FiscalApi.Samples.NetFramework
             // Create instance of FiscalApiClient
             var fiscalApi = FiscalApiClient.Create(Settings);
 
-            var personId = "31c5c154-e534-4317-b40b-f8aeb281b9f6";
-            var taxFileId = "cca18763-2cb0-406a-83d7-df803f990c5f";
-
             // Send request
-            var apiResponse = await fiscalApi.Persons.DeleteTaxFileAsync(personId, taxFileId);
+            var apiResponse = await fiscalApi.TaxFiles.DeleteAsync("bc6bf479-d30f-403d-8ed5-2435f9136566");
 
             // Check response
             if (apiResponse.Succeeded)
@@ -1510,17 +1365,12 @@ namespace FiscalApi.Samples.NetFramework
             // Obtener los últimos certificados válidos de una persona
 
             // Create instance of FiscalApiClient
-
             var fiscalApi = FiscalApiClient.Create(Settings);
 
-            var personId = "31c5c154-e534-4317-b40b-f8aeb281b9f6";
-
             // Send request
-
-            var apiResponse = await fiscalApi.Persons.GetLatestTaxFilesAsync(personId);
+            var apiResponse = await fiscalApi.TaxFiles.GetDefaultValuesAsync("984708c4-fcc0-43bd-9d30-ec017815c20e");
 
             // Check response
-
             if (apiResponse.Succeeded)
             {
                 MessageBox.Show("OK");
@@ -1970,6 +1820,58 @@ namespace FiscalApi.Samples.NetFramework
                 MessageBox.Show("OK");
                 foreach (var item in apiResponse.Data.Items)
                     MessageBox.Show($@"Catalogo: {item.Description}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        //
+        private async void listarCertificados_Click(object sender, EventArgs e)
+        {
+            // Obtener lista paginada de productos
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request (pageNumber=1, pageSize=2)
+            var apiResponse = await fiscalApi.TaxFiles.GetListAsync(1, 2);
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+                foreach (var item in apiResponse.Data.Items)
+                    MessageBox.Show($@"Certificate: {item.Tin}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void CertDefaultRefs_Click(object sender, EventArgs e)
+        {
+            // Obtener los ultimas referencias  (ids) a certificados válidos  de una persona.
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request
+            var apiResponse =
+                await fiscalApi.TaxFiles.GetDefaultReferencesAsync("984708c4-fcc0-43bd-9d30-ec017815c20e");
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+                foreach (var item in apiResponse.Data)
+                    MessageBox.Show($@"Certificate: {item.Id}");
             }
             else
             {
