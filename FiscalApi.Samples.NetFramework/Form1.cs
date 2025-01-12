@@ -1418,11 +1418,9 @@ namespace FiscalApi.Samples.NetFramework
             // Crear producto
 
             // Create instance of FiscalApiClient
-
             var fiscalApi = FiscalApiClient.Create(Settings);
 
             // request model
-
             var request = new Product
             {
                 Description = "Servicios contables",
@@ -1434,7 +1432,6 @@ namespace FiscalApi.Samples.NetFramework
             };
 
             // Send request
-
             var apiResponse = await fiscalApi.Products.CreateAsync(request);
 
             // Check response
@@ -1669,7 +1666,7 @@ namespace FiscalApi.Samples.NetFramework
 
             var request = new ApiKey
             {
-                PersonId = "5fd9f48c-a6a2-474f-944b-88a01751d432",
+                PersonId = "984708c4-fcc0-43bd-9d30-ec017815c20e",
             };
 
             // Send request
@@ -1872,6 +1869,62 @@ namespace FiscalApi.Samples.NetFramework
                 MessageBox.Show("OK");
                 foreach (var item in apiResponse.Data)
                     MessageBox.Show($@"Certificate: {item.Id}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void BorrarProducto_Click(object sender, EventArgs e)
+        {
+            // Borrar producto
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request
+            var apiResponse = await fiscalApi.Products.DeleteAsync("114a4be5-fb65-40b2-a762-ff0c55c6ebfa");
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show($@"Producto borrado {apiResponse.Data}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void UpdateApiKey_Click(object sender, EventArgs e)
+        {
+            // Actualizar apikey
+
+            // Create instance of FiscalApiClient
+
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // request model
+            var request = new ApiKey
+            {
+                Id = "b960961b-2f7e-423a-a083-d62bbd73ddfe",
+                Description = "Api-key server 001",
+                ApiKeyStatus = ApiKeyStatus.Enabled,
+            };
+
+            // Send request
+            var apiResponse = await fiscalApi.ApiKeys.UpdateAsync("b960961b-2f7e-423a-a083-d62bbd73ddfe", request);
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show(@"ApiKey actualizada.");
+                MessageBox.Show($@" {apiResponse.Data.Description}");
             }
             else
             {

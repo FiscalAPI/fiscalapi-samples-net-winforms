@@ -75,6 +75,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.CertDefaultRefs = new System.Windows.Forms.Button();
+            this.UpdateApiKey = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -415,6 +416,7 @@
             this.BorrarProducto.TabIndex = 9;
             this.BorrarProducto.Text = "Borrar producto";
             this.BorrarProducto.UseVisualStyleBackColor = true;
+            this.BorrarProducto.Click += new System.EventHandler(this.BorrarProducto_Click);
             // 
             // ActualizarProducto
             // 
@@ -448,6 +450,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.UpdateApiKey);
             this.groupBox4.Controls.Add(this.ObtenerPagedListApikeys);
             this.groupBox4.Controls.Add(this.RevocaApikey);
             this.groupBox4.Controls.Add(this.CrearApikey);
@@ -471,7 +474,7 @@
             // 
             // RevocaApikey
             // 
-            this.RevocaApikey.Location = new System.Drawing.Point(161, 75);
+            this.RevocaApikey.Location = new System.Drawing.Point(12, 131);
             this.RevocaApikey.Name = "RevocaApikey";
             this.RevocaApikey.Size = new System.Drawing.Size(144, 50);
             this.RevocaApikey.TabIndex = 15;
@@ -587,6 +590,16 @@
             this.CertDefaultRefs.UseVisualStyleBackColor = true;
             this.CertDefaultRefs.Click += new System.EventHandler(this.CertDefaultRefs_Click);
             // 
+            // UpdateApiKey
+            // 
+            this.UpdateApiKey.Location = new System.Drawing.Point(161, 75);
+            this.UpdateApiKey.Name = "UpdateApiKey";
+            this.UpdateApiKey.Size = new System.Drawing.Size(144, 50);
+            this.UpdateApiKey.TabIndex = 18;
+            this.UpdateApiKey.Text = "Obtener api-key por ID";
+            this.UpdateApiKey.UseVisualStyleBackColor = true;
+            this.UpdateApiKey.Click += new System.EventHandler(this.UpdateApiKey_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -660,6 +673,7 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button CertDefaultRefs;
+        private System.Windows.Forms.Button UpdateApiKey;
     }
 }
 
