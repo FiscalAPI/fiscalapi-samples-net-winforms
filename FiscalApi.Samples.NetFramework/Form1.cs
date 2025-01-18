@@ -20,22 +20,9 @@ namespace FiscalApi.Samples.NetFramework
 
             Settings = new FiscalApiOptions
             {
-                ApiUrl = "https://test.fiscalapi.com",
-                ApiKey = "sk_test_52be6db9_6d23_4191_b39f_cd9cc9df91c2",
-                ApiVersion = "v4",
-                Tenant = "102e5f13-e114-41dd-bea7-507fce177281",
-                TimeZone =
-                    "America/Mexico_City" // America/Mexico_City, by default. (iana time-zones https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
-            };
-
-            Settings = new FiscalApiOptions
-            {
                 ApiUrl = "https://localhost:7173",
-                ApiKey = "sk_development_e0e47dfa_5146_40c2_b3a3_3055909a6b88",
-                ApiVersion = "v4",
-                Tenant = "e839651d-1765-4cd0-ba7f-547a4c20580f",
-                TimeZone =
-                    "America/Mexico_City" // America/Mexico_City, by default. (iana time-zones https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+                ApiKey = "<apikey>",
+                Tenant = "<tenant>",
             };
 
             // Create directory if not exists
