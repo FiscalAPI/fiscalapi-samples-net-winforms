@@ -12,17 +12,19 @@ namespace FiscalApi.Samples.NetFramework
 {
     public partial class Form1 : Form
     {
-        public FiscalApiOptions Settings { get; set; }
+        public FiscalapiSettings Settings { get; set; }
 
         public Form1()
         {
             InitializeComponent();
 
-            Settings = new FiscalApiOptions
+            Settings = new FiscalapiSettings
             {
-                ApiUrl = "https://localhost:7173",
-                ApiKey = "<apikey>",
-                Tenant = "<tenant>",
+                ApiUrl = "https://test.fiscalapi.com",
+                // ApiKey = "<apikey>",
+                ApiKey = "sk_test_391b8980_42d0_4341_8e37_50475128d086",
+                //Tenant = "<tenant>",
+                Tenant = "102e5f13-e114-41dd-bea7-507fce177281",
             };
 
             // Create directory if not exists
@@ -30,14 +32,16 @@ namespace FiscalApi.Samples.NetFramework
         }
 
 
+        #region Facturas
+
         private async void FacturaIngresoPorValores_Click(object sender, EventArgs e)
         {
-            // Settings
-            var settings = new FiscalApiOptions
+            // https://docs.fiscalapi.com/credentials-info
+            var settings = new FiscalapiSettings
             {
                 ApiUrl = "https://test.fiscalapi.com",
-                ApiKey = "sk_test_52be6db9_6d23_4191_b39f_cd9cc9df91c2",
-                Tenant = "102e5f13-e114-41dd-bea7-507fce177281",
+                ApiKey = "<apikey>",
+                Tenant = "<tenant>",
             };
 
             // Crear fiscalapi client
@@ -367,7 +371,6 @@ namespace FiscalApi.Samples.NetFramework
             // Crear instancia de FiscalApiClient
             var fiscalApi = FiscalApiClient.Create(Settings);
 
-
             // Emisor KARLA FUENTE NOLASCO
             var issuer = new InvoiceIssuer
             {
@@ -388,7 +391,6 @@ namespace FiscalApi.Samples.NetFramework
                     Uuid = "5FB2822E-396D-4725-8521-CDC4BDD20CCF",
                     RelationshipTypeCode = "01"
                 }
-                // otras facturas relacionadas aquí
             };
 
             // Crear una lista de productos o servicios de la factura
@@ -399,7 +401,6 @@ namespace FiscalApi.Samples.NetFramework
                     Id = "310301b3-1ae9-441b-b463-51a8f9ca8ba2",
                     Quantity = 0.5m, // 50% de descuento
                 },
-                // otros productos o servicios aquí
             };
 
             // Crear la factura de egreso (nota de crédito)
@@ -904,7 +905,7 @@ namespace FiscalApi.Samples.NetFramework
             var fiscalApi = FiscalApiClient.Create(Settings);
 
 
-            // request model
+            // request model (utiliza las reglas de reporte https://docs.fiscalapi.com/report-rules-info)
             var request = new CreatePdfRequest
             {
                 InvoiceId = "51a3a6d3-b617-4a6b-8a67-cbfd654c7e90",
@@ -1022,23 +1023,53 @@ namespace FiscalApi.Samples.NetFramework
             }
         }
 
-        private async void ObtenerPersonaPorID_Click(object sender, EventArgs e)
+        private async void ObtenerListaPaginadaInvoices_Click(object sender, EventArgs e)
         {
-            //  Obtener persona por ID
-
-            // Create instance of FiscalApiClient
+            // crea una instancia de FiscalApiClient
             var fiscalApi = FiscalApiClient.Create(Settings);
 
-            // Send request
-            var apiResponse = await fiscalApi.Persons.GetByIdAsync("3f3478b4-60fd-459e-8bfc-f8239fc96257");
+            // envía la petición (pageNumber=1, pageSize=2)
+            var apiResponse = await fiscalApi.Invoices.GetListAsync(1, 2);
 
             // Check response
 
             if (apiResponse.Succeeded)
             {
-                var person = apiResponse.Data;
                 MessageBox.Show("OK");
-                MessageBox.Show($@"Persona: {person.LegalName}");
+
+                foreach (var item in apiResponse.Data.Items)
+                    MessageBox.Show($@"Persona: {item.Number}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        #endregion
+
+
+        #region Personas
+
+        private async void ObtenerListaPaginada_Click(object sender, EventArgs e)
+        {
+            //  Obtener lista paginada
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request (pageNumber=1, pageSize=2)
+            var apiResponse = await fiscalApi.Persons.GetListAsync(1, 2);
+
+            // Check response
+
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+
+                foreach (var item in apiResponse.Data.Items)
+                    MessageBox.Show($@"Persona: {item.LegalName}");
             }
             else
             {
@@ -1074,6 +1105,32 @@ namespace FiscalApi.Samples.NetFramework
             {
                 MessageBox.Show(@"Persona creada.");
                 MessageBox.Show($@" {apiResponse.Data.LegalName}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void ObtenerPersonaPorID_Click(object sender, EventArgs e)
+        {
+            //  Obtener persona por ID
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request
+            var apiResponse = await fiscalApi.Persons.GetByIdAsync("3f3478b4-60fd-459e-8bfc-f8239fc96257");
+
+            // Check response
+
+            if (apiResponse.Succeeded)
+            {
+                var person = apiResponse.Data;
+                MessageBox.Show("OK");
+                MessageBox.Show($@"Persona: {person.LegalName}");
             }
             else
             {
@@ -1145,48 +1202,27 @@ namespace FiscalApi.Samples.NetFramework
             }
         }
 
-        private async void ObtenerListaPaginada_Click(object sender, EventArgs e)
+        #endregion
+
+
+        #region Certificados
+
+        private async void listarCertificados_Click(object sender, EventArgs e)
         {
-            //  Obtener lista paginada
+            // Obtener lista paginada de productos
+
             // Create instance of FiscalApiClient
             var fiscalApi = FiscalApiClient.Create(Settings);
 
             // Send request (pageNumber=1, pageSize=2)
-            var apiResponse = await fiscalApi.Persons.GetListAsync(1, 2);
+            var apiResponse = await fiscalApi.TaxFiles.GetListAsync(1, 2);
 
             // Check response
-
             if (apiResponse.Succeeded)
             {
                 MessageBox.Show("OK");
-
                 foreach (var item in apiResponse.Data.Items)
-                    MessageBox.Show($@"Persona: {item.LegalName}");
-            }
-            else
-            {
-                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
-                MessageBox.Show(apiResponse.Message);
-                MessageBox.Show(apiResponse.Details);
-            }
-        }
-
-        private async void ObtenerListaPaginadaInvoices_Click(object sender, EventArgs e)
-        {
-            // crea una instancia de FiscalApiClient
-            var fiscalApi = FiscalApiClient.Create(Settings);
-
-            // envía la petición (pageNumber=1, pageSize=2)
-            var apiResponse = await fiscalApi.Invoices.GetListAsync(1, 2);
-
-            // Check response
-
-            if (apiResponse.Succeeded)
-            {
-                MessageBox.Show("OK");
-
-                foreach (var item in apiResponse.Data.Items)
-                    MessageBox.Show($@"Persona: {item.Number}");
+                    MessageBox.Show($@"Certificate: {item.Tin}");
             }
             else
             {
@@ -1278,9 +1314,9 @@ namespace FiscalApi.Samples.NetFramework
             }
         }
 
-        private async void EliEliminaCertificado_Click(object sender, EventArgs e)
+        private async void EliminaCertificado_Click(object sender, EventArgs e)
         {
-            // Eliminar certificado por user id y tax file id
+            // Eliminar certificado por su id 
 
             // Create instance of FiscalApiClient
             var fiscalApi = FiscalApiClient.Create(Settings);
@@ -1303,9 +1339,9 @@ namespace FiscalApi.Samples.NetFramework
             }
         }
 
-        private async void ObtenerUltimosCertficadosValidos_Click(object sender, EventArgs e)
+        private async void CertDefaultValues_Click(object sender, EventArgs e)
         {
-            // Obtener los últimos certificados válidos de una persona
+            // Obtener los ultimas valores (certificados) válidos de una persona.
 
             // Create instance of FiscalApiClient
             var fiscalApi = FiscalApiClient.Create(Settings);
@@ -1328,25 +1364,53 @@ namespace FiscalApi.Samples.NetFramework
             }
         }
 
-        private async void ObtenerProductoById_Click(object sender, EventArgs e)
+        private async void CertDefaultRefs_Click(object sender, EventArgs e)
         {
-            // Obtener producto por ID
+            // Obtener los ultimas referencias (ids) a certificados válidos de una persona.
 
             // Create instance of FiscalApiClient
-
             var fiscalApi = FiscalApiClient.Create(Settings);
 
             // Send request
-
-            var apiResponse = await fiscalApi.Products.GetByIdAsync("bf133d17-c030-4ec4-8588-182c2080407b");
+            var apiResponse =
+                await fiscalApi.TaxFiles.GetDefaultReferencesAsync("984708c4-fcc0-43bd-9d30-ec017815c20e");
 
             // Check response
-
             if (apiResponse.Succeeded)
             {
-                var product = apiResponse.Data;
                 MessageBox.Show("OK");
-                MessageBox.Show($@"Producto: {product.Description}");
+                foreach (var item in apiResponse.Data)
+                    MessageBox.Show($@"Certificate: {item.Id}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        #endregion
+
+
+        #region Productos
+
+        private async void ObtenerProductosPagedList_Click(object sender, EventArgs e)
+        {
+            // Obtener lista paginada de productos
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request (pageNumber=1, pageSize=2)
+            var apiResponse = await fiscalApi.Products.GetListAsync(1, 2);
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+                foreach (var item in apiResponse.Data.Items)
+                    MessageBox.Show($@"Producto: {item.Description}");
             }
             else
             {
@@ -1392,22 +1456,25 @@ namespace FiscalApi.Samples.NetFramework
             }
         }
 
-        private async void ObtenerProductosPagedList_Click(object sender, EventArgs e)
+        private async void ObtenerProductoById_Click(object sender, EventArgs e)
         {
-            // Obtener lista paginada de productos
+            // Obtener producto por ID
 
             // Create instance of FiscalApiClient
+
             var fiscalApi = FiscalApiClient.Create(Settings);
 
-            // Send request (pageNumber=1, pageSize=2)
-            var apiResponse = await fiscalApi.Products.GetListAsync(1, 2);
+            // Send request
+
+            var apiResponse = await fiscalApi.Products.GetByIdAsync("bf133d17-c030-4ec4-8588-182c2080407b");
 
             // Check response
+
             if (apiResponse.Succeeded)
             {
+                var product = apiResponse.Data;
                 MessageBox.Show("OK");
-                foreach (var item in apiResponse.Data.Items)
-                    MessageBox.Show($@"Producto: {item.Description}");
+                MessageBox.Show($@"Producto: {product.Description}");
             }
             else
             {
@@ -1547,23 +1614,20 @@ namespace FiscalApi.Samples.NetFramework
             }
         }
 
-        private async void ObtenerApikeyByID_Click(object sender, EventArgs e)
+        private async void BorrarProducto_Click(object sender, EventArgs e)
         {
-            // Obtener apikey por ID
+            // Borrar producto
 
             // Create instance of FiscalApiClient
             var fiscalApi = FiscalApiClient.Create(Settings);
 
             // Send request
-
-            var apiResponse = await fiscalApi.ApiKeys.GetByIdAsync("b960961b-2f7e-423a-a083-d62bbd73ddfe");
+            var apiResponse = await fiscalApi.Products.DeleteAsync("114a4be5-fb65-40b2-a762-ff0c55c6ebfa");
 
             // Check response
             if (apiResponse.Succeeded)
             {
-                var apiKey = apiResponse.Data;
-                MessageBox.Show("OK");
-                MessageBox.Show($@"ApiKey: {apiKey.ApiKeyValue}");
+                MessageBox.Show($@"Producto borrado {apiResponse.Data}");
             }
             else
             {
@@ -1572,6 +1636,11 @@ namespace FiscalApi.Samples.NetFramework
                 MessageBox.Show(apiResponse.Details);
             }
         }
+
+        #endregion
+
+
+        #region ApiKeys
 
         private async void ObtenerPagedListApikeys_Click(object sender, EventArgs e)
         {
@@ -1589,6 +1658,32 @@ namespace FiscalApi.Samples.NetFramework
                 MessageBox.Show("OK");
                 foreach (var item in apiResponse.Data.Items)
                     MessageBox.Show($@"ApiKey: {item.ApiKeyValue}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void ObtenerApikeyByID_Click(object sender, EventArgs e)
+        {
+            // Obtener apikey por ID
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request
+
+            var apiResponse = await fiscalApi.ApiKeys.GetByIdAsync("b960961b-2f7e-423a-a083-d62bbd73ddfe");
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                var apiKey = apiResponse.Data;
+                MessageBox.Show("OK");
+                MessageBox.Show($@"ApiKey: {apiKey.ApiKeyValue}");
             }
             else
             {
@@ -1632,7 +1727,7 @@ namespace FiscalApi.Samples.NetFramework
 
         private async void RevocaApikey_Click(object sender, EventArgs e)
         {
-            // Revocar apikey
+            // Eliminar (Revocar) apikey 
 
             // Create instance of FiscalApiClient
 
@@ -1646,194 +1741,6 @@ namespace FiscalApi.Samples.NetFramework
             if (apiResponse.Succeeded)
             {
                 MessageBox.Show($@"ApiKey revocada {apiResponse.Data}");
-            }
-            else
-            {
-                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
-                MessageBox.Show(apiResponse.Message);
-                MessageBox.Show(apiResponse.Details);
-            }
-        }
-
-
-        private async void ObtenerCatalogosDisponibles_Click(object sender, EventArgs e)
-        {
-            // Obtener catalogos disponibles
-
-            // Create instance of FiscalApiClient
-
-            var fiscalApi = FiscalApiClient.Create(Settings);
-
-            // Send request
-            var apiResponse = await fiscalApi.Catalogs.GetListAsync();
-
-            // Check response
-
-            if (apiResponse.Succeeded)
-            {
-                MessageBox.Show("OK");
-                foreach (var item in apiResponse.Data)
-                    MessageBox.Show($@"Catalogo: {item}");
-            }
-            else
-            {
-                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
-                MessageBox.Show(apiResponse.Message);
-                MessageBox.Show(apiResponse.Details);
-            }
-        }
-
-        private async void BuscarCodigoProductoServicio_Click(object sender, EventArgs e)
-        {
-            // Buscar codigo de producto o servicio
-
-            // Create instance of FiscalApiClient
-            var fiscalApi = FiscalApiClient.Create(Settings);
-
-            // Send request (pageNumber=1, pageSize=10)
-            var apiResponse = await fiscalApi.Catalogs.SearchCatalogAsync("SatProductCodes", "serv", 1, 10);
-
-            // Check response
-
-            if (apiResponse.Succeeded)
-            {
-                MessageBox.Show("OK");
-                foreach (var item in apiResponse.Data.Items)
-                    MessageBox.Show($@"Catalogo: {item.Description}");
-            }
-            else
-            {
-                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
-                MessageBox.Show(apiResponse.Message);
-                MessageBox.Show(apiResponse.Details);
-            }
-        }
-
-        private async void BuscarCodigoUnidad_Click(object sender, EventArgs e)
-        {
-            // Buscar codigo de unidad de medida
-
-            // Create instance of FiscalApiClient
-
-            var fiscalApi = FiscalApiClient.Create(Settings);
-
-
-            // Send request
-
-            var apiResponse = await fiscalApi.Catalogs.SearchCatalogAsync("SatUnitMeasurements", "inter", 1, 10);
-
-            //var apiResponse = Task.Run(async () => await fiscalApi.Catalogs.SearchCatalogAsync("SatUnitMeasurements", "inter", 1, 10)).Result;
-
-            // Check response
-
-            if (apiResponse.Succeeded)
-            {
-                MessageBox.Show("OK");
-                foreach (var item in apiResponse.Data.Items)
-                    MessageBox.Show($@"Catalogo: {item.Description}");
-            }
-            else
-            {
-                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
-                MessageBox.Show(apiResponse.Message);
-                MessageBox.Show(apiResponse.Details);
-            }
-        }
-
-        private async void BuscarCatalogo_Click(object sender, EventArgs e)
-        {
-            // Obtener todos los catalogos (Reemplaza SatUnitMeasurements por el nombre del catalogo que se desea consultar.
-            // Para recibir la lista completa, invoca el método GetListAsync() (sin parámetros))
-
-
-            // Create instance of FiscalApiClient
-            var fiscalApi = FiscalApiClient.Create(Settings);
-
-            // Send request
-            var apiResponse = await fiscalApi.Catalogs.SearchCatalogAsync("SatUnitMeasurements", "inter", 1, 10);
-
-            // Check response
-
-            if (apiResponse.Succeeded)
-            {
-                MessageBox.Show("OK");
-                foreach (var item in apiResponse.Data.Items)
-                    MessageBox.Show($@"Catalogo: {item.Description}");
-            }
-            else
-            {
-                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
-                MessageBox.Show(apiResponse.Message);
-                MessageBox.Show(apiResponse.Details);
-            }
-        }
-
-        //
-        private async void listarCertificados_Click(object sender, EventArgs e)
-        {
-            // Obtener lista paginada de productos
-
-            // Create instance of FiscalApiClient
-            var fiscalApi = FiscalApiClient.Create(Settings);
-
-            // Send request (pageNumber=1, pageSize=2)
-            var apiResponse = await fiscalApi.TaxFiles.GetListAsync(1, 2);
-
-            // Check response
-            if (apiResponse.Succeeded)
-            {
-                MessageBox.Show("OK");
-                foreach (var item in apiResponse.Data.Items)
-                    MessageBox.Show($@"Certificate: {item.Tin}");
-            }
-            else
-            {
-                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
-                MessageBox.Show(apiResponse.Message);
-                MessageBox.Show(apiResponse.Details);
-            }
-        }
-
-        private async void CertDefaultRefs_Click(object sender, EventArgs e)
-        {
-            // Obtener los ultimas referencias  (ids) a certificados válidos  de una persona.
-
-            // Create instance of FiscalApiClient
-            var fiscalApi = FiscalApiClient.Create(Settings);
-
-            // Send request
-            var apiResponse =
-                await fiscalApi.TaxFiles.GetDefaultReferencesAsync("984708c4-fcc0-43bd-9d30-ec017815c20e");
-
-            // Check response
-            if (apiResponse.Succeeded)
-            {
-                MessageBox.Show("OK");
-                foreach (var item in apiResponse.Data)
-                    MessageBox.Show($@"Certificate: {item.Id}");
-            }
-            else
-            {
-                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
-                MessageBox.Show(apiResponse.Message);
-                MessageBox.Show(apiResponse.Details);
-            }
-        }
-
-        private async void BorrarProducto_Click(object sender, EventArgs e)
-        {
-            // Borrar producto
-
-            // Create instance of FiscalApiClient
-            var fiscalApi = FiscalApiClient.Create(Settings);
-
-            // Send request
-            var apiResponse = await fiscalApi.Products.DeleteAsync("114a4be5-fb65-40b2-a762-ff0c55c6ebfa");
-
-            // Check response
-            if (apiResponse.Succeeded)
-            {
-                MessageBox.Show($@"Producto borrado {apiResponse.Data}");
             }
             else
             {
@@ -1876,6 +1783,38 @@ namespace FiscalApi.Samples.NetFramework
             }
         }
 
+        #endregion
+
+
+        #region Catalogos
+
+        private async void ObtenerCatalogosDisponibles_Click(object sender, EventArgs e)
+        {
+            // Obtener todos los catálogos disponibles
+
+            // Create instance of FiscalApiClient
+
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request
+            var apiResponse = await fiscalApi.Catalogs.GetListAsync();
+
+            // Check response
+
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+                foreach (var item in apiResponse.Data)
+                    MessageBox.Show($@"Catalogo: {item}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
         private async void ObtenerCatalogRecordPorId_Click(object sender, EventArgs e)
         {
             // Obtener catalog registro de un catalogo por nombre del catalogo y id del registro
@@ -1899,5 +1838,91 @@ namespace FiscalApi.Samples.NetFramework
                 MessageBox.Show(apiResponse.Details);
             }
         }
+
+        private async void BuscarCatalogo_Click(object sender, EventArgs e)
+        {
+            // Buscar 'inter' en el catalogo 'SatUnitMeasurements', pagina 1, 10 registros
+
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request
+            var apiResponse = await fiscalApi.Catalogs.SearchCatalogAsync("SatUnitMeasurements", "inter", 1, 10);
+
+            // Check response
+
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+                foreach (var item in apiResponse.Data.Items)
+                    MessageBox.Show($@"Catalogo: {item.Description}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void BuscarCodigoProductoServicio_Click(object sender, EventArgs e)
+        {
+            // Buscar 'serv' en el catálogo 'SatProductCodes', pagina 1, 10 registros
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request (pageNumber=1, pageSize=10)
+            var apiResponse = await fiscalApi.Catalogs.SearchCatalogAsync("SatProductCodes", "serv", 1, 10);
+
+            // Check response
+
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+                foreach (var item in apiResponse.Data.Items)
+                    MessageBox.Show($@"Catalogo: {item.Description}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void BuscarCodigoUnidad_Click(object sender, EventArgs e)
+        {
+            // Buscar 'inter' en el catalogo 'SatUnitMeasurements', pagina 1, 10 registros
+
+            // Create instance of FiscalApiClient
+
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+
+            // Send request
+
+            var apiResponse = await fiscalApi.Catalogs.SearchCatalogAsync("SatUnitMeasurements", "inter", 1, 10);
+
+            //var apiResponse = Task.Run(async () => await fiscalApi.Catalogs.SearchCatalogAsync("SatUnitMeasurements", "inter", 1, 10)).Result;
+
+            // Check response
+
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+                foreach (var item in apiResponse.Data.Items)
+                    MessageBox.Show($@"Catalogo: {item.Description}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        #endregion
     }
 }
