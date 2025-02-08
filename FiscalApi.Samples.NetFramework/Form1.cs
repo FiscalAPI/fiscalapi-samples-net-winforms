@@ -211,8 +211,8 @@ namespace FiscalApi.Samples.NetFramework
             // Crear instancia de FiscalApiClient
             var fiscalApiClient = FiscalApiClient.Create(Settings);
 
-            // Obtener factura por Id
-            var id = "5121ba81-0ce1-4839-b93b-c2933c0bb067";
+            // Obtener factura por Id (true para expandir los objetos relacionados)
+            var id = "5121ba81-0ce1-4839-b93b-c2933c0bb067"; 
             var apiResponse = await fiscalApiClient.Invoices.GetByIdAsync(id, true);
 
 
