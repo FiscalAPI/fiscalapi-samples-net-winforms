@@ -21,10 +21,8 @@ namespace FiscalApi.Samples.NetFramework
             Settings = new FiscalapiSettings
             {
                 ApiUrl = "https://test.fiscalapi.com",
-                // ApiKey = "<apikey>",
-                ApiKey = "sk_test_391b8980_42d0_4341_8e37_50475128d086",
-                //Tenant = "<tenant>",
-                Tenant = "102e5f13-e114-41dd-bea7-507fce177281",
+                ApiKey = "<apikey>",
+                Tenant = "<tenant>",
             };
 
             // Create directory if not exists
@@ -37,15 +35,10 @@ namespace FiscalApi.Samples.NetFramework
         private async void FacturaIngresoPorValores_Click(object sender, EventArgs e)
         {
             // https://docs.fiscalapi.com/credentials-info
-            var settings = new FiscalapiSettings
-            {
-                ApiUrl = "https://test.fiscalapi.com",
-                ApiKey = "<apikey>",
-                Tenant = "<tenant>",
-            };
+
 
             // Crear fiscalapi client
-            var fiscalApi = FiscalApiClient.Create(settings);
+            var fiscalApi = FiscalApiClient.Create(Settings);
 
             // Crear certificados de prueba (EKU9003173C9)
             var sellos = new List<TaxCredential>()
@@ -219,8 +212,8 @@ namespace FiscalApi.Samples.NetFramework
             var fiscalApiClient = FiscalApiClient.Create(Settings);
 
             // Obtener factura por Id
-            var id = "51a3a6d3-b617-4a6b-8a67-cbfd654c7e90";
-            var apiResponse = await fiscalApiClient.Invoices.GetByIdAsync(id);
+            var id = "5121ba81-0ce1-4839-b93b-c2933c0bb067";
+            var apiResponse = await fiscalApiClient.Invoices.GetByIdAsync(id, true);
 
 
             //Check response
@@ -1466,7 +1459,7 @@ namespace FiscalApi.Samples.NetFramework
 
             // Send request
 
-            var apiResponse = await fiscalApi.Products.GetByIdAsync("bf133d17-c030-4ec4-8588-182c2080407b");
+            var apiResponse = await fiscalApi.Products.GetByIdAsync("127b4b1b-36d2-4f70-9f6e-a434e6d850f2");
 
             // Check response
 
