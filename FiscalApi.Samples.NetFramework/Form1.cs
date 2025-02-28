@@ -20,9 +20,12 @@ namespace FiscalApi.Samples.NetFramework
 
             Settings = new FiscalapiSettings
             {
-                ApiUrl = "https://test.fiscalapi.com",
-                ApiKey = "<apikey>",
-                Tenant = "<tenant>",
+                //ApiUrl = "https://test.fiscalapi.com",
+                //ApiKey = "<apikey>",
+                //Tenant = "<tenant>",
+                ApiUrl = "https://localhost:7173",
+                ApiKey = "sk_development_71a2d1ff_25c6_4063_aee8_a5da7d0b9967",
+                Tenant = "e839651d-1765-4cd0-ba7f-547a4c20580f",
             };
 
             // Create directory if not exists
@@ -212,7 +215,7 @@ namespace FiscalApi.Samples.NetFramework
             var fiscalApiClient = FiscalApiClient.Create(Settings);
 
             // Obtener factura por Id (true para expandir los objetos relacionados)
-            var id = "5121ba81-0ce1-4839-b93b-c2933c0bb067"; 
+            var id = "5121ba81-0ce1-4839-b93b-c2933c0bb067";
             var apiResponse = await fiscalApiClient.Invoices.GetByIdAsync(id, true);
 
 
@@ -1917,5 +1920,70 @@ namespace FiscalApi.Samples.NetFramework
         }
 
         #endregion
+
+        private async void ConsultarEstadoValores_Click(object sender, EventArgs e)
+        {
+            // Consultar estado de una factura por valores (pasando todos los valores de la petición)
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // request model
+            var request = new InvoiceStatusRequest
+            {
+                IssuerTin = "POPJ450924HD6", // RFC del emisor
+                RecipientTin = "MEJJ940824C61", // RFC del receptor
+                InvoiceTotal = 430.00m, // Total de la factura
+                InvoiceUuid = "8e0fdc23-e148-4cf5-b3ce-4459f31c9c45", // UUID de la factura
+                Last8DigitsIssuerSignature = "oxPKRg==" // Ultimos 8 digitos del sello digital del emisor/cfdi
+            };
+
+            // Send request
+            var apiResponse = await fiscalApi.Invoices.GetStatusAsync(request);
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+                MessageBox.Show($@"Estado: {apiResponse.Data.Status}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void ConsultarEstadoRefs_Click(object sender, EventArgs e)
+        {
+            // Consultar estado de una factura por referencias (por id de la factura)
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+
+            // model request
+            var request = new InvoiceStatusRequest
+            {
+                Id = "bda0b31d-e1e0-4644-91ea-c6f0e90fb57c", // Id, No folio fiscal (UUID). 
+            };
+
+            // Send request
+            var apiResponse = await fiscalApi.Invoices.GetStatusAsync(request);
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+                MessageBox.Show($@"Estado: {apiResponse.Data.Status}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
     }
 }

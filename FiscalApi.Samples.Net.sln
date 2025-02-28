@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiscalApi.Samples.NetFramework", "FiscalApi.Samples.NetFramework\FiscalApi.Samples.NetFramework.csproj", "{3F1B9154-2A35-4F20-8BEB-ED0434BA1D40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fiscalapi-net", "..\fiscalapi-net\fiscalapi-net.csproj", "{C7D9D4CC-DCF6-43D0-9F64-623BE629E85E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3F1B9154-2A35-4F20-8BEB-ED0434BA1D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F1B9154-2A35-4F20-8BEB-ED0434BA1D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F1B9154-2A35-4F20-8BEB-ED0434BA1D40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7D9D4CC-DCF6-43D0-9F64-623BE629E85E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7D9D4CC-DCF6-43D0-9F64-623BE629E85E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7D9D4CC-DCF6-43D0-9F64-623BE629E85E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7D9D4CC-DCF6-43D0-9F64-623BE629E85E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
