@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Fiscalapi.Abstractions;
 using Fiscalapi.Common;
 using Fiscalapi.Models;
 using Fiscalapi.Services;
@@ -20,12 +21,9 @@ namespace FiscalApi.Samples.NetFramework
 
             Settings = new FiscalapiSettings
             {
-                //ApiUrl = "https://test.fiscalapi.com",
+                ApiUrl = "https://test.fiscalapi.com",
                 //ApiKey = "<apikey>",
                 //Tenant = "<tenant>",
-                ApiUrl = "https://localhost:7173",
-                ApiKey = "sk_development_71a2d1ff_25c6_4063_aee8_a5da7d0b9967",
-                Tenant = "e839651d-1765-4cd0-ba7f-547a4c20580f",
             };
 
             // Create directory if not exists
@@ -187,6 +185,218 @@ namespace FiscalApi.Samples.NetFramework
                 Recipient = recipient,
                 Items = items,
                 PaymentMethodCode = "PUE",
+            };
+
+
+            // Timbrar la factura
+            var apiResponse = await fiscalApi.Invoices.CreateAsync(invoice);
+
+
+            if (apiResponse.Succeeded)
+            {
+                // Guardar el XML de la factura
+                var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
+                File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
+
+                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+            }
+            else
+            {
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void GlobalInvoiceValbutton_Click(object sender, EventArgs e)
+        {
+            // Crear instancia de FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+
+            // Crear certificados de prueba (EKU9003173C9)
+            var sellos = new List<TaxCredential>()
+            {
+                new TaxCredential
+                {
+                    Base64File =
+                        "MIIFgDCCA2igAwIBAgIUMzAwMDEwMDAwMDA1MDAwMDM0NDYwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWxpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMjMwNTE4MTQzNTM3WhcNMjcwNTE4MTQzNTM3WjCBpzEdMBsGA1UEAxMUS0FSTEEgRlVFTlRFIE5PTEFTQ08xHTAbBgNVBCkTFEtBUkxBIEZVRU5URSBOT0xBU0NPMR0wGwYDVQQKExRLQVJMQSBGVUVOVEUgTk9MQVNDTzEWMBQGA1UELRMNRlVOSzY3MTIyOFBINjEbMBkGA1UEBRMSRlVOSzY3MTIyOE1DTE5MUjA1MRMwEQYDVQQLEwpTdWN1cnNhbCAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhNXbTSqGX6+/3Urpemyy5vVG2IdP2v7v001+c4BoMxEDFDQ32cOFdDiRxy0Fq9aR+Ojrofq8VeftvN586iyA1A6a0QnA68i7JnQKI4uJy+u0qiixuHu6u3b3BhSpoaVHcUtqFWLLlzr0yBxfVLOqVna/1/tHbQJg9hx57mp97P0JmXO1WeIqi+Zqob/mVZh2lsPGdJ8iqgjYFaFn9QVOQ1Pq74o1PTqwfzqgJSfV0zOOlESDPWggaDAYE4VNyTBisOUjlNd0x7ppcTxSi3yenrJHqkq/pqJsRLKf6VJ/s9p6bsd2bj07hSDpjlDC2lB25eEfkEkeMkXoE7ErXQ5QCwIDAQABox0wGzAMBgNVHRMBAf8EAjAAMAsGA1UdDwQEAwIGwDANBgkqhkiG9w0BAQsFAAOCAgEAHwYpgbClHULXYhK4GNTgonvXh81oqfXwCSWAyDPiTYFDWVfWM9C4ApxMLyc0XvJte75Rla+bPC08oYN3OlhbbvP3twBL/w9SsfxvkbpFn2ZfGSTXZhyiq4vjmQHW1pnFvGelwgU4v3eeRE/MjoCnE7M/Q5thpuog6WGf7CbKERnWZn8QsUaJsZSEkg6Bv2jm69ye57ab5rrOUaeMlstTfdlaHAEkUgLX/NXq7RbGwv82hkHY5b2vYcXeh34tUMBL6os3OdRlooN9ZQGkVIISvxVZpSHkYC20DFNh1Bb0ovjfujlTcka81GnbUhFGZtRuoVQ1RVpMO8xtx3YKBLp4do3hPmnRCV5hCm43OIjYx9Ov2dqICV3AaNXSLV1dW39Bak/RBiIDGHzOIW2+VMPjvvypBjmPv/tmbqNHWPSAWOxTyMx6E1gFCZvi+5F+BgkdC3Lm7U0BU0NfvsXajZd8sXnIllvEMrikCLoI/yurvexNDcF1RW/FhMsoua0eerwczcNm66pGjHm05p9DR6lFeJZrtqeqZuojdxBWy4vH6ghyJaupergoX+nmdG3JYeRttCFF/ITI68TeCES5V3Y0C3psYAg1XxcGRLGd4chPo/4xwiLkijWtgt0/to5ljGBwfK7r62PHZfL1Dp+i7V3w7hmOlhbXzP+zhMZn1GCk7KY=",
+                    FileType = FileType.CertificateCsd,
+                    Password = "12345678a"
+                },
+                new TaxCredential
+                {
+                    Base64File =
+                        "MIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIAgEAAoIBAQACAggAMBQGCCqGSIb3DQMHBAgwggS9AgEAMASCBMh4EHl7aNSCaMDA1VlRoXCZ5UUmqErAbucRBAKNQXH8t8gVCl/ItHMI2hMJ76QOECOqEi1Y89cDpegDvh/INXyMsXbzi87tfFzgq1O+9ID6aPWGg+bNGADXyXxDVdy7Nq/SCdoXvo66MTYwq8jyJeUHDHEGMVBcmZpD44VJCvLBxDcvByuevP4Wo2NKqJCwK+ecAdZc/8Rvd947SjbMHuS8BppfQWARVUqA5BLOkTAHNv6tEk/hncC7O2YOGSShart8fM8dokgGSyewHVFe08POuQ+WDHeVpvApH/SP29rwktSoiHRoL6dK+F2YeEB5SuFW9LQgYCutjapmUP/9TC3Byro9Li6UrvQHxNmgMFGQJSYjFdqlGjLibfuguLp7pueutbROoZaSxU8HqlfYxLkpJUxUwNI1ja/1t3wcivtWknVXBd13R06iVfU1HGe8Kb4u5il4a4yP4p7VT4RE3b1SBLJeG+BxHiE8gFaaKcX/Cl6JV14RPTvk/6VnAtEQ66qHJex21KKuiJo2JoOmDXVHmvGQlWXNjYgoPx28Xd5WsofL+n7HDR2Ku8XgwJw6IXBJGuoday9qWN9v/k7DGlNGB6Sm4gdVUmycMP6EGhB1vFTiDfOGQO42ywmcpKoMETPVQ5InYKE0xAOckgcminDgxWjtUHjBDPEKifEjYudPwKmR6Cf4ZdGvUWwY/zq9pPAC9bu423KeBCnSL8AQ4r5SVsW6XG0njamwfNjpegwh/YG7sS7sDtZ8gi7r6tZYjsOqZlCYU0j7QTBpuQn81Yof2nQRCFxhRJCeydmIA8+z0nXrcElk7NDPk4kYQS0VitJ2qeQYNENzGBglROkCl2y6GlxAG80IBtReCUp/xOSdlwDR0eim+SNkdStvmQM5IcWBuDKwGZc1A4v/UoLl7niV9fpl4X6bUX8lZzY4gidJOafoJ30VoY/lYGkrkEuz3GpbbT5v8fF3iXVRlEqhlpe8JSGu7Rd2cPcJSkQ1Cuj/QRhHPhFMF2KhTEf95c9ZBKI8H7SvBi7eLXfSW2Y0ve6vXBZKyjK9whgCU9iVOsJjqRXpAccaWOKi420CjmS0+uwj/Xr2wLZhPEjBA/G6Od30+eG9mICmbp/5wAGhK/ZxCT17ZETyFmOMo49jl9pxdKocJNuzMrLpSz7/g5Jwp8+y8Ck5YP7AX0R/dVA0t37DO7nAbQT5XVSYpMVh/yvpYJ9WR+tb8Yg1h2lERLR2fbuhQRcwmisZR2W3Sr2b7hX9MCMkMQw8y2fDJrzLrqKqkHcjvnI/TdzZW2MzeQDoBBb3fmgvjYg07l4kThS73wGX992w2Y+a1A2iirSmrYEm9dSh16JmXa8boGQAONQzQkHh7vpw0IBs9cnvqO1QLB1GtbBztUBXonA4TxMKLYZkVrrd2RhrYWMsDp7MpC4M0p/DA3E/qscYwq1OpwriewNdx6XXqMZbdUNqMP2viBY2VSGmNdHtVfbN/rnaeJetFGX7XgTVYD7wDq8TW9yseCK944jcT+y/o0YiT9j3OLQ2Ts0LDTQskpJSxRmXEQGy3NBDOYFTvRkcGJEQJItuol8NivJN1H9LoLIUAlAHBZxfHpUYx66YnP4PdTdMIWH+nxyekKPFfAT7olQ=",
+                    FileType = FileType.PrivateKeyCsd,
+                    Password = "12345678a"
+                }
+            };
+
+            // Emisor
+            var issuer = new InvoiceIssuer
+            {
+                Tin = "FUNK671228PH6",
+                LegalName = "KARLA FUENTE NOLASCO",
+                TaxRegimeCode = "621",
+                TaxCredentials = sellos
+            };
+
+            // Receptor
+            var recipient = new InvoiceRecipient
+            {
+                Tin = "XAXX010101000",
+                LegalName = "PUBLICO EN GENERAL",
+                ZipCode = "01160",
+                TaxRegimeCode = "616",
+                CfdiUseCode = "S01",
+                Email = "someone@somewhere.com"
+            };
+
+            // Crear una lista de productos o servicios de la factura
+            var items = new List<InvoiceItem>()
+            {
+                new InvoiceItem
+                {
+                    ItemCode = "01010101",
+                    Quantity = 1,
+                    UnitOfMeasurementCode = "ACT",
+                    Description = "Venta",
+                    UnitPrice = 1230.00m,
+                    TaxObjectCode = "02",
+                    ItemSku = "venta0001",
+                    Discount = 255.85m,
+                    ItemTaxes = new List<InvoiceItemTax>()
+                    {
+                        new InvoiceItemTax
+                        {
+                            TaxCode = "002", // IVA
+                            TaxTypeCode = "Tasa", // Tasa
+                            TaxRate = 0.160000m, // 16%
+                            TaxFlagCode = "T" // Traslado
+                        }
+                    }
+                }
+            };
+
+
+            // Información global
+
+            var globalInfo = new GlobalInformation
+            {
+                PeriodicityCode = "01",
+                MonthCode = "05",
+                Year = 2025
+            };
+
+
+            // Crear la factura 
+            var invoice = new Invoice
+            {
+                VersionCode = "4.0",
+                TypeCode = "I",
+                Series = "F",
+                Date = DateTime.Now,
+                CurrencyCode = "MXN",
+                PaymentFormCode = "01",
+                PaymentMethodCode = "PUE",
+                ExpeditionZipCode = "01160",
+                GlobalInformation = globalInfo, // Información global
+                Issuer = issuer, // Emisor
+                Recipient = recipient, // Receptor
+                Items = items, // Ventas 
+            };
+
+
+            // Timbrar la factura
+            var apiResponse = await fiscalApi.Invoices.CreateAsync(invoice);
+
+
+            if (apiResponse.Succeeded)
+            {
+                // Guardar el XML de la factura
+                var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
+                File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
+
+                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+            }
+            else
+            {
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void GlobalInvoiceRefButton_Click(object sender, EventArgs e)
+        {
+
+            // https://docs.fiscalapi.com/credentials-info
+            // Crear instancia de FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Emisor
+            var issuer = new InvoiceIssuer
+            {
+                Id = "78d380fd-1b69-4e3c-8bc0-4f57737f7d5f"
+            };
+
+            // Receptor
+            var recipient = new InvoiceRecipient
+            {
+                Id = "4e7ba2d7-2302-42f1-9fe4-6b75069f0fc9"
+            };
+
+            // Crear una lista de productos o servicios de la factura
+            var items = new List<InvoiceItem>()
+            {
+                new InvoiceItem
+                {
+                    ItemCode = "01010101",
+                    Quantity = 1,
+                    UnitOfMeasurementCode = "ACT",
+                    Description = "Venta",
+                    UnitPrice = 1230.00m,
+                    TaxObjectCode = "02",
+                    ItemSku = "venta0001",
+                    Discount = 255.85m,
+                    ItemTaxes = new List<InvoiceItemTax>()
+                    {
+                        new InvoiceItemTax
+                        {
+                            TaxCode = "002", // IVA
+                            TaxTypeCode = "Tasa", // Tasa
+                            TaxRate = 0.160000m, // 16%
+                            TaxFlagCode = "T" // Traslado
+                        }
+                    }
+                }
+            };
+
+
+            // Información global
+
+            var globalInfo = new GlobalInformation
+            {
+                PeriodicityCode = "01",
+                MonthCode = "05",
+                Year = 2025
+            };
+
+
+            // Crear la factura 
+            var invoice = new Invoice
+            {
+                VersionCode = "4.0",
+                TypeCode = "I",
+                Series = "F",
+                Date = DateTime.Now,
+                CurrencyCode = "MXN",
+                PaymentFormCode = "01",
+                PaymentMethodCode = "PUE",
+                ExpeditionZipCode = "01160",
+                GlobalInformation = globalInfo, // Información global
+                Issuer = issuer, // Emisor
+                Recipient = recipient, // Receptor
+                Items = items, // Ventas 
             };
 
 

@@ -43,6 +43,8 @@
             this.EnviarPorValores = new System.Windows.Forms.Button();
             this.EnviarPorReferencia = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ConsultarEstadoRefs = new System.Windows.Forms.Button();
+            this.ConsultarEstadoValores = new System.Windows.Forms.Button();
             this.ObtenerListaPaginadaInvoices = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ObtenerListaPaginada = new System.Windows.Forms.Button();
@@ -77,8 +79,8 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.CertDefaultRefs = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.ConsultarEstadoValores = new System.Windows.Forms.Button();
-            this.ConsultarEstadoRefs = new System.Windows.Forms.Button();
+            this.GlobalInvoiceValbutton = new System.Windows.Forms.Button();
+            this.GlobalInvoiceRefButton = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -219,7 +221,7 @@
             // 
             // EnviarPorReferencia
             // 
-            this.EnviarPorReferencia.Location = new System.Drawing.Point(128, 300);
+            this.EnviarPorReferencia.Location = new System.Drawing.Point(12, 355);
             this.EnviarPorReferencia.Name = "EnviarPorReferencia";
             this.EnviarPorReferencia.Size = new System.Drawing.Size(110, 49);
             this.EnviarPorReferencia.TabIndex = 13;
@@ -229,6 +231,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.GlobalInvoiceValbutton);
+            this.groupBox2.Controls.Add(this.GlobalInvoiceRefButton);
             this.groupBox2.Controls.Add(this.ConsultarEstadoRefs);
             this.groupBox2.Controls.Add(this.ConsultarEstadoValores);
             this.groupBox2.Controls.Add(this.ObtenerListaPaginadaInvoices);
@@ -248,10 +252,30 @@
             this.groupBox2.Controls.Add(this.GenerarPDFValores);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(367, 366);
+            this.groupBox2.Size = new System.Drawing.Size(367, 450);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "FACTURACION";
+            // 
+            // ConsultarEstadoRefs
+            // 
+            this.ConsultarEstadoRefs.Location = new System.Drawing.Point(244, 300);
+            this.ConsultarEstadoRefs.Name = "ConsultarEstadoRefs";
+            this.ConsultarEstadoRefs.Size = new System.Drawing.Size(110, 49);
+            this.ConsultarEstadoRefs.TabIndex = 16;
+            this.ConsultarEstadoRefs.Text = "Consultar estado de factua por referencias";
+            this.ConsultarEstadoRefs.UseVisualStyleBackColor = true;
+            this.ConsultarEstadoRefs.Click += new System.EventHandler(this.ConsultarEstadoRefs_Click);
+            // 
+            // ConsultarEstadoValores
+            // 
+            this.ConsultarEstadoValores.Location = new System.Drawing.Point(128, 300);
+            this.ConsultarEstadoValores.Name = "ConsultarEstadoValores";
+            this.ConsultarEstadoValores.Size = new System.Drawing.Size(110, 49);
+            this.ConsultarEstadoValores.TabIndex = 15;
+            this.ConsultarEstadoValores.Text = "Consultar estado de factua por valores";
+            this.ConsultarEstadoValores.UseVisualStyleBackColor = true;
+            this.ConsultarEstadoValores.Click += new System.EventHandler(this.ConsultarEstadoValores_Click);
             // 
             // ObtenerListaPaginadaInvoices
             // 
@@ -460,7 +484,7 @@
             this.groupBox4.Controls.Add(this.RevocaApikey);
             this.groupBox4.Controls.Add(this.CrearApikey);
             this.groupBox4.Controls.Add(this.ObtenerApikeyByID);
-            this.groupBox4.Location = new System.Drawing.Point(12, 393);
+            this.groupBox4.Location = new System.Drawing.Point(12, 468);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(367, 192);
             this.groupBox4.TabIndex = 19;
@@ -524,7 +548,7 @@
             this.groupBox5.Controls.Add(this.BuscarCatalogo);
             this.groupBox5.Controls.Add(this.BuscarCodigoUnidad);
             this.groupBox5.Controls.Add(this.BuscarCodigoProductoServicio);
-            this.groupBox5.Location = new System.Drawing.Point(722, 393);
+            this.groupBox5.Location = new System.Drawing.Point(722, 469);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(354, 192);
             this.groupBox5.TabIndex = 20;
@@ -589,7 +613,7 @@
             this.groupBox6.Controls.Add(this.ObtenerCertificadoById);
             this.groupBox6.Controls.Add(this.EliEliminaCertificado);
             this.groupBox6.Controls.Add(this.ObtenerUltimosCertficadosValidos);
-            this.groupBox6.Location = new System.Drawing.Point(385, 393);
+            this.groupBox6.Location = new System.Drawing.Point(385, 469);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(331, 192);
             this.groupBox6.TabIndex = 21;
@@ -616,31 +640,31 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.listarCertificados_Click);
             // 
-            // ConsultarEstadoValores
+            // GlobalInvoiceValbutton
             // 
-            this.ConsultarEstadoValores.Location = new System.Drawing.Point(128, 245);
-            this.ConsultarEstadoValores.Name = "ConsultarEstadoValores";
-            this.ConsultarEstadoValores.Size = new System.Drawing.Size(110, 49);
-            this.ConsultarEstadoValores.TabIndex = 15;
-            this.ConsultarEstadoValores.Text = "Consultar estado de factua por valores";
-            this.ConsultarEstadoValores.UseVisualStyleBackColor = true;
-            this.ConsultarEstadoValores.Click += new System.EventHandler(this.ConsultarEstadoValores_Click);
+            this.GlobalInvoiceValbutton.Location = new System.Drawing.Point(128, 245);
+            this.GlobalInvoiceValbutton.Name = "GlobalInvoiceValbutton";
+            this.GlobalInvoiceValbutton.Size = new System.Drawing.Size(110, 49);
+            this.GlobalInvoiceValbutton.TabIndex = 17;
+            this.GlobalInvoiceValbutton.Text = "Crear ractura global por valores";
+            this.GlobalInvoiceValbutton.UseVisualStyleBackColor = true;
+            this.GlobalInvoiceValbutton.Click += new System.EventHandler(this.GlobalInvoiceValbutton_Click);
             // 
-            // ConsultarEstadoRefs
+            // GlobalInvoiceRefButton
             // 
-            this.ConsultarEstadoRefs.Location = new System.Drawing.Point(244, 245);
-            this.ConsultarEstadoRefs.Name = "ConsultarEstadoRefs";
-            this.ConsultarEstadoRefs.Size = new System.Drawing.Size(110, 49);
-            this.ConsultarEstadoRefs.TabIndex = 16;
-            this.ConsultarEstadoRefs.Text = "Consultar estado de factua por referencias";
-            this.ConsultarEstadoRefs.UseVisualStyleBackColor = true;
-            this.ConsultarEstadoRefs.Click += new System.EventHandler(this.ConsultarEstadoRefs_Click);
+            this.GlobalInvoiceRefButton.Location = new System.Drawing.Point(244, 245);
+            this.GlobalInvoiceRefButton.Name = "GlobalInvoiceRefButton";
+            this.GlobalInvoiceRefButton.Size = new System.Drawing.Size(110, 49);
+            this.GlobalInvoiceRefButton.TabIndex = 18;
+            this.GlobalInvoiceRefButton.Text = "Crear ractura global por referencias";
+            this.GlobalInvoiceRefButton.UseVisualStyleBackColor = true;
+            this.GlobalInvoiceRefButton.Click += new System.EventHandler(this.GlobalInvoiceRefButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 652);
+            this.ClientSize = new System.Drawing.Size(1083, 765);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -713,6 +737,8 @@
         private System.Windows.Forms.Button ObtenerCatalogRecordPorId;
         private System.Windows.Forms.Button ConsultarEstadoRefs;
         private System.Windows.Forms.Button ConsultarEstadoValores;
+        private System.Windows.Forms.Button GlobalInvoiceValbutton;
+        private System.Windows.Forms.Button GlobalInvoiceRefButton;
     }
 }
 
