@@ -43,6 +43,8 @@
             this.EnviarPorValores = new System.Windows.Forms.Button();
             this.EnviarPorReferencia = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.GlobalInvoiceValbutton = new System.Windows.Forms.Button();
+            this.GlobalInvoiceRefButton = new System.Windows.Forms.Button();
             this.ConsultarEstadoRefs = new System.Windows.Forms.Button();
             this.ConsultarEstadoValores = new System.Windows.Forms.Button();
             this.ObtenerListaPaginadaInvoices = new System.Windows.Forms.Button();
@@ -79,8 +81,8 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.CertDefaultRefs = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.GlobalInvoiceValbutton = new System.Windows.Forms.Button();
-            this.GlobalInvoiceRefButton = new System.Windows.Forms.Button();
+            this.DynamicPriceCreditNoteButton = new System.Windows.Forms.Button();
+            this.DynamicPriceInvoiceButton = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -231,6 +233,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.DynamicPriceCreditNoteButton);
+            this.groupBox2.Controls.Add(this.DynamicPriceInvoiceButton);
             this.groupBox2.Controls.Add(this.GlobalInvoiceValbutton);
             this.groupBox2.Controls.Add(this.GlobalInvoiceRefButton);
             this.groupBox2.Controls.Add(this.ConsultarEstadoRefs);
@@ -256,6 +260,26 @@
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "FACTURACION";
+            // 
+            // GlobalInvoiceValbutton
+            // 
+            this.GlobalInvoiceValbutton.Location = new System.Drawing.Point(128, 245);
+            this.GlobalInvoiceValbutton.Name = "GlobalInvoiceValbutton";
+            this.GlobalInvoiceValbutton.Size = new System.Drawing.Size(110, 49);
+            this.GlobalInvoiceValbutton.TabIndex = 17;
+            this.GlobalInvoiceValbutton.Text = "Crear ractura global por valores";
+            this.GlobalInvoiceValbutton.UseVisualStyleBackColor = true;
+            this.GlobalInvoiceValbutton.Click += new System.EventHandler(this.GlobalInvoiceValbutton_Click);
+            // 
+            // GlobalInvoiceRefButton
+            // 
+            this.GlobalInvoiceRefButton.Location = new System.Drawing.Point(244, 245);
+            this.GlobalInvoiceRefButton.Name = "GlobalInvoiceRefButton";
+            this.GlobalInvoiceRefButton.Size = new System.Drawing.Size(110, 49);
+            this.GlobalInvoiceRefButton.TabIndex = 18;
+            this.GlobalInvoiceRefButton.Text = "Crear ractura global por referencias";
+            this.GlobalInvoiceRefButton.UseVisualStyleBackColor = true;
+            this.GlobalInvoiceRefButton.Click += new System.EventHandler(this.GlobalInvoiceRefButton_Click);
             // 
             // ConsultarEstadoRefs
             // 
@@ -640,25 +664,25 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.listarCertificados_Click);
             // 
-            // GlobalInvoiceValbutton
+            // DynamicPriceCreditNoteButton
             // 
-            this.GlobalInvoiceValbutton.Location = new System.Drawing.Point(128, 245);
-            this.GlobalInvoiceValbutton.Name = "GlobalInvoiceValbutton";
-            this.GlobalInvoiceValbutton.Size = new System.Drawing.Size(110, 49);
-            this.GlobalInvoiceValbutton.TabIndex = 17;
-            this.GlobalInvoiceValbutton.Text = "Crear ractura global por valores";
-            this.GlobalInvoiceValbutton.UseVisualStyleBackColor = true;
-            this.GlobalInvoiceValbutton.Click += new System.EventHandler(this.GlobalInvoiceValbutton_Click);
+            this.DynamicPriceCreditNoteButton.Location = new System.Drawing.Point(128, 355);
+            this.DynamicPriceCreditNoteButton.Name = "DynamicPriceCreditNoteButton";
+            this.DynamicPriceCreditNoteButton.Size = new System.Drawing.Size(110, 49);
+            this.DynamicPriceCreditNoteButton.TabIndex = 19;
+            this.DynamicPriceCreditNoteButton.Text = "Crear nota de credito con precios dinamicos";
+            this.DynamicPriceCreditNoteButton.UseVisualStyleBackColor = true;
+            this.DynamicPriceCreditNoteButton.Click += new System.EventHandler(this.DynamicPriceCreditNoteButton_Click);
             // 
-            // GlobalInvoiceRefButton
+            // DynamicPriceInvoiceButton
             // 
-            this.GlobalInvoiceRefButton.Location = new System.Drawing.Point(244, 245);
-            this.GlobalInvoiceRefButton.Name = "GlobalInvoiceRefButton";
-            this.GlobalInvoiceRefButton.Size = new System.Drawing.Size(110, 49);
-            this.GlobalInvoiceRefButton.TabIndex = 18;
-            this.GlobalInvoiceRefButton.Text = "Crear ractura global por referencias";
-            this.GlobalInvoiceRefButton.UseVisualStyleBackColor = true;
-            this.GlobalInvoiceRefButton.Click += new System.EventHandler(this.GlobalInvoiceRefButton_Click);
+            this.DynamicPriceInvoiceButton.Location = new System.Drawing.Point(244, 355);
+            this.DynamicPriceInvoiceButton.Name = "DynamicPriceInvoiceButton";
+            this.DynamicPriceInvoiceButton.Size = new System.Drawing.Size(110, 49);
+            this.DynamicPriceInvoiceButton.TabIndex = 20;
+            this.DynamicPriceInvoiceButton.Text = "Crear factura con precios dinamicos";
+            this.DynamicPriceInvoiceButton.UseVisualStyleBackColor = true;
+            this.DynamicPriceInvoiceButton.Click += new System.EventHandler(this.DynamicPriceInvoiceButton_Click);
             // 
             // Form1
             // 
@@ -739,6 +763,8 @@
         private System.Windows.Forms.Button ConsultarEstadoValores;
         private System.Windows.Forms.Button GlobalInvoiceValbutton;
         private System.Windows.Forms.Button GlobalInvoiceRefButton;
+        private System.Windows.Forms.Button DynamicPriceCreditNoteButton;
+        private System.Windows.Forms.Button DynamicPriceInvoiceButton;
     }
 }
 
