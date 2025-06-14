@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Fiscalapi.Abstractions;
 using Fiscalapi.Common;
 using Fiscalapi.Models;
 using Fiscalapi.Services;
