@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Fiscalapi.Abstractions;
 using Fiscalapi.Common;
 using Fiscalapi.Models;
 using Fiscalapi.Services;
@@ -21,9 +20,13 @@ namespace FiscalApi.Samples.NetFramework
 
             Settings = new FiscalapiSettings
             {
-                ApiUrl = "https://test.fiscalapi.com",
+                //ApiUrl = "https://test.fiscalapi.com",
                 //ApiKey = "<apikey>",
                 //Tenant = "<tenant>",
+
+                ApiUrl = "http://localhost:5001",
+                ApiKey = "sk_development_f3c85758_baa5_43ac_bef7_7a2954409405",
+                Tenant = "102e5f13-e114-41dd-bea7-507fce177281",
             };
 
             // Create directory if not exists
@@ -328,7 +331,6 @@ namespace FiscalApi.Samples.NetFramework
 
         private async void GlobalInvoiceRefButton_Click(object sender, EventArgs e)
         {
-
             // https://docs.fiscalapi.com/credentials-info
             // Crear instancia de FiscalApiClient
             var fiscalApi = FiscalApiClient.Create(Settings);
@@ -2194,6 +2196,447 @@ namespace FiscalApi.Samples.NetFramework
                 MessageBox.Show(apiResponse.Message);
                 MessageBox.Show(apiResponse.Details);
             }
+        }
+
+
+        #region DescargaMasiva
+
+        #region Catalogos
+
+        private async void ListarDownloadCatalogos_Click(object sender, EventArgs e)
+        {
+            // Obtener todos los catálogos de descarga masiva disponibles
+
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request
+            var apiResponse = await fiscalApi.DownloadCatalogs.GetListAsync();
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                foreach (var item in apiResponse.Data)
+                    MessageBox.Show($@"Catalogo: {item}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void ListarDownloadCatalogo_Click(object sender, EventArgs e)
+        {
+            // Listar los registros del catálogo 'SatInvoiceStatuses' de descarga masiva.
+
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request
+            var apiResponse = await fiscalApi.DownloadCatalogs.GetRecordByNameAsync("SatInvoiceStatuses");
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                foreach (var item in apiResponse.Data)
+                    MessageBox.Show($@"Catalogo: {item.Description}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        #endregion
+
+        #region Reglas de descarga
+
+        private async void ListarReglas_Click(object sender, EventArgs e)
+        {
+            // Obtener lista paginada de reglas de descarga masiva
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request (pageNumber=1, pageSize=2)
+            var apiResponse = await fiscalApi.DownloadRules.GetListAsync(1, 2);
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                foreach (var item in apiResponse.Data.Items)
+                    MessageBox.Show($@"Producto: {item.Description}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void ObtenerReglaPorID_Click(object sender, EventArgs e)
+        {
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request
+            var apiResponse = await fiscalApi.DownloadRules.GetByIdAsync("59ccad08-5d3a-48ab-95fa-b7f80f9b00c7");
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                var product = apiResponse.Data;
+                MessageBox.Show("OK");
+                MessageBox.Show($@"Regla: {product.Description}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void CrearRegla_Click(object sender, EventArgs e)
+        {
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Regla para descargar CFDI recibidos y vigentes.
+            var request = new DownloadRule
+            {
+                PersonId = "b0c1cf6c-153a-464e-99df-5741f45d6695", //Persona que recibió los CFDI
+                Description = "Regla descarga demo ...",
+                SatQueryTypeId = "CFDI",
+                DownloadTypeId = "Recibidos",
+                SatInvoiceStatusId = "Vigente",
+            };
+
+            // Send request
+            var apiResponse = await fiscalApi.DownloadRules.CreateAsync(request);
+
+            // Check response
+
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show(@"Regla creada.");
+                MessageBox.Show($@" {apiResponse.Data.Description}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void CrearReglaSolicitudDePrueba_Click(object sender, EventArgs e)
+        {
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request
+            var apiResponse = await fiscalApi.DownloadRules.CreateTestRuleAsync();
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show(@"Regla creada.");
+                MessageBox.Show($@" {apiResponse.Data.Id}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void ActualizarRegla_Click(object sender, EventArgs e)
+        {
+            // Actualizar regla de descarga masiva
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            var id = "8d5905f3-d7e1-46b7-b0f4-9f3a2528bb56";
+
+            // Actualizar descripción.
+            var request = new DownloadRule
+            {
+                Id = id,
+                Description = "Regla descarga actualizada",
+            };
+
+            // Send request
+            var apiResponse = await fiscalApi.DownloadRules.UpdateAsync(id, request);
+
+            // Check response
+
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show(@"Regla actualizada.");
+                MessageBox.Show($@" {apiResponse.Data.Description}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void EliminarRegla_Click(object sender, EventArgs e)
+        {
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request
+            var apiResponse = await fiscalApi.DownloadRules.DeleteAsync("2029b977-31d5-4911-a7ba-23bda12e97f2");
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show($@"Regla borrada {apiResponse.Data}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        #endregion
+
+        #region Solicitud de descarga
+
+        private async void ListarSolicitudes_Click(object sender, EventArgs e)
+        {
+            // Obtener lista paginada de solicitudes de descarga masiva
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request (pageNumber=1, pageSize=2)
+            var apiResponse = await fiscalApi.DownloadRequests.GetListAsync(1, 2);
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                foreach (var item in apiResponse.Data.Items)
+                    MessageBox.Show($@"RFC solicitante: {item.RequesterTin}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void ObtenerSolicitudPorID_Click(object sender, EventArgs e)
+        {
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request
+            var apiResponse = await fiscalApi.DownloadRequests.GetByIdAsync("4e376d60-8ab0-47d7-a82d-eb13583aaf22");
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                var product = apiResponse.Data;
+                MessageBox.Show("OK");
+                MessageBox.Show($@"RFC solicitante:  {product.RequesterTin}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void ListarXmlsPorSolicitudID_Click(object sender, EventArgs e)
+        {
+            // Obtener lista paginada de xmls descargados asociados a una solicitud de descarga.
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // request
+            var apiResponse = await fiscalApi.DownloadRequests.GetXmlsAsync("4e376d60-8ab0-47d7-a82d-eb13583aaf22");
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                foreach (var xml in apiResponse.Data.Items)
+                    MessageBox.Show($@"Factura: Serie:{xml.Series} Folio:{xml.Number}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void ListarMetaItemsPorSolicitudID_Click(object sender, EventArgs e)
+        {
+            // Obtener lista paginada de metadatos descargados asociados a una solicitud de descarga.
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // request
+            var apiResponse =
+                await fiscalApi.DownloadRequests.GetMetadataItemsAsync("4e376d60-8ab0-47d7-a82d-eb13583aaf22");
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                foreach (var metadataItem in apiResponse.Data.Items)
+                    MessageBox.Show($@" Factura UUID:{metadataItem.InvoiceUuid} Receptor:{metadataItem.RecipientName}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void DescargarPaquetePorSolicitudID_Click(object sender, EventArgs e)
+        {
+            // Descargar paquete (.zip file) de una solicitud de descarga masiva.
+
+            var fiscalApi = FiscalApiClient.Create(Settings);
+            // Send request
+            var apiResponse =
+                await fiscalApi.DownloadRequests.DownloadPackageAsync("4e376d60-8ab0-47d7-a82d-eb13583aaf22");
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                WriteFileToDisk(apiResponse.Data.FirstOrDefault());
+                MessageBox.Show(@"Archivo descargado.");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void ObtenerSATRequestPorSolicitudID_Click(object sender, EventArgs e)
+        {
+            // Descargar SAT request (.xml file) de una solicitud de descarga masiva. (debug/testing)
+            var fiscalApi = FiscalApiClient.Create(Settings);
+            // Send request
+            var apiResponse =
+                await fiscalApi.DownloadRequests.DownloadSatRequestAsync("4e376d60-8ab0-47d7-a82d-eb13583aaf22");
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                WriteFileToDisk(apiResponse.Data);
+                MessageBox.Show(@"Archivo descargado.");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void ObtenerSATResponsePorSolicitudID_Click(object sender, EventArgs e)
+        {
+            // Descargar SAT response (.xml file) de una solicitud de descarga masiva. (debug/testing)
+            var fiscalApi = FiscalApiClient.Create(Settings);
+            // Send request
+            var apiResponse = await fiscalApi.DownloadRequests
+                .DownloadSatResponseAsync("4e376d60-8ab0-47d7-a82d-eb13583aaf22");
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                WriteFileToDisk(apiResponse.Data);
+                MessageBox.Show(@"Archivo descargado.");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void CrearSolicitud_Click(object sender, EventArgs e)
+        {
+            // Crear solicitud de descarga masiva
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Crear solicitud para descargar facturas de los últimos 5 días.
+            var request = new DownloadRequest
+            {
+                DownloadRuleId = "89aba371-3f9a-431c-a92d-dcb1e606fcfd",
+                DownloadRequestTypeId = "Manual",
+                StartDate = DateTime.Now.AddDays(-5),
+                EndDate = DateTime.Now,
+            };
+
+            // Send request
+            var apiResponse = await fiscalApi.DownloadRequests.CreateAsync(request);
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show(@"Solicitud creada.");
+                MessageBox.Show($@" {apiResponse.Data.Id}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void EliminarSolicitud_Click(object sender, EventArgs e)
+        {
+            // Eliminar solicitud de descarga masiva.
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+            // Send request
+
+            var apiResponse = await fiscalApi.DownloadRequests.DeleteAsync("4763983b-f587-4497-8b87-7f3645589ac9");
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show($@"Solicitud borrada {apiResponse.Data}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        #endregion
+
+        #endregion
+
+
+        public static void WriteFileToDisk(FileResponse fileResponse)
+        {
+            // Convertir Base64 a bytes
+            var fileBytes = Convert.FromBase64String(fileResponse.Base64File);
+
+            var filePath = Path.Combine(@"C:\facturas", fileResponse.FileName);
+
+            File.WriteAllBytes(filePath, fileBytes);
         }
     }
 }

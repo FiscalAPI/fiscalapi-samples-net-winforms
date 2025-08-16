@@ -43,6 +43,8 @@
             this.EnviarPorValores = new System.Windows.Forms.Button();
             this.EnviarPorReferencia = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.GlobalInvoiceValbutton = new System.Windows.Forms.Button();
+            this.GlobalInvoiceRefButton = new System.Windows.Forms.Button();
             this.ConsultarEstadoRefs = new System.Windows.Forms.Button();
             this.ConsultarEstadoValores = new System.Windows.Forms.Button();
             this.ObtenerListaPaginadaInvoices = new System.Windows.Forms.Button();
@@ -79,14 +81,41 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.CertDefaultRefs = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.GlobalInvoiceValbutton = new System.Windows.Forms.Button();
-            this.GlobalInvoiceRefButton = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.EliminarSolicitud = new System.Windows.Forms.Button();
+            this.CrearSolicitud = new System.Windows.Forms.Button();
+            this.ObtenerSATResponsePorSolicitudID = new System.Windows.Forms.Button();
+            this.ObtenerSATRequestPorSolicitudID = new System.Windows.Forms.Button();
+            this.DescargarPaquetePorSolicitudID = new System.Windows.Forms.Button();
+            this.ListarMetaItemsPorSolicitudID = new System.Windows.Forms.Button();
+            this.ListarXmlsPorSolicitudID = new System.Windows.Forms.Button();
+            this.ObtenerSolicitudporID = new System.Windows.Forms.Button();
+            this.ListarSolicitudes = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.EliminarRegla = new System.Windows.Forms.Button();
+            this.ActualizarRegla = new System.Windows.Forms.Button();
+            this.CrearReglaSolicituddePrueba = new System.Windows.Forms.Button();
+            this.CrearRegla = new System.Windows.Forms.Button();
+            this.ObtenerReglaporID = new System.Windows.Forms.Button();
+            this.ListarReglas = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.ListarDownloadCatalogo = new System.Windows.Forms.Button();
+            this.ListarDownloadCatalogos = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // ObtenerFacturaById
@@ -250,12 +279,32 @@
             this.groupBox2.Controls.Add(this.CancelByValues);
             this.groupBox2.Controls.Add(this.CfdiPagoRefs);
             this.groupBox2.Controls.Add(this.GenerarPDFValores);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(367, 450);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "FACTURACION";
+            // 
+            // GlobalInvoiceValbutton
+            // 
+            this.GlobalInvoiceValbutton.Location = new System.Drawing.Point(128, 245);
+            this.GlobalInvoiceValbutton.Name = "GlobalInvoiceValbutton";
+            this.GlobalInvoiceValbutton.Size = new System.Drawing.Size(110, 49);
+            this.GlobalInvoiceValbutton.TabIndex = 17;
+            this.GlobalInvoiceValbutton.Text = "Crear ractura global por valores";
+            this.GlobalInvoiceValbutton.UseVisualStyleBackColor = true;
+            this.GlobalInvoiceValbutton.Click += new System.EventHandler(this.GlobalInvoiceValbutton_Click);
+            // 
+            // GlobalInvoiceRefButton
+            // 
+            this.GlobalInvoiceRefButton.Location = new System.Drawing.Point(244, 245);
+            this.GlobalInvoiceRefButton.Name = "GlobalInvoiceRefButton";
+            this.GlobalInvoiceRefButton.Size = new System.Drawing.Size(110, 49);
+            this.GlobalInvoiceRefButton.TabIndex = 18;
+            this.GlobalInvoiceRefButton.Text = "Crear ractura global por referencias";
+            this.GlobalInvoiceRefButton.UseVisualStyleBackColor = true;
+            this.GlobalInvoiceRefButton.Click += new System.EventHandler(this.GlobalInvoiceRefButton_Click);
             // 
             // ConsultarEstadoRefs
             // 
@@ -294,9 +343,9 @@
             this.groupBox1.Controls.Add(this.ActualizarPersona);
             this.groupBox1.Controls.Add(this.CrearPersona);
             this.groupBox1.Controls.Add(this.ObtenerPersonaPorID);
-            this.groupBox1.Location = new System.Drawing.Point(385, 12);
+            this.groupBox1.Location = new System.Drawing.Point(379, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(331, 366);
+            this.groupBox1.Size = new System.Drawing.Size(331, 249);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PERSONAS (Emisores, receptores, usuarios, clientes etc)";
@@ -400,9 +449,9 @@
             this.groupBox3.Controls.Add(this.ActualizarProducto);
             this.groupBox3.Controls.Add(this.CrearProducto);
             this.groupBox3.Controls.Add(this.ObtenerProductoById);
-            this.groupBox3.Location = new System.Drawing.Point(722, 12);
+            this.groupBox3.Location = new System.Drawing.Point(716, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(354, 366);
+            this.groupBox3.Size = new System.Drawing.Size(354, 249);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Productos";
@@ -484,16 +533,16 @@
             this.groupBox4.Controls.Add(this.RevocaApikey);
             this.groupBox4.Controls.Add(this.CrearApikey);
             this.groupBox4.Controls.Add(this.ObtenerApikeyByID);
-            this.groupBox4.Location = new System.Drawing.Point(12, 468);
+            this.groupBox4.Location = new System.Drawing.Point(6, 462);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(367, 192);
+            this.groupBox4.Size = new System.Drawing.Size(1059, 97);
             this.groupBox4.TabIndex = 19;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Api Keys";
             // 
             // UpdateApiKey
             // 
-            this.UpdateApiKey.Location = new System.Drawing.Point(161, 75);
+            this.UpdateApiKey.Location = new System.Drawing.Point(461, 19);
             this.UpdateApiKey.Name = "UpdateApiKey";
             this.UpdateApiKey.Size = new System.Drawing.Size(144, 50);
             this.UpdateApiKey.TabIndex = 18;
@@ -503,7 +552,7 @@
             // 
             // ObtenerPagedListApikeys
             // 
-            this.ObtenerPagedListApikeys.Location = new System.Drawing.Point(11, 75);
+            this.ObtenerPagedListApikeys.Location = new System.Drawing.Point(311, 19);
             this.ObtenerPagedListApikeys.Name = "ObtenerPagedListApikeys";
             this.ObtenerPagedListApikeys.Size = new System.Drawing.Size(144, 50);
             this.ObtenerPagedListApikeys.TabIndex = 17;
@@ -513,7 +562,7 @@
             // 
             // RevocaApikey
             // 
-            this.RevocaApikey.Location = new System.Drawing.Point(12, 131);
+            this.RevocaApikey.Location = new System.Drawing.Point(611, 19);
             this.RevocaApikey.Name = "RevocaApikey";
             this.RevocaApikey.Size = new System.Drawing.Size(144, 50);
             this.RevocaApikey.TabIndex = 15;
@@ -548,7 +597,7 @@
             this.groupBox5.Controls.Add(this.BuscarCatalogo);
             this.groupBox5.Controls.Add(this.BuscarCodigoUnidad);
             this.groupBox5.Controls.Add(this.BuscarCodigoProductoServicio);
-            this.groupBox5.Location = new System.Drawing.Point(722, 469);
+            this.groupBox5.Location = new System.Drawing.Point(716, 264);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(354, 192);
             this.groupBox5.TabIndex = 20;
@@ -613,7 +662,7 @@
             this.groupBox6.Controls.Add(this.ObtenerCertificadoById);
             this.groupBox6.Controls.Add(this.EliEliminaCertificado);
             this.groupBox6.Controls.Add(this.ObtenerUltimosCertficadosValidos);
-            this.groupBox6.Location = new System.Drawing.Point(385, 469);
+            this.groupBox6.Location = new System.Drawing.Point(379, 264);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(331, 192);
             this.groupBox6.TabIndex = 21;
@@ -640,37 +689,266 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.listarCertificados_Click);
             // 
-            // GlobalInvoiceValbutton
+            // tabControl1
             // 
-            this.GlobalInvoiceValbutton.Location = new System.Drawing.Point(128, 245);
-            this.GlobalInvoiceValbutton.Name = "GlobalInvoiceValbutton";
-            this.GlobalInvoiceValbutton.Size = new System.Drawing.Size(110, 49);
-            this.GlobalInvoiceValbutton.TabIndex = 17;
-            this.GlobalInvoiceValbutton.Text = "Crear ractura global por valores";
-            this.GlobalInvoiceValbutton.UseVisualStyleBackColor = true;
-            this.GlobalInvoiceValbutton.Click += new System.EventHandler(this.GlobalInvoiceValbutton_Click);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1143, 637);
+            this.tabControl1.TabIndex = 0;
             // 
-            // GlobalInvoiceRefButton
+            // tabPage1
             // 
-            this.GlobalInvoiceRefButton.Location = new System.Drawing.Point(244, 245);
-            this.GlobalInvoiceRefButton.Name = "GlobalInvoiceRefButton";
-            this.GlobalInvoiceRefButton.Size = new System.Drawing.Size(110, 49);
-            this.GlobalInvoiceRefButton.TabIndex = 18;
-            this.GlobalInvoiceRefButton.Text = "Crear ractura global por referencias";
-            this.GlobalInvoiceRefButton.UseVisualStyleBackColor = true;
-            this.GlobalInvoiceRefButton.Click += new System.EventHandler(this.GlobalInvoiceRefButton_Click);
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.groupBox6);
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.groupBox5);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1135, 611);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "FACTURACION";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox9);
+            this.tabPage2.Controls.Add(this.groupBox8);
+            this.tabPage2.Controls.Add(this.groupBox7);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1135, 611);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "DESCARGA MASIVA XML";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.EliminarSolicitud);
+            this.groupBox9.Controls.Add(this.CrearSolicitud);
+            this.groupBox9.Controls.Add(this.ObtenerSATResponsePorSolicitudID);
+            this.groupBox9.Controls.Add(this.ObtenerSATRequestPorSolicitudID);
+            this.groupBox9.Controls.Add(this.DescargarPaquetePorSolicitudID);
+            this.groupBox9.Controls.Add(this.ListarMetaItemsPorSolicitudID);
+            this.groupBox9.Controls.Add(this.ListarXmlsPorSolicitudID);
+            this.groupBox9.Controls.Add(this.ObtenerSolicitudporID);
+            this.groupBox9.Controls.Add(this.ListarSolicitudes);
+            this.groupBox9.Location = new System.Drawing.Point(3, 138);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(587, 164);
+            this.groupBox9.TabIndex = 2;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Solicitudes de descarga";
+            // 
+            // EliminarSolicitud
+            // 
+            this.EliminarSolicitud.Location = new System.Drawing.Point(336, 69);
+            this.EliminarSolicitud.Name = "EliminarSolicitud";
+            this.EliminarSolicitud.Size = new System.Drawing.Size(104, 44);
+            this.EliminarSolicitud.TabIndex = 10;
+            this.EliminarSolicitud.Text = "Eliminar Solicitud";
+            this.EliminarSolicitud.UseVisualStyleBackColor = true;
+            this.EliminarSolicitud.Click += new System.EventHandler(this.EliminarSolicitud_Click);
+            // 
+            // CrearSolicitud
+            // 
+            this.CrearSolicitud.Location = new System.Drawing.Point(226, 69);
+            this.CrearSolicitud.Name = "CrearSolicitud";
+            this.CrearSolicitud.Size = new System.Drawing.Size(104, 44);
+            this.CrearSolicitud.TabIndex = 9;
+            this.CrearSolicitud.Text = "Crear Solicitud";
+            this.CrearSolicitud.UseVisualStyleBackColor = true;
+            this.CrearSolicitud.Click += new System.EventHandler(this.CrearSolicitud_Click);
+            // 
+            // ObtenerSATResponsePorSolicitudID
+            // 
+            this.ObtenerSATResponsePorSolicitudID.Location = new System.Drawing.Point(116, 69);
+            this.ObtenerSATResponsePorSolicitudID.Name = "ObtenerSATResponsePorSolicitudID";
+            this.ObtenerSATResponsePorSolicitudID.Size = new System.Drawing.Size(104, 44);
+            this.ObtenerSATResponsePorSolicitudID.TabIndex = 8;
+            this.ObtenerSATResponsePorSolicitudID.Text = "Obtener SAT response por solicitud ID";
+            this.ObtenerSATResponsePorSolicitudID.UseVisualStyleBackColor = true;
+            this.ObtenerSATResponsePorSolicitudID.Click += new System.EventHandler(this.ObtenerSATResponsePorSolicitudID_Click);
+            // 
+            // ObtenerSATRequestPorSolicitudID
+            // 
+            this.ObtenerSATRequestPorSolicitudID.Location = new System.Drawing.Point(6, 69);
+            this.ObtenerSATRequestPorSolicitudID.Name = "ObtenerSATRequestPorSolicitudID";
+            this.ObtenerSATRequestPorSolicitudID.Size = new System.Drawing.Size(104, 44);
+            this.ObtenerSATRequestPorSolicitudID.TabIndex = 7;
+            this.ObtenerSATRequestPorSolicitudID.Text = "Obtener SAT request por solicitud ID";
+            this.ObtenerSATRequestPorSolicitudID.UseVisualStyleBackColor = true;
+            this.ObtenerSATRequestPorSolicitudID.Click += new System.EventHandler(this.ObtenerSATRequestPorSolicitudID_Click);
+            // 
+            // DescargarPaquetePorSolicitudID
+            // 
+            this.DescargarPaquetePorSolicitudID.Location = new System.Drawing.Point(446, 19);
+            this.DescargarPaquetePorSolicitudID.Name = "DescargarPaquetePorSolicitudID";
+            this.DescargarPaquetePorSolicitudID.Size = new System.Drawing.Size(104, 44);
+            this.DescargarPaquetePorSolicitudID.TabIndex = 6;
+            this.DescargarPaquetePorSolicitudID.Text = "Descargar paquete por solicitud ID";
+            this.DescargarPaquetePorSolicitudID.UseVisualStyleBackColor = true;
+            this.DescargarPaquetePorSolicitudID.Click += new System.EventHandler(this.DescargarPaquetePorSolicitudID_Click);
+            // 
+            // ListarMetaItemsPorSolicitudID
+            // 
+            this.ListarMetaItemsPorSolicitudID.Location = new System.Drawing.Point(336, 19);
+            this.ListarMetaItemsPorSolicitudID.Name = "ListarMetaItemsPorSolicitudID";
+            this.ListarMetaItemsPorSolicitudID.Size = new System.Drawing.Size(104, 44);
+            this.ListarMetaItemsPorSolicitudID.TabIndex = 5;
+            this.ListarMetaItemsPorSolicitudID.Text = "Listar meta-items por solicitud ID";
+            this.ListarMetaItemsPorSolicitudID.UseVisualStyleBackColor = true;
+            this.ListarMetaItemsPorSolicitudID.Click += new System.EventHandler(this.ListarMetaItemsPorSolicitudID_Click);
+            // 
+            // ListarXmlsPorSolicitudID
+            // 
+            this.ListarXmlsPorSolicitudID.Location = new System.Drawing.Point(226, 19);
+            this.ListarXmlsPorSolicitudID.Name = "ListarXmlsPorSolicitudID";
+            this.ListarXmlsPorSolicitudID.Size = new System.Drawing.Size(104, 44);
+            this.ListarXmlsPorSolicitudID.TabIndex = 4;
+            this.ListarXmlsPorSolicitudID.Text = "Listar xmls por solicitud ID";
+            this.ListarXmlsPorSolicitudID.UseVisualStyleBackColor = true;
+            this.ListarXmlsPorSolicitudID.Click += new System.EventHandler(this.ListarXmlsPorSolicitudID_Click);
+            // 
+            // ObtenerSolicitudporID
+            // 
+            this.ObtenerSolicitudporID.Location = new System.Drawing.Point(116, 19);
+            this.ObtenerSolicitudporID.Name = "ObtenerSolicitudporID";
+            this.ObtenerSolicitudporID.Size = new System.Drawing.Size(104, 44);
+            this.ObtenerSolicitudporID.TabIndex = 3;
+            this.ObtenerSolicitudporID.Text = "Obtener solicitud por ID";
+            this.ObtenerSolicitudporID.UseVisualStyleBackColor = true;
+            this.ObtenerSolicitudporID.Click += new System.EventHandler(this.ObtenerSolicitudPorID_Click);
+            // 
+            // ListarSolicitudes
+            // 
+            this.ListarSolicitudes.Location = new System.Drawing.Point(6, 19);
+            this.ListarSolicitudes.Name = "ListarSolicitudes";
+            this.ListarSolicitudes.Size = new System.Drawing.Size(104, 44);
+            this.ListarSolicitudes.TabIndex = 2;
+            this.ListarSolicitudes.Text = "Listar solicitudes";
+            this.ListarSolicitudes.UseVisualStyleBackColor = true;
+            this.ListarSolicitudes.Click += new System.EventHandler(this.ListarSolicitudes_Click);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.EliminarRegla);
+            this.groupBox8.Controls.Add(this.ActualizarRegla);
+            this.groupBox8.Controls.Add(this.CrearReglaSolicituddePrueba);
+            this.groupBox8.Controls.Add(this.CrearRegla);
+            this.groupBox8.Controls.Add(this.ObtenerReglaporID);
+            this.groupBox8.Controls.Add(this.ListarReglas);
+            this.groupBox8.Location = new System.Drawing.Point(252, 6);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(343, 126);
+            this.groupBox8.TabIndex = 1;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Reglas de descarga";
+            // 
+            // EliminarRegla
+            // 
+            this.EliminarRegla.Location = new System.Drawing.Point(226, 69);
+            this.EliminarRegla.Name = "EliminarRegla";
+            this.EliminarRegla.Size = new System.Drawing.Size(104, 44);
+            this.EliminarRegla.TabIndex = 6;
+            this.EliminarRegla.Text = "Eliminar Regla";
+            this.EliminarRegla.UseVisualStyleBackColor = true;
+            this.EliminarRegla.Click += new System.EventHandler(this.EliminarRegla_Click);
+            // 
+            // ActualizarRegla
+            // 
+            this.ActualizarRegla.Location = new System.Drawing.Point(116, 69);
+            this.ActualizarRegla.Name = "ActualizarRegla";
+            this.ActualizarRegla.Size = new System.Drawing.Size(104, 44);
+            this.ActualizarRegla.TabIndex = 5;
+            this.ActualizarRegla.Text = "Actualizar Regla";
+            this.ActualizarRegla.UseVisualStyleBackColor = true;
+            this.ActualizarRegla.Click += new System.EventHandler(this.ActualizarRegla_Click);
+            // 
+            // CrearReglaSolicituddePrueba
+            // 
+            this.CrearReglaSolicituddePrueba.Location = new System.Drawing.Point(6, 69);
+            this.CrearReglaSolicituddePrueba.Name = "CrearReglaSolicituddePrueba";
+            this.CrearReglaSolicituddePrueba.Size = new System.Drawing.Size(104, 44);
+            this.CrearReglaSolicituddePrueba.TabIndex = 4;
+            this.CrearReglaSolicituddePrueba.Text = "Crear regla y solicitud de prueba";
+            this.CrearReglaSolicituddePrueba.UseVisualStyleBackColor = true;
+            this.CrearReglaSolicituddePrueba.Click += new System.EventHandler(this.CrearReglaSolicitudDePrueba_Click);
+            // 
+            // CrearRegla
+            // 
+            this.CrearRegla.Location = new System.Drawing.Point(226, 19);
+            this.CrearRegla.Name = "CrearRegla";
+            this.CrearRegla.Size = new System.Drawing.Size(104, 44);
+            this.CrearRegla.TabIndex = 3;
+            this.CrearRegla.Text = "Crear Regla";
+            this.CrearRegla.UseVisualStyleBackColor = true;
+            this.CrearRegla.Click += new System.EventHandler(this.CrearRegla_Click);
+            // 
+            // ObtenerReglaporID
+            // 
+            this.ObtenerReglaporID.Location = new System.Drawing.Point(116, 19);
+            this.ObtenerReglaporID.Name = "ObtenerReglaporID";
+            this.ObtenerReglaporID.Size = new System.Drawing.Size(104, 44);
+            this.ObtenerReglaporID.TabIndex = 2;
+            this.ObtenerReglaporID.Text = "Obtener Regla por ID";
+            this.ObtenerReglaporID.UseVisualStyleBackColor = true;
+            this.ObtenerReglaporID.Click += new System.EventHandler(this.ObtenerReglaPorID_Click);
+            // 
+            // ListarReglas
+            // 
+            this.ListarReglas.Location = new System.Drawing.Point(6, 19);
+            this.ListarReglas.Name = "ListarReglas";
+            this.ListarReglas.Size = new System.Drawing.Size(104, 44);
+            this.ListarReglas.TabIndex = 1;
+            this.ListarReglas.Text = "Listar Reglas";
+            this.ListarReglas.UseVisualStyleBackColor = true;
+            this.ListarReglas.Click += new System.EventHandler(this.ListarReglas_Click);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.ListarDownloadCatalogo);
+            this.groupBox7.Controls.Add(this.ListarDownloadCatalogos);
+            this.groupBox7.Location = new System.Drawing.Point(8, 6);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(238, 126);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Catalogos descarga masiva";
+            // 
+            // ListarDownloadCatalogo
+            // 
+            this.ListarDownloadCatalogo.Location = new System.Drawing.Point(116, 19);
+            this.ListarDownloadCatalogo.Name = "ListarDownloadCatalogo";
+            this.ListarDownloadCatalogo.Size = new System.Drawing.Size(104, 44);
+            this.ListarDownloadCatalogo.TabIndex = 1;
+            this.ListarDownloadCatalogo.Text = "Listar catálogo";
+            this.ListarDownloadCatalogo.UseVisualStyleBackColor = true;
+            this.ListarDownloadCatalogo.Click += new System.EventHandler(this.ListarDownloadCatalogo_Click);
+            // 
+            // ListarDownloadCatalogos
+            // 
+            this.ListarDownloadCatalogos.Location = new System.Drawing.Point(6, 19);
+            this.ListarDownloadCatalogos.Name = "ListarDownloadCatalogos";
+            this.ListarDownloadCatalogos.Size = new System.Drawing.Size(104, 44);
+            this.ListarDownloadCatalogos.TabIndex = 0;
+            this.ListarDownloadCatalogos.Text = "Listar catálogos";
+            this.ListarDownloadCatalogos.UseVisualStyleBackColor = true;
+            this.ListarDownloadCatalogos.Click += new System.EventHandler(this.ListarDownloadCatalogos_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 765);
-            this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(1143, 637);
+            this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -680,6 +958,12 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -739,6 +1023,29 @@
         private System.Windows.Forms.Button ConsultarEstadoValores;
         private System.Windows.Forms.Button GlobalInvoiceValbutton;
         private System.Windows.Forms.Button GlobalInvoiceRefButton;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button EliminarSolicitud;
+        private System.Windows.Forms.Button CrearSolicitud;
+        private System.Windows.Forms.Button ObtenerSATResponsePorSolicitudID;
+        private System.Windows.Forms.Button ObtenerSATRequestPorSolicitudID;
+        private System.Windows.Forms.Button DescargarPaquetePorSolicitudID;
+        private System.Windows.Forms.Button ListarMetaItemsPorSolicitudID;
+        private System.Windows.Forms.Button ListarXmlsPorSolicitudID;
+        private System.Windows.Forms.Button ObtenerSolicitudporID;
+        private System.Windows.Forms.Button ListarSolicitudes;
+        private System.Windows.Forms.Button EliminarRegla;
+        private System.Windows.Forms.Button ActualizarRegla;
+        private System.Windows.Forms.Button CrearReglaSolicituddePrueba;
+        private System.Windows.Forms.Button CrearRegla;
+        private System.Windows.Forms.Button ObtenerReglaporID;
+        private System.Windows.Forms.Button ListarReglas;
+        private System.Windows.Forms.Button ListarDownloadCatalogo;
+        private System.Windows.Forms.Button ListarDownloadCatalogos;
     }
 }
 
