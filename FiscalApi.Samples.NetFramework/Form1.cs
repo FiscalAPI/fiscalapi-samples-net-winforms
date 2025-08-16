@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Fiscalapi.Abstractions;
 using Fiscalapi.Common;
 using Fiscalapi.Models;
 using Fiscalapi.Services;
@@ -20,13 +21,9 @@ namespace FiscalApi.Samples.NetFramework
 
             Settings = new FiscalapiSettings
             {
-                //ApiUrl = "https://test.fiscalapi.com",
+                ApiUrl = "https://test.fiscalapi.com",
                 //ApiKey = "<apikey>",
                 //Tenant = "<tenant>",
-
-                ApiUrl = "http://localhost:5001",
-                ApiKey = "sk_development_f3c85758_baa5_43ac_bef7_7a2954409405",
-                Tenant = "102e5f13-e114-41dd-bea7-507fce177281",
             };
 
             // Create directory if not exists
@@ -2189,6 +2186,146 @@ namespace FiscalApi.Samples.NetFramework
             {
                 MessageBox.Show("OK");
                 MessageBox.Show($@"Estado: {apiResponse.Data.Status}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void DynamicPriceInvoiceButton_Click(object sender, EventArgs e)
+        {
+            // Crear instancia de FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Emisor KARLA FUENTE NOLASCO
+            var issuer = new InvoiceIssuer
+            {
+                Id = "3f3478b4-60fd-459e-8bfc-f8239fc96257"
+            };
+
+            // Receptor ESCUELA KEMPER URGATE
+            var recipient = new InvoiceRecipient
+            {
+                Id = "96b46762-d246-4a67-a562-510a25dbafa9"
+            };
+
+            // Crear una lista de productos o servicios de la factura
+            var items = new List<InvoiceItem>()
+      {
+          new InvoiceItem
+          {
+              Id = "114a4be5-fb65-40b2-a762-ff0c55c6ebfa",
+              Quantity = 1,
+              UnitPrice = 102.00m, // Precio dinámico
+          },
+      };
+
+            // Crear la factura 
+            var invoice = new Invoice
+            {
+                VersionCode = "4.0",
+                Series = "SDK-F",
+                Date = DateTime.Now,
+                PaymentFormCode = "01",
+                CurrencyCode = "MXN",
+                TypeCode = "I",
+                ExpeditionZipCode = "42501",
+                Issuer = issuer,
+                Recipient = recipient,
+                Items = items,
+                PaymentMethodCode = "PUE",
+            };
+
+
+            // Timbrar la factura
+            var apiResponse = await fiscalApi.Invoices.CreateAsync(invoice);
+
+
+            if (apiResponse.Succeeded)
+            {
+                // Guardar el XML de la factura
+                var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
+                File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
+
+                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+            }
+            else
+            {
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void DynamicPriceCreditNoteButton_Click(object sender, EventArgs e)
+        {
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Emisor KARLA FUENTE NOLASCO
+            var issuer = new InvoiceIssuer
+            {
+                Id = "3f3478b4-60fd-459e-8bfc-f8239fc96257",
+            };
+
+            // Receptor  ESCUELA KEMPER URGATE
+            var recipient = new InvoiceRecipient
+            {
+                Id = "96b46762-d246-4a67-a562-510a25dbafa9"
+            };
+
+            // Agregar facturas relacionadas
+            var relatedInvoices = new List<RelatedInvoice>()
+      {
+          new RelatedInvoice
+          {
+              Uuid = "5FB2822E-396D-4725-8521-CDC4BDD20CCF",
+              RelationshipTypeCode = "01"
+          }
+      };
+
+            // Crear una lista de productos o servicios de la factura
+            var items = new List<InvoiceItem>()
+      {
+          new InvoiceItem
+          {
+              Id = "114a4be5-fb65-40b2-a762-ff0c55c6ebfa",
+              Quantity = 0.5m, // 50% de descuento
+              UnitPrice = 101.00m, // Precio dinámico
+          },
+      };
+
+            // Crear la factura de egreso (nota de crédito)
+            var creditNote = new Invoice
+            {
+                VersionCode = "4.0",
+                Series = "CN",
+                Date = DateTime.Now,
+                PaymentFormCode = "03",
+                PaymentConditions = "Contado",
+                CurrencyCode = "MXN",
+                TypeCode = "E", // nota de crédito
+                ExpeditionZipCode = "01160",
+                Issuer = issuer,
+                Recipient = recipient,
+                Items = items,
+                PaymentMethodCode = "PUE",
+                ExchangeRate = 1,
+                ExportCode = "01",
+                RelatedInvoices = relatedInvoices
+            };
+
+            // Timbrar la factura de egreso
+            var apiResponse = await fiscalApi.Invoices.CreateAsync(creditNote);
+
+            if (apiResponse.Succeeded)
+            {
+                // Guardar el XML de la factura
+                var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
+                File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
+
+                MessageBox.Show($@"Nota de Crédito {apiResponse.Data.Number} creada exitosamente");
             }
             else
             {

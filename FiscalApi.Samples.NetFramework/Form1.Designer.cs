@@ -260,6 +260,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.DynamicPriceCreditNoteButton);
+            this.groupBox2.Controls.Add(this.DynamicPriceInvoiceButton);
             this.groupBox2.Controls.Add(this.GlobalInvoiceValbutton);
             this.groupBox2.Controls.Add(this.GlobalInvoiceRefButton);
             this.groupBox2.Controls.Add(this.ConsultarEstadoRefs);
