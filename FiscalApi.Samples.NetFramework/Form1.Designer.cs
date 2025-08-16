@@ -43,6 +43,7 @@
             this.EnviarPorValores = new System.Windows.Forms.Button();
             this.EnviarPorReferencia = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.DynamicPriceCreditNoteButton = new System.Windows.Forms.Button();
             this.GlobalInvoiceValbutton = new System.Windows.Forms.Button();
             this.GlobalInvoiceRefButton = new System.Windows.Forms.Button();
             this.ConsultarEstadoRefs = new System.Windows.Forms.Button();
@@ -104,6 +105,7 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.ListarDownloadCatalogo = new System.Windows.Forms.Button();
             this.ListarDownloadCatalogos = new System.Windows.Forms.Button();
+            this.DynamicPriceInvoiceButton = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -260,8 +262,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.DynamicPriceCreditNoteButton);
             this.groupBox2.Controls.Add(this.DynamicPriceInvoiceButton);
+            this.groupBox2.Controls.Add(this.DynamicPriceCreditNoteButton);
             this.groupBox2.Controls.Add(this.GlobalInvoiceValbutton);
             this.groupBox2.Controls.Add(this.GlobalInvoiceRefButton);
             this.groupBox2.Controls.Add(this.ConsultarEstadoRefs);
@@ -287,6 +289,16 @@
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "FACTURACION";
+            // 
+            // DynamicPriceCreditNoteButton
+            // 
+            this.DynamicPriceCreditNoteButton.Location = new System.Drawing.Point(128, 355);
+            this.DynamicPriceCreditNoteButton.Name = "DynamicPriceCreditNoteButton";
+            this.DynamicPriceCreditNoteButton.Size = new System.Drawing.Size(110, 49);
+            this.DynamicPriceCreditNoteButton.TabIndex = 19;
+            this.DynamicPriceCreditNoteButton.Text = "Nota de credito con precios dinamicos";
+            this.DynamicPriceCreditNoteButton.UseVisualStyleBackColor = true;
+            this.DynamicPriceCreditNoteButton.Click += new System.EventHandler(this.DynamicPriceCreditNoteButton_Click);
             // 
             // GlobalInvoiceValbutton
             // 
@@ -945,6 +957,16 @@
             this.ListarDownloadCatalogos.UseVisualStyleBackColor = true;
             this.ListarDownloadCatalogos.Click += new System.EventHandler(this.ListarDownloadCatalogos_Click);
             // 
+            // DynamicPriceInvoiceButton
+            // 
+            this.DynamicPriceInvoiceButton.Location = new System.Drawing.Point(244, 355);
+            this.DynamicPriceInvoiceButton.Name = "DynamicPriceInvoiceButton";
+            this.DynamicPriceInvoiceButton.Size = new System.Drawing.Size(110, 49);
+            this.DynamicPriceInvoiceButton.TabIndex = 20;
+            this.DynamicPriceInvoiceButton.Text = "Factura con precios dinamicos";
+            this.DynamicPriceInvoiceButton.UseVisualStyleBackColor = true;
+            this.DynamicPriceInvoiceButton.Click += new System.EventHandler(this.DynamicPriceInvoiceButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1048,6 +1070,8 @@
         private System.Windows.Forms.Button ListarReglas;
         private System.Windows.Forms.Button ListarDownloadCatalogo;
         private System.Windows.Forms.Button ListarDownloadCatalogos;
+        private System.Windows.Forms.Button DynamicPriceCreditNoteButton;
+        private System.Windows.Forms.Button DynamicPriceInvoiceButton;
     }
 }
 

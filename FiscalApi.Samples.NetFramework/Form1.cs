@@ -2214,14 +2214,14 @@ namespace FiscalApi.Samples.NetFramework
 
             // Crear una lista de productos o servicios de la factura
             var items = new List<InvoiceItem>()
-      {
-          new InvoiceItem
-          {
-              Id = "114a4be5-fb65-40b2-a762-ff0c55c6ebfa",
-              Quantity = 1,
-              UnitPrice = 102.00m, // Precio dinámico
-          },
-      };
+            {
+                new InvoiceItem
+                {
+                    Id = "114a4be5-fb65-40b2-a762-ff0c55c6ebfa",
+                    Quantity = 1,
+                    UnitPrice = 102.00m, // Precio dinámico
+                },
+            };
 
             // Crear la factura 
             var invoice = new Invoice
@@ -2277,24 +2277,24 @@ namespace FiscalApi.Samples.NetFramework
 
             // Agregar facturas relacionadas
             var relatedInvoices = new List<RelatedInvoice>()
-      {
-          new RelatedInvoice
-          {
-              Uuid = "5FB2822E-396D-4725-8521-CDC4BDD20CCF",
-              RelationshipTypeCode = "01"
-          }
-      };
+            {
+                new RelatedInvoice
+                {
+                    Uuid = "5FB2822E-396D-4725-8521-CDC4BDD20CCF",
+                    RelationshipTypeCode = "01"
+                }
+            };
 
             // Crear una lista de productos o servicios de la factura
             var items = new List<InvoiceItem>()
-      {
-          new InvoiceItem
-          {
-              Id = "114a4be5-fb65-40b2-a762-ff0c55c6ebfa",
-              Quantity = 0.5m, // 50% de descuento
-              UnitPrice = 101.00m, // Precio dinámico
-          },
-      };
+            {
+                new InvoiceItem
+                {
+                    Id = "114a4be5-fb65-40b2-a762-ff0c55c6ebfa",
+                    Quantity = 0.5m, // 50% de descuento
+                    UnitPrice = 101.00m, // Precio dinámico
+                },
+            };
 
             // Crear la factura de egreso (nota de crédito)
             var creditNote = new Invoice
@@ -2775,5 +2775,6 @@ namespace FiscalApi.Samples.NetFramework
 
             File.WriteAllBytes(filePath, fileBytes);
         }
+
     }
 }
