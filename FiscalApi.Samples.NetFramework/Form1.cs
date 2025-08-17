@@ -2369,7 +2369,7 @@ namespace FiscalApi.Samples.NetFramework
             var fiscalApi = FiscalApiClient.Create(Settings);
 
             // Send request
-            var apiResponse = await fiscalApi.DownloadCatalogs.GetRecordByNameAsync("SatInvoiceStatuses");
+            var apiResponse = await fiscalApi.DownloadCatalogs.ListCatalogAsync("SatInvoiceStatuses");
 
             // Check response
             if (apiResponse.Succeeded)
