@@ -20,7 +20,7 @@ namespace FiscalApi.Samples.NetFramework
 
             Settings = new FiscalapiSettings
             {
-                ApiUrl = "https://test.fiscalapi.com",
+                //ApiUrl = "https://test.fiscalapi.com",
                 //ApiKey = "<apikey>",
                 //Tenant = "<tenant>",
             };
@@ -2760,6 +2760,29 @@ namespace FiscalApi.Samples.NetFramework
             }
         }
 
+        private async void BuscarSolicitud_Click(object sender, EventArgs e)
+        {
+            // Buscar solicitud de descarga masiva por fecha de creación.
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+            // Send request
+            var apiResponse = await fiscalApi.DownloadRequests.SearchAsync(DateTime.Now);
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+                foreach (var item in apiResponse.Data)
+                    MessageBox.Show($@"Solicitud: {item.Id} - {item.SatInvoiceStatus.Description}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
         #endregion
 
         #endregion
@@ -2775,5 +2798,6 @@ namespace FiscalApi.Samples.NetFramework
             File.WriteAllBytes(filePath, fileBytes);
         }
 
+       
     }
 }

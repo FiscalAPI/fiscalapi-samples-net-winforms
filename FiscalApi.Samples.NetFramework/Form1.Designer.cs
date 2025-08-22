@@ -43,6 +43,7 @@
             this.EnviarPorValores = new System.Windows.Forms.Button();
             this.EnviarPorReferencia = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.DynamicPriceInvoiceButton = new System.Windows.Forms.Button();
             this.DynamicPriceCreditNoteButton = new System.Windows.Forms.Button();
             this.GlobalInvoiceValbutton = new System.Windows.Forms.Button();
             this.GlobalInvoiceRefButton = new System.Windows.Forms.Button();
@@ -105,7 +106,7 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.ListarDownloadCatalogo = new System.Windows.Forms.Button();
             this.ListarDownloadCatalogos = new System.Windows.Forms.Button();
-            this.DynamicPriceInvoiceButton = new System.Windows.Forms.Button();
+            this.BuscarSolicitud = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -289,6 +290,16 @@
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "FACTURACION";
+            // 
+            // DynamicPriceInvoiceButton
+            // 
+            this.DynamicPriceInvoiceButton.Location = new System.Drawing.Point(244, 355);
+            this.DynamicPriceInvoiceButton.Name = "DynamicPriceInvoiceButton";
+            this.DynamicPriceInvoiceButton.Size = new System.Drawing.Size(110, 49);
+            this.DynamicPriceInvoiceButton.TabIndex = 20;
+            this.DynamicPriceInvoiceButton.Text = "Factura con precios dinamicos";
+            this.DynamicPriceInvoiceButton.UseVisualStyleBackColor = true;
+            this.DynamicPriceInvoiceButton.Click += new System.EventHandler(this.DynamicPriceInvoiceButton_Click);
             // 
             // DynamicPriceCreditNoteButton
             // 
@@ -742,9 +753,11 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "DESCARGA MASIVA XML";
             this.tabPage2.UseVisualStyleBackColor = true;
+           
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.BuscarSolicitud);
             this.groupBox9.Controls.Add(this.EliminarSolicitud);
             this.groupBox9.Controls.Add(this.CrearSolicitud);
             this.groupBox9.Controls.Add(this.ObtenerSATResponsePorSolicitudID);
@@ -957,15 +970,15 @@
             this.ListarDownloadCatalogos.UseVisualStyleBackColor = true;
             this.ListarDownloadCatalogos.Click += new System.EventHandler(this.ListarDownloadCatalogos_Click);
             // 
-            // DynamicPriceInvoiceButton
+            // BuscarSolicitud
             // 
-            this.DynamicPriceInvoiceButton.Location = new System.Drawing.Point(244, 355);
-            this.DynamicPriceInvoiceButton.Name = "DynamicPriceInvoiceButton";
-            this.DynamicPriceInvoiceButton.Size = new System.Drawing.Size(110, 49);
-            this.DynamicPriceInvoiceButton.TabIndex = 20;
-            this.DynamicPriceInvoiceButton.Text = "Factura con precios dinamicos";
-            this.DynamicPriceInvoiceButton.UseVisualStyleBackColor = true;
-            this.DynamicPriceInvoiceButton.Click += new System.EventHandler(this.DynamicPriceInvoiceButton_Click);
+            this.BuscarSolicitud.Location = new System.Drawing.Point(446, 69);
+            this.BuscarSolicitud.Name = "BuscarSolicitud";
+            this.BuscarSolicitud.Size = new System.Drawing.Size(104, 44);
+            this.BuscarSolicitud.TabIndex = 11;
+            this.BuscarSolicitud.Text = "Buscar Solicitud";
+            this.BuscarSolicitud.UseVisualStyleBackColor = true;
+            this.BuscarSolicitud.Click += new System.EventHandler(this.BuscarSolicitud_Click);
             // 
             // Form1
             // 
@@ -1072,6 +1085,7 @@
         private System.Windows.Forms.Button ListarDownloadCatalogos;
         private System.Windows.Forms.Button DynamicPriceCreditNoteButton;
         private System.Windows.Forms.Button DynamicPriceInvoiceButton;
+        private System.Windows.Forms.Button BuscarSolicitud;
     }
 }
 
