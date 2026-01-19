@@ -33,9 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Fiscalapi, Version=4.0.270.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fiscalapi.4.0.270\lib\net461\Fiscalapi.dll</HintPath>
-    </Reference>
+   <Reference Include="Fiscalapi, Version=4.0.270.0, Culture=neutral, processorArchitecture=MSIL">
+   <HintPath>..\packages\Fiscalapi.4.0.270\lib\net461\Fiscalapi.dll</HintPath>
+ </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -108,16 +108,167 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreditNoteInvoiceValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditNoteInvoiceValueForm.Designer.cs">
+      <DependentUpon>CreditNoteInvoiceValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadRequestsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DownloadRequestsForm.Designer.cs">
+      <DependentUpon>DownloadRequestsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadRulesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DownloadRulesForm.Designer.cs">
+      <DependentUpon>DownloadRulesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EgressInvoiceReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EgressInvoiceReferenceForm.Designer.cs">
+      <DependentUpon>EgressInvoiceReferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EgressInvoiceValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EgressInvoiceValueForm.Designer.cs">
+      <DependentUpon>EgressInvoiceValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployerForm.Designer.cs">
+      <DependentUpon>EmployerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IncomeInvoiceReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IncomeInvoiceReferenceForm.Designer.cs">
+      <DependentUpon>IncomeInvoiceReferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IncomeInvoiceValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IncomeInvoiceValueForm.Designer.cs">
+      <DependentUpon>IncomeInvoiceValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoiceReferenceForm.Designer.cs">
+      <DependentUpon>InvoiceReferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoiceValueForm.Designer.cs">
+      <DependentUpon>InvoiceValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalTaxesComplementValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalTaxesComplementValueForm.Designer.cs">
+      <DependentUpon>LocalTaxesComplementValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalTaxesComplementReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalTaxesComplementReferenceForm.Designer.cs">
+      <DependentUpon>LocalTaxesComplementReferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentComplementInvoiceReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentComplementInvoiceReferenceForm.Designer.cs">
+      <DependentUpon>PaymentComplementInvoiceReferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentComplementInvoiceValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentComplementInvoiceValueForm.Designer.cs">
+      <DependentUpon>PaymentComplementInvoiceValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PayrollComplementReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayrollComplementReferenceForm.Designer.cs">
+      <DependentUpon>PayrollComplementReferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PayrollComplementValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayrollComplementValueForm.Designer.cs">
+      <DependentUpon>PayrollComplementValueForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringUtils.cs" />
+    <EmbeddedResource Include="DownloadRequestsForm.resx">
+      <DependentUpon>DownloadRequestsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownloadRulesForm.resx">
+      <DependentUpon>DownloadRulesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EgressInvoiceReferenceForm.resx">
+      <DependentUpon>EgressInvoiceReferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EgressInvoiceValueForm.resx">
+      <DependentUpon>EgressInvoiceValueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployerForm.resx">
+      <DependentUpon>EmployerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IncomeInvoiceReferenceForm.resx">
+      <DependentUpon>IncomeInvoiceReferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IncomeInvoiceValueForm.resx">
+      <DependentUpon>IncomeInvoiceValueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceReferenceForm.resx">
+      <DependentUpon>InvoiceReferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceValueForm.resx">
+      <DependentUpon>InvoiceValueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalTaxesComplementReferenceForm.resx">
+      <DependentUpon>LocalTaxesComplementReferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalTaxesComplementValueForm.resx">
+      <DependentUpon>LocalTaxesComplementValueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentComplementInvoiceReferenceForm.resx">
+      <DependentUpon>PaymentComplementInvoiceReferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentComplementInvoiceValueForm.resx">
+      <DependentUpon>PaymentComplementInvoiceValueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayrollComplementReferenceForm.resx">
+      <DependentUpon>PayrollComplementReferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayrollComplementValueForm.resx">
+      <DependentUpon>PayrollComplementValueForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

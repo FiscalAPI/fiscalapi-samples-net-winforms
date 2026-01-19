@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fiscalapi.Common;
 using Fiscalapi.Models;
 using Fiscalapi.Services;
+using Newtonsoft.Json;
 
 
 namespace FiscalApi.Samples.NetFramework
@@ -20,9 +22,9 @@ namespace FiscalApi.Samples.NetFramework
 
             Settings = new FiscalapiSettings
             {
-                //ApiUrl = "https://test.fiscalapi.com",
-                //ApiKey = "<apikey>",
-                //Tenant = "<tenant>",
+                ApiUrl = "https://test.fiscalapi.com",
+                ApiKey = "sk_test_b4f8cc00_d02a_4ecc_a68a_f87ae970958c",
+                Tenant = "275510ee-f64d-435a-9e92-1553d8f10a7e",
             };
 
             // Create directory if not exists
@@ -2798,6 +2800,242 @@ namespace FiscalApi.Samples.NetFramework
             File.WriteAllBytes(filePath, fileBytes);
         }
 
-       
+        private async void button3_Click(object sender, EventArgs e)
+        {
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            var apiResponse = await fiscalApi.Persons.Employer.GetByIdAsync("0e82a655-5f0c-4e07-abab-8f322e4123ef");
+
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data));
+            }
+        }
+
+        private async void button4_Click(object sender, EventArgs e)
+        {
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            string personId = "bd199ed8-02ef-47c0-919c-9479dd8ecae7";
+            EmployerData requestModel = new EmployerData()
+            {
+                PersonId = personId,
+                EmployerRegistration = "abc1234567890",
+                OriginEmployerTin = "MEQA951024HC9",
+                OwnResourceAmount = 10000.0M
+            };
+            var apiResponse = await fiscalApi.Persons.Employer.CreateAsync(requestModel);
+
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("");
+            }
+        }
+
+        private async void button5_Click(object sender, EventArgs e)
+        {
+            var fiscalapi = FiscalApiClient.Create(Settings);
+            string personId = "bd199ed8-02ef-47c0-919c-9479dd8ecae7";
+            EmployerData requestModel = new EmployerData()
+            {
+                PersonId = personId,
+                EmployerRegistration = "xyz0987654321",
+                OriginEmployerTin = "URE180429TM6",
+                OwnResourceAmount = 98.5M,
+                SatFundSourceId = "IF"
+            };
+
+            var apiResponse = await fiscalapi.Persons.Employer.UpdateAsync(requestModel);
+
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show(apiResponse.Data.OriginEmployerTin);
+            }
+            else
+            {
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void button6_Click(object sender, EventArgs e)
+        {
+            var fiscalapi = FiscalApiClient.Create(Settings);
+            string personId = "bd199ed8-02ef-47c0-919c-9479dd8ecae7";
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            InvoiceValueForm ivf = new InvoiceValueForm(Settings);
+            ivf.Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            InvoiceReferenceForm irf = new InvoiceReferenceForm(Settings);
+            irf.Show();
+        }
+
+        private async void button3_Click_1(object sender, EventArgs e)
+        {
+            // Obtener todos los catálogos disponibles
+
+            // Create instance of FiscalApiClient
+
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request
+            var apiResponse = await fiscalApi.Catalogs.GetListAsync();
+
+            // Check response
+
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data, Formatting.Indented));
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            DownloadRulesForm downloadRulesForm = new DownloadRulesForm(Settings);
+            downloadRulesForm.Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            var fiscalapi = FiscalApiClient.Create(Settings);
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            EmployerForm employerForm = new EmployerForm(Settings);
+            employerForm.Show();
+        }
+
+        private async void button14_Click(object sender, EventArgs e)
+        {
+            var fiscalapi = FiscalApiClient.Create(Settings);
+
+            var apiResponse = await fiscalapi.Stamps.GetListAsync(1, 2);
+
+
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show(apiResponse.Data.TotalPages.ToString());
+            }
+            else
+            {
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void button15_Click(object sender, EventArgs e)
+        {
+            var fiscalapi = FiscalApiClient.Create(Settings);
+
+            var apiResponse = await fiscalapi.Stamps.GetByIdAsync("");
+
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show(apiResponse.Data.Id);
+            }
+            else
+            {
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void button16_Click(object sender, EventArgs e)
+        {
+            var fiscalapi = FiscalApiClient.Create(Settings);
+
+            var requestModel = new StampTransactionParams
+            {
+                FromPersonId = "",
+                ToPersonId = "",
+                Amount = 1,
+                Comments = ""
+            };
+
+            var apiResponse = await fiscalapi.Stamps.TransferStamps(requestModel);
+
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show(apiResponse.Data.ToString());
+            }
+            else
+            {
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void button6_Click_1(object sender, EventArgs e)
+        {
+            // Obtener catalog registro de un catalogo por nombre del catalogo y id del registro
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request /api/v4/catalogs/SatProductCodes/key/84111500
+            var apiResponse = await fiscalApi.Catalogs.GetRecordByIdAsync("SatProductCodes", "84111500");
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data, Formatting.Indented));
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            DownloadRequestsForm downloadRequestsForm = new DownloadRequestsForm(Settings);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            EmployeeForm employeeForm = new EmployeeForm(Settings);
+            employeeForm.Show();
+        }
+
+        private async void button17_Click(object sender, EventArgs e)
+        {
+            var fiscalapi = FiscalApiClient.Create(Settings);
+
+            var requestModel = new StampTransactionParams
+            {
+                FromPersonId = "",
+                ToPersonId = "",
+                Amount = 1,
+                Comments = ""
+            };
+
+            var apiResponse = await fiscalapi.Stamps.TransferStamps(requestModel);
+
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show(apiResponse.Data.ToString());
+            }
+            else
+            {
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
     }
 }
