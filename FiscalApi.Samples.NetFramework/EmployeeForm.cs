@@ -1,15 +1,8 @@
 ﻿using Fiscalapi.Common;
+using Fiscalapi.Models;
 using Fiscalapi.Services;
-using FiscalApi.Samples.NetFramework.Properties;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FiscalApi.Samples.NetFramework
@@ -27,7 +20,7 @@ namespace FiscalApi.Samples.NetFramework
         {
             var fiscalApi = FiscalApiClient.Create(_settings);
 
-            var apiResponse = await fiscalApi.Persons.Employer.GetByIdAsync("0e82a655-5f0c-4e07-abab-8f322e4123ef");
+            var apiResponse = await fiscalApi.Persons.Employee.GetByIdAsync("0e82a655-5f0c-4e07-abab-8f322e4123ef");
 
             if (apiResponse.Succeeded)
             {

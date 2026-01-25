@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fiscalapi.Common;
 using Fiscalapi.Models;
@@ -2867,7 +2866,7 @@ namespace FiscalApi.Samples.NetFramework
         private void button12_Click(object sender, EventArgs e)
         {
             InvoiceValueForm ivf = new InvoiceValueForm(Settings);
-            ivf.Show();
+            ivf.ShowDialog();
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -2941,7 +2940,7 @@ namespace FiscalApi.Samples.NetFramework
         {
             var fiscalapi = FiscalApiClient.Create(Settings);
 
-            var apiResponse = await fiscalapi.Stamps.GetByIdAsync("");
+            var apiResponse = await fiscalapi.Stamps.GetByIdAsync("3186ca81-83c8-4a99-99ea-12445519de50");
 
             if (apiResponse.Succeeded)
             {

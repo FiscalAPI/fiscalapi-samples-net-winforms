@@ -3,13 +3,8 @@ using Fiscalapi.Models;
 using Fiscalapi.Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FiscalApi.Samples.NetFramework
@@ -462,16 +457,16 @@ namespace FiscalApi.Samples.NetFramework
             // Receptor
             var recipient = new InvoiceRecipient
             {
-                Id = "da71df0c-f328-45ee-9bd9-3096ed02c164"
+                Id = "aa2ad8c3-6ec5-4601-91be-d827d9a865bc"
             };
 
             var payroll = new Payroll
             {
                 Version = "1.2",
                 PayrollTypeCode = "O",
-                PaymentDate = DateTime.Parse("2023-06-22T00:00:00"),
-                InitialPaymentDate = DateTime.Parse("2023-06-05T00:00:00"),
-                FinalPaymentDate = DateTime.Parse("2023-06-11T00:00:00"),
+                PaymentDate = DateTime.Parse("2023-05-24T00:00:00"),
+                InitialPaymentDate = DateTime.Parse("2023-05-09T00:00:00"),
+                FinalPaymentDate = DateTime.Parse("2023-05-24T00:00:00"),
                 DaysPaid = 15,
                 Earnings = new PayrollEarnings
                 {
@@ -672,13 +667,13 @@ namespace FiscalApi.Samples.NetFramework
             // Emisor
             var issuer = new InvoiceIssuer
             {
-                Id = "0e82a655-5f0c-4e07-abab-8f322e4123ef"
+                Id = "ab7ec306-6f81-4f9f-b55f-bbbb1ab2f153"
             };
 
             // Receptor
             var recipient = new InvoiceRecipient
             {
-                Id = "da71df0c-f328-45ee-9bd9-3096ed02c164"
+                Id = "acf43966-4672-48b6-a01a-d04cac6c3d64"
             };
 
             var payroll = new Payroll
@@ -829,7 +824,7 @@ namespace FiscalApi.Samples.NetFramework
             // Receptor
             var recipient = new InvoiceRecipient
             {
-                Id = "da71df0c-f328-45ee-9bd9-3096ed02c164"
+                Id = "aa2ad8c3-6ec5-4601-91be-d827d9a865bc"
             };
 
             var payroll = new Payroll
@@ -908,7 +903,7 @@ namespace FiscalApi.Samples.NetFramework
             // Receptor
             var recipient = new InvoiceRecipient
             {
-                Id = "da71df0c-f328-45ee-9bd9-3096ed02c164"
+                Id = "aa2ad8c3-6ec5-4601-91be-d827d9a865bc"
             };
 
             var payroll = new Payroll
@@ -1003,7 +998,7 @@ namespace FiscalApi.Samples.NetFramework
             // Receptor
             var recipient = new InvoiceRecipient
             {
-                Id = "da71df0c-f328-45ee-9bd9-3096ed02c164"
+                Id = "aa2ad8c3-6ec5-4601-91be-d827d9a865bc"
             };
 
             var payroll = new Payroll
@@ -1093,7 +1088,7 @@ namespace FiscalApi.Samples.NetFramework
             // Receptor
             var recipient = new InvoiceRecipient
             {
-                Id = "da71df0c-f328-45ee-9bd9-3096ed02c164"
+                Id = "aa2ad8c3-6ec5-4601-91be-d827d9a865bc"
             };
 
             var payroll = new Payroll
@@ -1172,16 +1167,16 @@ namespace FiscalApi.Samples.NetFramework
             // Receptor
             var recipient = new InvoiceRecipient
             {
-                Id = "da71df0c-f328-45ee-9bd9-3096ed02c164"
+                Id = "aa2ad8c3-6ec5-4601-91be-d827d9a865bc"
             };
 
             var payroll = new Payroll
             {
                 Version = "1.2",
                 PayrollTypeCode = "O",
-                PaymentDate = DateTime.Parse("2023-06-04T00:00:00"),
-                InitialPaymentDate = DateTime.Parse("2023-06-04T00:00:00"),
-                FinalPaymentDate = DateTime.Parse("2023-06-04T00:00:00"),
+                PaymentDate = DateTime.Parse("2023-05-24T00:00:00"),
+                InitialPaymentDate = DateTime.Parse("2023-05-09T00:00:00"),
+                FinalPaymentDate = DateTime.Parse("2023-05-24T00:00:00"),
                 DaysPaid = 15,
                 Earnings = new PayrollEarnings
                 {
@@ -1277,16 +1272,16 @@ namespace FiscalApi.Samples.NetFramework
             // Receptor
             var recipient = new InvoiceRecipient
             {
-                Id = "da71df0c-f328-45ee-9bd9-3096ed02c164"
+                Id = "aa2ad8c3-6ec5-4601-91be-d827d9a865bc"
             };
 
             var payroll = new Payroll
             {
                 Version = "1.2",
                 PayrollTypeCode = "O",
-                PaymentDate = DateTime.Parse("2023-06-04T00:00:00"),
-                InitialPaymentDate = DateTime.Parse("2023-06-04T00:00:00"),
-                FinalPaymentDate = DateTime.Parse("2023-06-04T00:00:00"),
+                PaymentDate = DateTime.Parse("2023-09-26T00:00:00"),
+                InitialPaymentDate = DateTime.Parse("2023-09-11T00:00:00"),
+                FinalPaymentDate = DateTime.Parse("2023-09-26T00:00:00"),
                 DaysPaid = 15,
                 Earnings = new PayrollEarnings
                 {
@@ -1365,16 +1360,16 @@ namespace FiscalApi.Samples.NetFramework
             // Receptor
             var recipient = new InvoiceRecipient
             {
-                Id = "da71df0c-f328-45ee-9bd9-3096ed02c164"
+                Id = "aa2ad8c3-6ec5-4601-91be-d827d9a865bc"
             };
 
             var payroll = new Payroll
             {
                 Version = "1.2",
                 PayrollTypeCode = "O",
-                PaymentDate = DateTime.Parse("2023-06-04T00:00:00"),
-                InitialPaymentDate = DateTime.Parse("2023-06-04T00:00:00"),
-                FinalPaymentDate = DateTime.Parse("2023-06-04T00:00:00"),
+                PaymentDate = DateTime.Parse("2023-05-24T00:00:00"),
+                InitialPaymentDate = DateTime.Parse("2023-05-09T00:00:00"),
+                FinalPaymentDate = DateTime.Parse("2023-05-24T00:00:00"),
                 DaysPaid = 15,
                 Earnings = new PayrollEarnings
                 {

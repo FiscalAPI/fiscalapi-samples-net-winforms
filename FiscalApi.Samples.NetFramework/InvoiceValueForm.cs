@@ -1,16 +1,10 @@
 ﻿using Fiscalapi.Common;
 using Fiscalapi.Models;
 using Fiscalapi.Services;
-using FiscalApi.Samples.NetFramework.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -712,13 +706,13 @@ namespace FiscalApi.Samples.NetFramework
         private void button1_Click(object sender, EventArgs e)
         {
             IncomeInvoiceValueForm incomeInvoiceValueForm = new IncomeInvoiceValueForm(_settings);
-            incomeInvoiceValueForm.Show();
+            incomeInvoiceValueForm.ShowDialog();
         }
 
         private void button9_Click_1(object sender, EventArgs e)
         {
             EgressInvoiceValueForm egressInvoiceValueForm = new EgressInvoiceValueForm(_settings);
-            egressInvoiceValueForm.Show();
+            egressInvoiceValueForm.ShowDialog();
         }
 
         private void button13_Click_1(object sender, EventArgs e)
@@ -729,7 +723,7 @@ namespace FiscalApi.Samples.NetFramework
         private void button10_Click_1(object sender, EventArgs e)
         {
             PaymentComplementInvoiceForm paymentComplementInvoiceForm = new PaymentComplementInvoiceForm(_settings);
-            paymentComplementInvoiceForm.Show();
+            paymentComplementInvoiceForm.ShowDialog();
         }
 
         private async void button6_Click(object sender, EventArgs e)
@@ -769,7 +763,7 @@ namespace FiscalApi.Samples.NetFramework
         private void button11_Click_1(object sender, EventArgs e)
         {
             PayrollComplementValueForm payrollComplementForm = new PayrollComplementValueForm(_settings);
-            payrollComplementForm.Show();
+            payrollComplementForm.ShowDialog();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -780,7 +774,7 @@ namespace FiscalApi.Samples.NetFramework
         private void button12_Click_1(object sender, EventArgs e)
         {
             LocalTaxesComplementValueForm localTaxesComplementForm = new LocalTaxesComplementValueForm(_settings);
-            localTaxesComplementForm.Show();
+            localTaxesComplementForm.ShowDialog();
         }
     }
 }

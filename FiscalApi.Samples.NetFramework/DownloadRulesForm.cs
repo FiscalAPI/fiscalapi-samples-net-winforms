@@ -1,15 +1,7 @@
 ﻿using Fiscalapi.Common;
 using Fiscalapi.Models;
 using Fiscalapi.Services;
-using FiscalApi.Samples.NetFramework.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FiscalApi.Samples.NetFramework

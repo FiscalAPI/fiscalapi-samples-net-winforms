@@ -1,15 +1,11 @@
 ﻿using Fiscalapi.Common;
 using Fiscalapi.Models;
 using Fiscalapi.Services;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FiscalApi.Samples.NetFramework
@@ -236,7 +232,7 @@ namespace FiscalApi.Samples.NetFramework
                 var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
                 File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
 
-                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data, Formatting.Indented));
             }
             else
             {
@@ -369,7 +365,7 @@ namespace FiscalApi.Samples.NetFramework
                 var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
                 File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
 
-                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data, Formatting.Indented));
             }
             else
             {
@@ -599,7 +595,7 @@ namespace FiscalApi.Samples.NetFramework
                 var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
                 File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
 
-                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data, Formatting.Indented));
             }
             else
             {
@@ -763,7 +759,7 @@ namespace FiscalApi.Samples.NetFramework
                 var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
                 File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
 
-                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data, Formatting.Indented));
             }
             else
             {
@@ -918,7 +914,7 @@ namespace FiscalApi.Samples.NetFramework
                 var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
                 File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
 
-                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data, Formatting.Indented));
             }
             else
             {
@@ -1118,7 +1114,7 @@ namespace FiscalApi.Samples.NetFramework
                 var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
                 File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
 
-                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data, Formatting.Indented));
             }
             else
             {
@@ -1248,7 +1244,7 @@ namespace FiscalApi.Samples.NetFramework
                 var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
                 File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
 
-                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data, Formatting.Indented));
             }
             else
             {
@@ -1394,7 +1390,7 @@ namespace FiscalApi.Samples.NetFramework
                 var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
                 File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
 
-                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data, Formatting.Indented));
             }
             else
             {
@@ -1530,7 +1526,7 @@ namespace FiscalApi.Samples.NetFramework
                 var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
                 File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
 
-                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data, Formatting.Indented));
             }
             else
             {
@@ -1661,7 +1657,7 @@ namespace FiscalApi.Samples.NetFramework
                 var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
                 File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
 
-                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data, Formatting.Indented));
             }
             else
             {
@@ -1818,7 +1814,7 @@ namespace FiscalApi.Samples.NetFramework
                 var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
                 File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
 
-                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data, Formatting.Indented));
             }
             else
             {
@@ -1958,7 +1954,7 @@ namespace FiscalApi.Samples.NetFramework
                 var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
                 File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
 
-                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data, Formatting.Indented));
             }
             else
             {
@@ -2105,7 +2101,7 @@ namespace FiscalApi.Samples.NetFramework
                 var xml = apiResponse.Data.Responses.FirstOrDefault()?.InvoiceBase64.DecodeFromBase64();
                 File.WriteAllText($@"C:\facturas\{apiResponse.Data.Number}.xml", xml);
 
-                MessageBox.Show($@"Factura {apiResponse.Data.Number} creada");
+                MessageBox.Show(JsonConvert.SerializeObject(apiResponse.Data, Formatting.Indented));
             }
             else
             {
