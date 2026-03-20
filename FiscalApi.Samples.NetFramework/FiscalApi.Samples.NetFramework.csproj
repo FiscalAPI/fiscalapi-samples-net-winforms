@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Fiscalapi, Version=4.0.360.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fiscalapi.4.0.360\lib\net461\Fiscalapi.dll</HintPath>
+  <Reference Include="Fiscalapi, Version=4.0.372.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fiscalapi.4.0.372\lib\net461\Fiscalapi.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -108,6 +108,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillOfLadingReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillOfLadingReferenceForm.Designer.cs">
+      <DependentUpon>BillOfLadingReferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BillOfLadingValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillOfLadingValueForm.Designer.cs">
+      <DependentUpon>BillOfLadingValueForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreditNoteInvoiceValueForm.cs">
       <SubType>Form</SubType>
     </Compile>

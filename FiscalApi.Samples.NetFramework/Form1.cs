@@ -22,8 +22,8 @@ namespace FiscalApi.Samples.NetFramework
             Settings = new FiscalapiSettings
             {
                 ApiUrl = "https://test.fiscalapi.com",
-                ApiKey = "sk_test_b4f8cc00_d02a_4ecc_a68a_f87ae970958c",
-                Tenant = "275510ee-f64d-435a-9e92-1553d8f10a7e",
+                ApiKey = "api_key",
+                Tenant = "tenant_id",
             };
 
             // Create directory if not exists
