@@ -99,9 +99,9 @@ namespace FiscalApi.Samples.NetFramework
             {
                 mercancia.TipoMateriaId = "05";
                 mercancia.DescripcionMateria = "otramateria";
-                mercancia.DocumentacionAduanera = new List<DocumentoAduanero>
+                mercancia.DocumentacionAduanera = new List<DocumentacionAduanera>
                 {
-                    new DocumentoAduanero
+                    new DocumentacionAduanera
                     {
                         TipoDocumentoId = "01",
                         NumPedimento = "23  43  0472  8000448",
@@ -173,7 +173,7 @@ namespace FiscalApi.Samples.NetFramework
                             RFCRemitenteDestinatario = "URE180429TM6",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "211", NumeroInterior = "212",
                                 ColoniaId = "1957", LocalidadId = "13", Referencia = "casa blanca",
@@ -188,7 +188,7 @@ namespace FiscalApi.Samples.NetFramework
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
                             DistanciaRecorrida = 1,
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle2", NumeroExterior = "214", NumeroInterior = "215",
                                 ColoniaId = "0347", LocalidadId = "23", Referencia = "casa negra",
@@ -206,7 +206,7 @@ namespace FiscalApi.Samples.NetFramework
                             RFCFigura = "URE180429TM6",
                             NumLicencia = "NumLicencia1",
                             NombreFigura = "NombreFigura1",
-                            Domicilio = new Domicilio
+                            Domicilio = new TiposFiguraDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "NumeroExterior1", NumeroInterior = "NumeroInterior1",
                                 ColoniaId = "Colonia1", LocalidadId = "Localidad1", Referencia = "Referencia1",
@@ -262,7 +262,7 @@ namespace FiscalApi.Samples.NetFramework
                             RFCRemitenteDestinatario = "URE180429TM6",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "211", NumeroInterior = "212",
                                 ColoniaId = "1957", LocalidadId = "13", Referencia = "casa blanca",
@@ -277,7 +277,7 @@ namespace FiscalApi.Samples.NetFramework
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
                             DistanciaRecorrida = 1,
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle2", NumeroExterior = "214", NumeroInterior = "215",
                                 ColoniaId = "0347", LocalidadId = "23", Referencia = "casa negra",
@@ -295,7 +295,7 @@ namespace FiscalApi.Samples.NetFramework
                             RFCFigura = "URE180429TM6",
                             NumLicencia = "NumLicencia1",
                             NombreFigura = "NombreFigura1",
-                            Domicilio = new Domicilio
+                            Domicilio = new TiposFiguraDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "NumeroExterior1", NumeroInterior = "NumeroInterior1",
                                 ColoniaId = "Colonia1", LocalidadId = "Localidad1", Referencia = "Referencia1",
@@ -325,7 +325,13 @@ namespace FiscalApi.Samples.NetFramework
             var invoice = CreateBaseInvoice();
             invoice.Recipient = new InvoiceRecipient { Id = "37f7c342-d9a6-4881-9620-0da769b50ce5" };
 
-            var domicilioUSA = new Domicilio
+            var domicilioUSA = new UbicacionDomicilio
+            {
+                Calle = "ST", NumeroExterior = "214", ColoniaId = "N/A",
+                Referencia = "WHITE HOUSE", MunicipioId = "N/A", EstadoId = "TX",
+                PaisId = "USA", CodigoPostalId = "N/A"
+            };
+            var domicilioUSATF = new TiposFiguraDomicilio
             {
                 Calle = "ST", NumeroExterior = "214", ColoniaId = "N/A",
                 Referencia = "WHITE HOUSE", MunicipioId = "N/A", EstadoId = "TX",
@@ -410,7 +416,7 @@ namespace FiscalApi.Samples.NetFramework
                             RFCFigura = "EKU9003173C9",
                             NumLicencia = "NumLicencia1",
                             NombreFigura = "NombreFigura1",
-                            Domicilio = domicilioUSA
+                            Domicilio = domicilioUSATF
                         }
                     }
                 }
@@ -435,7 +441,13 @@ namespace FiscalApi.Samples.NetFramework
             var invoice = CreateBaseInvoice();
             invoice.Recipient = new InvoiceRecipient { Id = "37f7c342-d9a6-4881-9620-0da769b50ce5" };
 
-            var domicilioUSA = new Domicilio
+            var domicilioUSA = new UbicacionDomicilio
+            {
+                Calle = "ST", NumeroExterior = "214", ColoniaId = "N/A",
+                Referencia = "WHITE HOUSE", MunicipioId = "N/A", EstadoId = "TX",
+                PaisId = "USA", CodigoPostalId = "N/A"
+            };
+            var domicilioUSATF = new TiposFiguraDomicilio
             {
                 Calle = "ST", NumeroExterior = "214", ColoniaId = "N/A",
                 Referencia = "WHITE HOUSE", MunicipioId = "N/A", EstadoId = "TX",
@@ -494,7 +506,7 @@ namespace FiscalApi.Samples.NetFramework
                             RFCFigura = "EKU9003173C9",
                             NumLicencia = "NumLicencia1",
                             NombreFigura = "NombreFigura1",
-                            Domicilio = domicilioUSA
+                            Domicilio = domicilioUSATF
                         }
                     }
                 }
@@ -564,7 +576,7 @@ namespace FiscalApi.Samples.NetFramework
                 NumEstacionId = "EF0001", NombreEstacion = "NombreEstacion",
                 FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T05:00:01"),
                 DistanciaRecorrida = 100.00m,
-                Domicilio = new Domicilio
+                Domicilio = new UbicacionDomicilio
                 {
                     Calle = "ST", NumeroExterior = "1234", ColoniaId = "1234",
                     Referencia = "WHITE HOUSE", MunicipioId = "1234",
@@ -676,7 +688,7 @@ namespace FiscalApi.Samples.NetFramework
                             NumEstacionId = "EA0417", NombreEstacion = "Loreto",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                             TipoEstacionId = "01",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "211", NumeroInterior = "212",
                                 ColoniaId = "1957", LocalidadId = "13", Referencia = "casa blanca",
@@ -691,7 +703,7 @@ namespace FiscalApi.Samples.NetFramework
                             NumEstacionId = "EA0418", NombreEstacion = "Los Cabos",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
                             TipoEstacionId = "03",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle2", NumeroExterior = "214", NumeroInterior = "215",
                                 ColoniaId = "0347", LocalidadId = "23", Referencia = "casa negra",
@@ -793,7 +805,7 @@ namespace FiscalApi.Samples.NetFramework
                             NumEstacionId = "EA0417", NombreEstacion = "Loreto",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                             TipoEstacionId = "01",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle2", NumeroExterior = "214", NumeroInterior = "215",
                                 ColoniaId = "0347", LocalidadId = "23", Referencia = "casa negra",
@@ -808,7 +820,7 @@ namespace FiscalApi.Samples.NetFramework
                             NumRegIdTrib = "01010101", ResidenciaFiscalId = "USA",
                             NumEstacionId = "EA0143", NombreEstacion = "Phoenix-Mesa Gateway",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "ST", NumeroExterior = "12344", ColoniaId = "N/A",
                                 Referencia = "WHITE HOUSE", MunicipioId = "N/A",
@@ -913,7 +925,7 @@ namespace FiscalApi.Samples.NetFramework
                             NumEstacionId = "EA0417", NombreEstacion = "Loreto",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                             TipoEstacionId = "01",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "211", NumeroInterior = "212",
                                 ColoniaId = "1957", LocalidadId = "13", Referencia = "casa blanca",
@@ -929,7 +941,7 @@ namespace FiscalApi.Samples.NetFramework
                             NumEstacionId = "EA0418", NombreEstacion = "Los Cabos",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
                             TipoEstacionId = "03",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle2", NumeroExterior = "214", NumeroInterior = "215",
                                 ColoniaId = "0347", LocalidadId = "23", Referencia = "casa negra",
@@ -957,9 +969,9 @@ namespace FiscalApi.Samples.NetFramework
                             MonedaId = "MXN",
                             TipoMateriaId = "05",
                             DescripcionMateria = "otramateria",
-                            DocumentacionAduanera = new List<DocumentoAduanero>
+                            DocumentacionAduanera = new List<DocumentacionAduanera>
                             {
-                                new DocumentoAduanero { TipoDocumentoId = "01", NumPedimento = "23  43  0472  8000448", RFCImpo = "EKU9003173C9" }
+                                new DocumentacionAduanera { TipoDocumentoId = "01", NumPedimento = "23  43  0472  8000448", RFCImpo = "EKU9003173C9" }
                             },
                             CantidadTransporta = new List<CantidadTransporta>
                             {
@@ -1031,7 +1043,7 @@ namespace FiscalApi.Samples.NetFramework
                             NavegacionTraficoId = "Altura",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                             TipoEstacionId = "01",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "211", NumeroInterior = "212",
                                 ColoniaId = "1957", LocalidadId = "13", Referencia = "casa blanca",
@@ -1047,7 +1059,7 @@ namespace FiscalApi.Samples.NetFramework
                             NavegacionTraficoId = "Altura",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
                             TipoEstacionId = "03",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle2", NumeroExterior = "214", NumeroInterior = "215",
                                 ColoniaId = "0347", LocalidadId = "23", Referencia = "casa negra",
@@ -1135,7 +1147,7 @@ namespace FiscalApi.Samples.NetFramework
                             {
                                 new ParteTransporte { ParteTransporteId = "PT02" }
                             },
-                            Domicilio = new Domicilio
+                            Domicilio = new TiposFiguraDomicilio
                             {
                                 Calle = "calle", NumeroExterior = "211", ColoniaId = "0814",
                                 LocalidadId = "01", Referencia = "casa blanca",
@@ -1191,7 +1203,7 @@ namespace FiscalApi.Samples.NetFramework
                             NavegacionTraficoId = "Altura",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                             TipoEstacionId = "01",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "211", NumeroInterior = "212",
                                 ColoniaId = "1957", LocalidadId = "13", Referencia = "casa blanca",
@@ -1207,7 +1219,7 @@ namespace FiscalApi.Samples.NetFramework
                             NumEstacionId = "PM120", NombreEstacion = "NombreEstacion",
                             NavegacionTraficoId = "Altura",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "ST", NumeroExterior = "12345", ColoniaId = "N/A",
                                 Referencia = "N/A", MunicipioId = "N/A",
@@ -1299,7 +1311,7 @@ namespace FiscalApi.Samples.NetFramework
                             {
                                 new ParteTransporte { ParteTransporteId = "PT02" }
                             },
-                            Domicilio = new Domicilio
+                            Domicilio = new TiposFiguraDomicilio
                             {
                                 Calle = "calle", NumeroExterior = "211", ColoniaId = "0814",
                                 LocalidadId = "01", Referencia = "casa blanca",
@@ -1361,7 +1373,7 @@ namespace FiscalApi.Samples.NetFramework
                             NavegacionTraficoId = "Altura",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                             TipoEstacionId = "01",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "211", NumeroInterior = "212",
                                 ColoniaId = "1957", LocalidadId = "13", Referencia = "casa blanca",
@@ -1379,7 +1391,7 @@ namespace FiscalApi.Samples.NetFramework
                             NavegacionTraficoId = "Altura",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T04:00:01"),
                             TipoEstacionId = "02",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle2", NumeroExterior = "214", NumeroInterior = "215",
                                 ColoniaId = "0347", LocalidadId = "23", Referencia = "casa negra",
@@ -1410,9 +1422,9 @@ namespace FiscalApi.Samples.NetFramework
                             FraccionArancelariaId = "6309000100",
                             TipoMateriaId = "05",
                             DescripcionMateria = "otramateria",
-                            DocumentacionAduanera = new List<DocumentoAduanero>
+                            DocumentacionAduanera = new List<DocumentacionAduanera>
                             {
-                                new DocumentoAduanero
+                                new DocumentacionAduanera
                                 {
                                     TipoDocumentoId = "01",
                                     NumPedimento = "23  43  0472  8000448",
@@ -1492,7 +1504,7 @@ namespace FiscalApi.Samples.NetFramework
                             RFCFigura = "EKU9003173C9",
                             NumLicencia = "NumLicencia1",
                             NombreFigura = "NombreFigura1",
-                            Domicilio = new Domicilio
+                            Domicilio = new TiposFiguraDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "NumeroExterior1", NumeroInterior = "NumeroInterior1",
                                 ColoniaId = "Colonia1", LocalidadId = "Localidad1", Referencia = "Referencia1",
@@ -1542,7 +1554,7 @@ namespace FiscalApi.Samples.NetFramework
                             RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "211", NumeroInterior = "212",
                                 ColoniaId = "1957", LocalidadId = "13", Referencia = "casa blanca",
@@ -1557,7 +1569,7 @@ namespace FiscalApi.Samples.NetFramework
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
                             DistanciaRecorrida = 1,
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle2", NumeroExterior = "214", NumeroInterior = "215",
                                 ColoniaId = "0347", LocalidadId = "23", Referencia = "casa negra",
@@ -1620,7 +1632,13 @@ namespace FiscalApi.Samples.NetFramework
             var invoice = CreateBaseTraslado();
             invoice.Series = "SerieCCP31";
 
-            var domicilioUSA = new Domicilio
+            var domicilioUSA = new UbicacionDomicilio
+            {
+                Calle = "ST", NumeroExterior = "214", ColoniaId = "N/A",
+                Referencia = "WHITE HOUSE", MunicipioId = "N/A", EstadoId = "TX",
+                PaisId = "USA", CodigoPostalId = "N/A"
+            };
+            var domicilioUSATF = new TiposFiguraDomicilio
             {
                 Calle = "ST", NumeroExterior = "214", ColoniaId = "N/A",
                 Referencia = "WHITE HOUSE", MunicipioId = "N/A", EstadoId = "TX",
@@ -1705,7 +1723,7 @@ namespace FiscalApi.Samples.NetFramework
                             RFCFigura = "EKU9003173C9",
                             NumLicencia = "NumLicencia1",
                             NombreFigura = "NombreFigura1",
-                            Domicilio = domicilioUSA
+                            Domicilio = domicilioUSATF
                         }
                     }
                 }
@@ -1730,7 +1748,13 @@ namespace FiscalApi.Samples.NetFramework
             var invoice = CreateBaseTraslado();
             invoice.Series = "SerieCCP31";
 
-            var domicilioUSA = new Domicilio
+            var domicilioUSA = new UbicacionDomicilio
+            {
+                Calle = "ST", NumeroExterior = "214", ColoniaId = "N/A",
+                Referencia = "WHITE HOUSE", MunicipioId = "N/A", EstadoId = "TX",
+                PaisId = "USA", CodigoPostalId = "N/A"
+            };
+            var domicilioUSATF = new TiposFiguraDomicilio
             {
                 Calle = "ST", NumeroExterior = "214", ColoniaId = "N/A",
                 Referencia = "WHITE HOUSE", MunicipioId = "N/A", EstadoId = "TX",
@@ -1800,9 +1824,9 @@ namespace FiscalApi.Samples.NetFramework
                             FraccionArancelariaId = "6309000100",
                             TipoMateriaId = "05",
                             DescripcionMateria = "otramateria",
-                            DocumentacionAduanera = new List<DocumentoAduanero>
+                            DocumentacionAduanera = new List<DocumentacionAduanera>
                             {
-                                new DocumentoAduanero
+                                new DocumentacionAduanera
                                 {
                                     TipoDocumentoId = "01",
                                     NumPedimento = "23  43  0472  8000448",
@@ -1824,7 +1848,7 @@ namespace FiscalApi.Samples.NetFramework
                             RFCFigura = "EKU9003173C9",
                             NumLicencia = "NumLicencia1",
                             NombreFigura = "NombreFigura1",
-                            Domicilio = domicilioUSA
+                            Domicilio = domicilioUSATF
                         }
                     }
                 }
@@ -1896,7 +1920,7 @@ namespace FiscalApi.Samples.NetFramework
                 NumEstacionId = "EF0001", NombreEstacion = "NombreEstacion",
                 FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T05:00:01"),
                 DistanciaRecorrida = 100.00m,
-                Domicilio = new Domicilio
+                Domicilio = new UbicacionDomicilio
                 {
                     Calle = "ST", NumeroExterior = "1234", ColoniaId = "1234",
                     Referencia = "WHITE HOUSE", MunicipioId = "1234",
@@ -2007,7 +2031,7 @@ namespace FiscalApi.Samples.NetFramework
                             NumEstacionId = "EA0417", NombreEstacion = "Loreto",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                             TipoEstacionId = "01",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "211", NumeroInterior = "212",
                                 ColoniaId = "1957", LocalidadId = "13", Referencia = "casa blanca",
@@ -2022,7 +2046,7 @@ namespace FiscalApi.Samples.NetFramework
                             NumEstacionId = "EA0418", NombreEstacion = "Los Cabos",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
                             TipoEstacionId = "03",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle2", NumeroExterior = "214", NumeroInterior = "215",
                                 ColoniaId = "0347", LocalidadId = "23", Referencia = "casa negra",
@@ -2123,7 +2147,7 @@ namespace FiscalApi.Samples.NetFramework
                             NumEstacionId = "EA0417", NombreEstacion = "Loreto",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                             TipoEstacionId = "01",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle2", NumeroExterior = "214", NumeroInterior = "215",
                                 ColoniaId = "0347", LocalidadId = "23", Referencia = "casa negra",
@@ -2138,7 +2162,7 @@ namespace FiscalApi.Samples.NetFramework
                             NumRegIdTrib = "01010101", ResidenciaFiscalId = "USA",
                             NumEstacionId = "EA0143", NombreEstacion = "Phoenix-Mesa Gateway",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "ST", NumeroExterior = "12344", ColoniaId = "N/A",
                                 Referencia = "WHITE HOUSE", MunicipioId = "N/A",
@@ -2241,7 +2265,7 @@ namespace FiscalApi.Samples.NetFramework
                             NumEstacionId = "EA0417", NombreEstacion = "Loreto",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                             TipoEstacionId = "01",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "211", NumeroInterior = "212",
                                 ColoniaId = "1957", LocalidadId = "13", Referencia = "casa blanca",
@@ -2256,7 +2280,7 @@ namespace FiscalApi.Samples.NetFramework
                             NumEstacionId = "EA0418", NombreEstacion = "Los Cabos",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
                             TipoEstacionId = "03",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle2", NumeroExterior = "214", NumeroInterior = "215",
                                 ColoniaId = "0347", LocalidadId = "23", Referencia = "casa negra",
@@ -2284,9 +2308,9 @@ namespace FiscalApi.Samples.NetFramework
                             MonedaId = "MXN",
                             TipoMateriaId = "05",
                             DescripcionMateria = "otramateria",
-                            DocumentacionAduanera = new List<DocumentoAduanero>
+                            DocumentacionAduanera = new List<DocumentacionAduanera>
                             {
-                                new DocumentoAduanero
+                                new DocumentacionAduanera
                                 {
                                     TipoDocumentoId = "01",
                                     NumPedimento = "23  43  0472  8000448",
@@ -2362,7 +2386,7 @@ namespace FiscalApi.Samples.NetFramework
                             NavegacionTraficoId = "Altura",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                             TipoEstacionId = "01",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "211", NumeroInterior = "212",
                                 ColoniaId = "1957", LocalidadId = "13", Referencia = "casa blanca",
@@ -2378,7 +2402,7 @@ namespace FiscalApi.Samples.NetFramework
                             NavegacionTraficoId = "Altura",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
                             TipoEstacionId = "03",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle2", NumeroExterior = "214", NumeroInterior = "215",
                                 ColoniaId = "0347", LocalidadId = "23", Referencia = "casa negra",
@@ -2468,7 +2492,7 @@ namespace FiscalApi.Samples.NetFramework
                             {
                                 new ParteTransporte { ParteTransporteId = "PT02" }
                             },
-                            Domicilio = new Domicilio
+                            Domicilio = new TiposFiguraDomicilio
                             {
                                 Calle = "calle", NumeroExterior = "211", ColoniaId = "0814",
                                 LocalidadId = "01", Referencia = "casa blanca",
@@ -2523,7 +2547,7 @@ namespace FiscalApi.Samples.NetFramework
                             NavegacionTraficoId = "Altura",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                             TipoEstacionId = "01",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "211", NumeroInterior = "212",
                                 ColoniaId = "1957", LocalidadId = "13", Referencia = "casa blanca",
@@ -2539,7 +2563,7 @@ namespace FiscalApi.Samples.NetFramework
                             NumEstacionId = "PM120", NombreEstacion = "NombreEstacion",
                             NavegacionTraficoId = "Altura",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "ST", NumeroExterior = "12345", ColoniaId = "N/A",
                                 Referencia = "N/A", MunicipioId = "N/A",
@@ -2631,7 +2655,7 @@ namespace FiscalApi.Samples.NetFramework
                             {
                                 new ParteTransporte { ParteTransporteId = "PT02" }
                             },
-                            Domicilio = new Domicilio
+                            Domicilio = new TiposFiguraDomicilio
                             {
                                 Calle = "calle", NumeroExterior = "211", ColoniaId = "0814",
                                 LocalidadId = "01", Referencia = "casa blanca",
@@ -2687,7 +2711,7 @@ namespace FiscalApi.Samples.NetFramework
                             NavegacionTraficoId = "Altura",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                             TipoEstacionId = "01",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle1", NumeroExterior = "211", NumeroInterior = "212",
                                 ColoniaId = "1957", LocalidadId = "13", Referencia = "casa blanca",
@@ -2703,7 +2727,7 @@ namespace FiscalApi.Samples.NetFramework
                             NavegacionTraficoId = "Altura",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
                             TipoEstacionId = "03",
-                            Domicilio = new Domicilio
+                            Domicilio = new UbicacionDomicilio
                             {
                                 Calle = "Calle2", NumeroExterior = "214", NumeroInterior = "215",
                                 ColoniaId = "0347", LocalidadId = "23", Referencia = "casa negra",
@@ -2731,9 +2755,9 @@ namespace FiscalApi.Samples.NetFramework
                             MonedaId = "MXN",
                             TipoMateriaId = "05",
                             DescripcionMateria = "otramateria",
-                            DocumentacionAduanera = new List<DocumentoAduanero>
+                            DocumentacionAduanera = new List<DocumentacionAduanera>
                             {
-                                new DocumentoAduanero
+                                new DocumentacionAduanera
                                 {
                                     TipoDocumentoId = "01",
                                     NumPedimento = "23  43  0472  8000448",
@@ -2804,7 +2828,7 @@ namespace FiscalApi.Samples.NetFramework
                             {
                                 new ParteTransporte { ParteTransporteId = "PT02" }
                             },
-                            Domicilio = new Domicilio
+                            Domicilio = new TiposFiguraDomicilio
                             {
                                 Calle = "calle", NumeroExterior = "211", ColoniaId = "0814",
                                 LocalidadId = "01", Referencia = "casa blanca",
@@ -2860,7 +2884,7 @@ namespace FiscalApi.Samples.NetFramework
                 {
                     new ParteTransporte { ParteTransporteId = "PT02" }
                 },
-                Domicilio = new Domicilio
+                Domicilio = new TiposFiguraDomicilio
                 {
                     Calle = "calle", NumeroExterior = "211", ColoniaId = "0814",
                     LocalidadId = "01", Referencia = "casa blanca",
@@ -2881,7 +2905,7 @@ namespace FiscalApi.Samples.NetFramework
                     NumEstacionId = "Q0736", NombreEstacion = "SANTO NINO",
                     FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                     TipoEstacionId = "01",
-                    Domicilio = new Domicilio
+                    Domicilio = new UbicacionDomicilio
                     {
                         Calle = "Calle1", NumeroExterior = "211", NumeroInterior = "212",
                         ColoniaId = "1957", LocalidadId = "13", Referencia = "casa blanca",
@@ -2932,7 +2956,7 @@ namespace FiscalApi.Samples.NetFramework
                     NumEstacionId = "JM047", NombreEstacion = "HUEHUETOCA",
                     FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T05:00:01"),
                     TipoEstacionId = "03", DistanciaRecorrida = 100.00m,
-                    Domicilio = new Domicilio
+                    Domicilio = new UbicacionDomicilio
                     {
                         Calle = "Calle2", NumeroExterior = "214", NumeroInterior = "215",
                         ColoniaId = "0347", LocalidadId = "23", Referencia = "casa negra",
@@ -2972,9 +2996,9 @@ namespace FiscalApi.Samples.NetFramework
 
             if (includeDocumentacionAduanera)
             {
-                m.DocumentacionAduanera = new List<DocumentoAduanero>
+                m.DocumentacionAduanera = new List<DocumentacionAduanera>
                 {
-                    new DocumentoAduanero
+                    new DocumentacionAduanera
                     {
                         TipoDocumentoId = "01",
                         NumPedimento = "23  43  0472  8000448",
