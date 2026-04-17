@@ -91,7 +91,7 @@ namespace FiscalApi.Samples.NetFramework
                 FraccionArancelariaId = "6309000100",
                 CantidadTransporta = new List<CantidadTransporta>
                 {
-                    new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                    new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                 }
             };
 
@@ -105,7 +105,7 @@ namespace FiscalApi.Samples.NetFramework
                     {
                         TipoDocumentoId = "01",
                         NumPedimento = "23  43  0472  8000448",
-                        RfcImpo = "EKU9003173C9"
+                        RFCImpo = "EKU9003173C9"
                     }
                 };
             }
@@ -169,8 +169,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Origen",
-                            IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "URE180429TM6",
+                            IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "URE180429TM6",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                             Domicilio = new Domicilio
@@ -183,8 +183,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Destino",
-                            IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "URE180429TM6",
+                            IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "URE180429TM6",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
                             DistanciaRecorrida = 1,
@@ -203,7 +203,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "01",
-                            RfcFigura = "URE180429TM6",
+                            RFCFigura = "URE180429TM6",
                             NumLicencia = "NumLicencia1",
                             NombreFigura = "NombreFigura1",
                             Domicilio = new Domicilio
@@ -258,8 +258,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Origen",
-                            IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "URE180429TM6",
+                            IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "URE180429TM6",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                             Domicilio = new Domicilio
@@ -272,8 +272,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Destino",
-                            IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "URE180429TM6",
+                            IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "URE180429TM6",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
                             DistanciaRecorrida = 1,
@@ -292,7 +292,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "01",
-                            RfcFigura = "URE180429TM6",
+                            RFCFigura = "URE180429TM6",
                             NumLicencia = "NumLicencia1",
                             NombreFigura = "NombreFigura1",
                             Domicilio = new Domicilio
@@ -355,8 +355,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Origen",
-                            IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "XEXX010101000",
+                            IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "XEXX010101000",
                             NumRegIdTrib = "01010101",
                             ResidenciaFiscalId = "USA",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
@@ -365,8 +365,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Destino",
-                            IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "XEXX010101000",
+                            IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "XEXX010101000",
                             NumRegIdTrib = "01010101",
                             ResidenciaFiscalId = "USA",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
@@ -397,7 +397,7 @@ namespace FiscalApi.Samples.NetFramework
                             DescripcionMateria = "otramateria",
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                             }
                         }
                     },
@@ -407,7 +407,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "01",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NumLicencia = "NumLicencia1",
                             NombreFigura = "NombreFigura1",
                             Domicilio = domicilioUSA
@@ -465,8 +465,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Origen",
-                            IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "XEXX010101000",
+                            IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "XEXX010101000",
                             NumRegIdTrib = "01010101",
                             ResidenciaFiscalId = "USA",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
@@ -475,8 +475,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Destino",
-                            IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "XEXX010101000",
+                            IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "XEXX010101000",
                             NumRegIdTrib = "01010101",
                             ResidenciaFiscalId = "USA",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
@@ -491,7 +491,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "01",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NumLicencia = "NumLicencia1",
                             NombreFigura = "NombreFigura1",
                             Domicilio = domicilioUSA
@@ -557,8 +557,8 @@ namespace FiscalApi.Samples.NetFramework
             // Replace last destination with a foreign one
             ubicaciones[ubicaciones.Count - 1] = new Ubicacion
             {
-                TipoUbicacion = "Destino", IdUbicacion = "DE202025",
-                RfcRemitenteDestinatario = "XEXX010101000",
+                TipoUbicacion = "Destino", IDUbicacion = "DE202025",
+                RFCRemitenteDestinatario = "XEXX010101000",
                 NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                 NumRegIdTrib = "01010101", ResidenciaFiscalId = "USA",
                 NumEstacionId = "EF0001", NombreEstacion = "NombreEstacion",
@@ -670,8 +670,8 @@ namespace FiscalApi.Samples.NetFramework
                     {
                         new Ubicacion
                         {
-                            TipoUbicacion = "Origen", IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Origen", IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             NumEstacionId = "EA0417", NombreEstacion = "Loreto",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
@@ -685,8 +685,8 @@ namespace FiscalApi.Samples.NetFramework
                         },
                         new Ubicacion
                         {
-                            TipoUbicacion = "Destino", IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Destino", IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                             NumEstacionId = "EA0418", NombreEstacion = "Los Cabos",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
@@ -719,7 +719,7 @@ namespace FiscalApi.Samples.NetFramework
                             MonedaId = "MXN",
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                             }
                         }
                     },
@@ -733,7 +733,7 @@ namespace FiscalApi.Samples.NetFramework
                         NumeroGuia = "acUbYlBVTmlzx",
                         LugarContrato = "LugarContrato",
                         CodigoTransportistaId = "CA001",
-                        RfcEmbarcador = "EKU9003173C9",
+                        RFCEmbarcador = "EKU9003173C9",
                         NombreEmbarcador = "Embarcador"
                     },
                     TiposFigura = new List<TipoFigura>
@@ -741,7 +741,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "01",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NumLicencia = "a234567890",
                             NombreFigura = "NombreFigura"
                         }
@@ -787,8 +787,8 @@ namespace FiscalApi.Samples.NetFramework
                     {
                         new Ubicacion
                         {
-                            TipoUbicacion = "Origen", IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Origen", IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             NumEstacionId = "EA0417", NombreEstacion = "Loreto",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
@@ -802,8 +802,8 @@ namespace FiscalApi.Samples.NetFramework
                         },
                         new Ubicacion
                         {
-                            TipoUbicacion = "Destino", IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "XEXX010101000",
+                            TipoUbicacion = "Destino", IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "XEXX010101000",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario",
                             NumRegIdTrib = "01010101", ResidenciaFiscalId = "USA",
                             NumEstacionId = "EA0143", NombreEstacion = "Phoenix-Mesa Gateway",
@@ -838,7 +838,7 @@ namespace FiscalApi.Samples.NetFramework
                             DescripcionMateria = "otramateria",
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                             }
                         }
                     },
@@ -852,7 +852,7 @@ namespace FiscalApi.Samples.NetFramework
                         NumeroGuia = "acUbYlBVTmlzx",
                         LugarContrato = "LugarContrato",
                         CodigoTransportistaId = "CA001",
-                        RfcEmbarcador = "EKU9003173C9",
+                        RFCEmbarcador = "EKU9003173C9",
                         NombreEmbarcador = "Embarcador"
                     },
                     TiposFigura = new List<TipoFigura>
@@ -860,7 +860,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "01",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NumLicencia = "a234567890",
                             NombreFigura = "NombreFigura"
                         }
@@ -907,8 +907,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Origen",
-                            IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             NumEstacionId = "EA0417", NombreEstacion = "Loreto",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
@@ -923,8 +923,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Destino",
-                            IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                             NumEstacionId = "EA0418", NombreEstacion = "Los Cabos",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
@@ -959,11 +959,11 @@ namespace FiscalApi.Samples.NetFramework
                             DescripcionMateria = "otramateria",
                             DocumentacionAduanera = new List<DocumentoAduanero>
                             {
-                                new DocumentoAduanero { TipoDocumentoId = "01", NumPedimento = "23  43  0472  8000448", RfcImpo = "EKU9003173C9" }
+                                new DocumentoAduanero { TipoDocumentoId = "01", NumPedimento = "23  43  0472  8000448", RFCImpo = "EKU9003173C9" }
                             },
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                             }
                         }
                     },
@@ -977,7 +977,7 @@ namespace FiscalApi.Samples.NetFramework
                         NumeroGuia = "acUbYlBVTmlzx",
                         LugarContrato = "LugarContrato",
                         CodigoTransportistaId = "CA001",
-                        RfcEmbarcador = "EKU9003173C9",
+                        RFCEmbarcador = "EKU9003173C9",
                         NombreEmbarcador = "Embarcador"
                     },
                     TiposFigura = new List<TipoFigura>
@@ -985,7 +985,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "01",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NumLicencia = "a234567890",
                             NombreFigura = "NombreFigura"
                         }
@@ -1024,8 +1024,8 @@ namespace FiscalApi.Samples.NetFramework
                     {
                         new Ubicacion
                         {
-                            TipoUbicacion = "Origen", IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Origen", IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             NumEstacionId = "PM001", NombreEstacion = "Rosarito",
                             NavegacionTraficoId = "Altura",
@@ -1040,8 +1040,8 @@ namespace FiscalApi.Samples.NetFramework
                         },
                         new Ubicacion
                         {
-                            TipoUbicacion = "Destino", IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Destino", IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                             NumEstacionId = "PM001", NombreEstacion = "Rosarito",
                             NavegacionTraficoId = "Altura",
@@ -1073,7 +1073,7 @@ namespace FiscalApi.Samples.NetFramework
                             PesoEnKg = 1,
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                             },
                             DetalleMercancia = new DetalleMercancia
                             {
@@ -1116,7 +1116,7 @@ namespace FiscalApi.Samples.NetFramework
                                 TipoContenedorId = "CM011",
                                 IdCCPRelacionado = "CCCBCD94-870A-4332-A52A-A52AA52AA52A",
                                 PlacaVMCCP = "JNG7683",
-                                FechaCertificacionCCP = "2024-06-20T11:11:00",
+                                FechaCertificacionCCP = DateTime.Parse("2024-06-20T11:11:00"),
                                 RemolquesCCP = new List<RemolqueCCP>
                                 {
                                     new RemolqueCCP { SubTipoRemCCPId = "CTR001", PlacaCCP = "JNG7636" }
@@ -1129,7 +1129,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "02",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NombreFigura = "NombreFigura",
                             PartesTransporte = new List<ParteTransporte>
                             {
@@ -1184,8 +1184,8 @@ namespace FiscalApi.Samples.NetFramework
                     {
                         new Ubicacion
                         {
-                            TipoUbicacion = "Origen", IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Origen", IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             NumEstacionId = "PM001", NombreEstacion = "Rosarito",
                             NavegacionTraficoId = "Altura",
@@ -1200,8 +1200,8 @@ namespace FiscalApi.Samples.NetFramework
                         },
                         new Ubicacion
                         {
-                            TipoUbicacion = "Destino", IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "XEXX010101000",
+                            TipoUbicacion = "Destino", IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "XEXX010101000",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario",
                             NumRegIdTrib = "01010101", ResidenciaFiscalId = "USA",
                             NumEstacionId = "PM120", NombreEstacion = "NombreEstacion",
@@ -1237,7 +1237,7 @@ namespace FiscalApi.Samples.NetFramework
                             DescripcionMateria = "otramateria",
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                             },
                             DetalleMercancia = new DetalleMercancia
                             {
@@ -1280,7 +1280,7 @@ namespace FiscalApi.Samples.NetFramework
                                 TipoContenedorId = "CM011",
                                 IdCCPRelacionado = "CCCBCD94-870A-4332-A52A-A52AA52AA52A",
                                 PlacaVMCCP = "JNG7683",
-                                FechaCertificacionCCP = "2024-06-20T11:11:00",
+                                FechaCertificacionCCP = DateTime.Parse("2024-06-20T11:11:00"),
                                 RemolquesCCP = new List<RemolqueCCP>
                                 {
                                     new RemolqueCCP { SubTipoRemCCPId = "CTR001", PlacaCCP = "JNG7636" }
@@ -1293,7 +1293,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "02",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NombreFigura = "NombreFigura",
                             PartesTransporte = new List<ParteTransporte>
                             {
@@ -1353,8 +1353,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Origen",
-                            IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             NumEstacionId = "EA0417",
                             NombreEstacion = "Loreto",
@@ -1371,8 +1371,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Destino",
-                            IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                             NumEstacionId = "PM001",
                             NombreEstacion = "Rosarito",
@@ -1416,12 +1416,12 @@ namespace FiscalApi.Samples.NetFramework
                                 {
                                     TipoDocumentoId = "01",
                                     NumPedimento = "23  43  0472  8000448",
-                                    RfcImpo = "EKU9003173C9"
+                                    RFCImpo = "EKU9003173C9"
                                 }
                             },
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020", CvesTransporteId = "02" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020", CvesTransporteId = "02" }
                             },
                             DetalleMercancia = new DetalleMercancia
                             {
@@ -1463,7 +1463,7 @@ namespace FiscalApi.Samples.NetFramework
                                 TipoContenedorId = "CM011",
                                 IdCCPRelacionado = "CCCBCD94-870A-4332-A52A-A52AA52AA52A",
                                 PlacaVMCCP = "JNG7683",
-                                FechaCertificacionCCP = "2024-06-20T11:11:00",
+                                FechaCertificacionCCP = DateTime.Parse("2024-06-20T11:11:00"),
                                 RemolquesCCP = new List<RemolqueCCP>
                                 {
                                     new RemolqueCCP { SubTipoRemCCPId = "CTR001", PlacaCCP = "JNG7636" }
@@ -1481,7 +1481,7 @@ namespace FiscalApi.Samples.NetFramework
                         NumeroGuia = "acUbYlBVTmlzx",
                         LugarContrato = "LugarContrato",
                         CodigoTransportistaId = "CA001",
-                        RfcEmbarcador = "EKU9003173C9",
+                        RFCEmbarcador = "EKU9003173C9",
                         NombreEmbarcador = "Embarcador"
                     },
                     TiposFigura = new List<TipoFigura>
@@ -1489,7 +1489,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "01",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NumLicencia = "NumLicencia1",
                             NombreFigura = "NombreFigura1",
                             Domicilio = new Domicilio
@@ -1538,8 +1538,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Origen",
-                            IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
                             Domicilio = new Domicilio
@@ -1552,8 +1552,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Destino",
-                            IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
                             DistanciaRecorrida = 1,
@@ -1583,7 +1583,7 @@ namespace FiscalApi.Samples.NetFramework
                             PesoEnKg = 1,
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                             }
                         }
                     },
@@ -1593,7 +1593,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "01",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NumLicencia = "a234567890",
                             NombreFigura = "NombreFigura"
                         }
@@ -1650,8 +1650,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Origen",
-                            IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "XEXX010101000",
+                            IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "XEXX010101000",
                             NumRegIdTrib = "01010101",
                             ResidenciaFiscalId = "USA",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
@@ -1660,8 +1660,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Destino",
-                            IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "XEXX010101000",
+                            IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "XEXX010101000",
                             NumRegIdTrib = "01010101",
                             ResidenciaFiscalId = "USA",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
@@ -1692,7 +1692,7 @@ namespace FiscalApi.Samples.NetFramework
                             DescripcionMateria = "otramateria",
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                             }
                         }
                     },
@@ -1702,7 +1702,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "01",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NumLicencia = "NumLicencia1",
                             NombreFigura = "NombreFigura1",
                             Domicilio = domicilioUSA
@@ -1760,8 +1760,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Origen",
-                            IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "XEXX010101000",
+                            IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "XEXX010101000",
                             NumRegIdTrib = "01010101",
                             ResidenciaFiscalId = "USA",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
@@ -1770,8 +1770,8 @@ namespace FiscalApi.Samples.NetFramework
                         new Ubicacion
                         {
                             TipoUbicacion = "Destino",
-                            IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "XEXX010101000",
+                            IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "XEXX010101000",
                             NumRegIdTrib = "01010101",
                             ResidenciaFiscalId = "USA",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
@@ -1806,12 +1806,12 @@ namespace FiscalApi.Samples.NetFramework
                                 {
                                     TipoDocumentoId = "01",
                                     NumPedimento = "23  43  0472  8000448",
-                                    RfcImpo = "EKU9003173C9"
+                                    RFCImpo = "EKU9003173C9"
                                 }
                             },
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                             }
                         }
                     },
@@ -1821,7 +1821,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "01",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NumLicencia = "NumLicencia1",
                             NombreFigura = "NombreFigura1",
                             Domicilio = domicilioUSA
@@ -1889,8 +1889,8 @@ namespace FiscalApi.Samples.NetFramework
             // Replace last destination with a foreign one
             ubicaciones[ubicaciones.Count - 1] = new Ubicacion
             {
-                TipoUbicacion = "Destino", IdUbicacion = "DE202025",
-                RfcRemitenteDestinatario = "XEXX010101000",
+                TipoUbicacion = "Destino", IDUbicacion = "DE202025",
+                RFCRemitenteDestinatario = "XEXX010101000",
                 NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                 NumRegIdTrib = "01010101", ResidenciaFiscalId = "USA",
                 NumEstacionId = "EF0001", NombreEstacion = "NombreEstacion",
@@ -2001,8 +2001,8 @@ namespace FiscalApi.Samples.NetFramework
                     {
                         new Ubicacion
                         {
-                            TipoUbicacion = "Origen", IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Origen", IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             NumEstacionId = "EA0417", NombreEstacion = "Loreto",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
@@ -2016,8 +2016,8 @@ namespace FiscalApi.Samples.NetFramework
                         },
                         new Ubicacion
                         {
-                            TipoUbicacion = "Destino", IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Destino", IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                             NumEstacionId = "EA0418", NombreEstacion = "Los Cabos",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
@@ -2050,7 +2050,7 @@ namespace FiscalApi.Samples.NetFramework
                             MonedaId = "MXN",
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                             }
                         }
                     },
@@ -2064,7 +2064,7 @@ namespace FiscalApi.Samples.NetFramework
                         NumeroGuia = "acUbYlBVTmlzx",
                         LugarContrato = "LugarContrato",
                         CodigoTransportistaId = "CA001",
-                        RfcEmbarcador = "EKU9003173C9",
+                        RFCEmbarcador = "EKU9003173C9",
                         NombreEmbarcador = "Embarcador"
                     },
                     TiposFigura = new List<TipoFigura>
@@ -2072,7 +2072,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "01",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NumLicencia = "a234567890",
                             NombreFigura = "NombreFigura"
                         }
@@ -2117,8 +2117,8 @@ namespace FiscalApi.Samples.NetFramework
                     {
                         new Ubicacion
                         {
-                            TipoUbicacion = "Origen", IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Origen", IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             NumEstacionId = "EA0417", NombreEstacion = "Loreto",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
@@ -2132,8 +2132,8 @@ namespace FiscalApi.Samples.NetFramework
                         },
                         new Ubicacion
                         {
-                            TipoUbicacion = "Destino", IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "XEXX010101000",
+                            TipoUbicacion = "Destino", IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "XEXX010101000",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario",
                             NumRegIdTrib = "01010101", ResidenciaFiscalId = "USA",
                             NumEstacionId = "EA0143", NombreEstacion = "Phoenix-Mesa Gateway",
@@ -2168,7 +2168,7 @@ namespace FiscalApi.Samples.NetFramework
                             DescripcionMateria = "otramateria",
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                             }
                         }
                     },
@@ -2182,7 +2182,7 @@ namespace FiscalApi.Samples.NetFramework
                         NumeroGuia = "acUbYlBVTmlzx",
                         LugarContrato = "LugarContrato",
                         CodigoTransportistaId = "CA001",
-                        RfcEmbarcador = "EKU9003173C9",
+                        RFCEmbarcador = "EKU9003173C9",
                         NombreEmbarcador = "Embarcador"
                     },
                     TiposFigura = new List<TipoFigura>
@@ -2190,7 +2190,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "01",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NumLicencia = "a234567890",
                             NombreFigura = "NombreFigura"
                         }
@@ -2235,8 +2235,8 @@ namespace FiscalApi.Samples.NetFramework
                     {
                         new Ubicacion
                         {
-                            TipoUbicacion = "Origen", IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Origen", IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             NumEstacionId = "EA0417", NombreEstacion = "Loreto",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
@@ -2250,8 +2250,8 @@ namespace FiscalApi.Samples.NetFramework
                         },
                         new Ubicacion
                         {
-                            TipoUbicacion = "Destino", IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Destino", IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                             NumEstacionId = "EA0418", NombreEstacion = "Los Cabos",
                             FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:01"),
@@ -2290,12 +2290,12 @@ namespace FiscalApi.Samples.NetFramework
                                 {
                                     TipoDocumentoId = "01",
                                     NumPedimento = "23  43  0472  8000448",
-                                    RfcImpo = "EKU9003173C9"
+                                    RFCImpo = "EKU9003173C9"
                                 }
                             },
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                             }
                         }
                     },
@@ -2309,7 +2309,7 @@ namespace FiscalApi.Samples.NetFramework
                         NumeroGuia = "acUbYlBVTmlzx",
                         LugarContrato = "LugarContrato",
                         CodigoTransportistaId = "CA001",
-                        RfcEmbarcador = "EKU9003173C9",
+                        RFCEmbarcador = "EKU9003173C9",
                         NombreEmbarcador = "Embarcador"
                     },
                     TiposFigura = new List<TipoFigura>
@@ -2317,7 +2317,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "01",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NumLicencia = "a234567890",
                             NombreFigura = "NombreFigura"
                         }
@@ -2355,8 +2355,8 @@ namespace FiscalApi.Samples.NetFramework
                     {
                         new Ubicacion
                         {
-                            TipoUbicacion = "Origen", IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Origen", IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             NumEstacionId = "PM001", NombreEstacion = "Rosarito",
                             NavegacionTraficoId = "Altura",
@@ -2371,8 +2371,8 @@ namespace FiscalApi.Samples.NetFramework
                         },
                         new Ubicacion
                         {
-                            TipoUbicacion = "Destino", IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Destino", IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                             NumEstacionId = "PM001", NombreEstacion = "Rosarito",
                             NavegacionTraficoId = "Altura",
@@ -2406,7 +2406,7 @@ namespace FiscalApi.Samples.NetFramework
                             MonedaId = "MXN",
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                             },
                             DetalleMercancia = new DetalleMercancia
                             {
@@ -2449,7 +2449,7 @@ namespace FiscalApi.Samples.NetFramework
                                 TipoContenedorId = "CM011",
                                 IdCCPRelacionado = "CCCBCD94-870A-4332-A52A-A52AA52AA52A",
                                 PlacaVMCCP = "JNG7683",
-                                FechaCertificacionCCP = "2024-06-20T11:11:00",
+                                FechaCertificacionCCP = DateTime.Parse("2024-06-20T11:11:00"),
                                 RemolquesCCP = new List<RemolqueCCP>
                                 {
                                     new RemolqueCCP { SubTipoRemCCPId = "CTR001", PlacaCCP = "JNG7636" }
@@ -2462,7 +2462,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "02",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NombreFigura = "NombreFigura",
                             PartesTransporte = new List<ParteTransporte>
                             {
@@ -2516,8 +2516,8 @@ namespace FiscalApi.Samples.NetFramework
                     {
                         new Ubicacion
                         {
-                            TipoUbicacion = "Origen", IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Origen", IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             NumEstacionId = "PM001", NombreEstacion = "Rosarito",
                             NavegacionTraficoId = "Altura",
@@ -2532,8 +2532,8 @@ namespace FiscalApi.Samples.NetFramework
                         },
                         new Ubicacion
                         {
-                            TipoUbicacion = "Destino", IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "XEXX010101000",
+                            TipoUbicacion = "Destino", IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "XEXX010101000",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                             NumRegIdTrib = "01010101", ResidenciaFiscalId = "USA",
                             NumEstacionId = "PM120", NombreEstacion = "NombreEstacion",
@@ -2569,7 +2569,7 @@ namespace FiscalApi.Samples.NetFramework
                             DescripcionMateria = "otramateria",
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                             },
                             DetalleMercancia = new DetalleMercancia
                             {
@@ -2612,7 +2612,7 @@ namespace FiscalApi.Samples.NetFramework
                                 TipoContenedorId = "CM011",
                                 IdCCPRelacionado = "CCCBCD94-870A-4332-A52A-A52AA52AA52A",
                                 PlacaVMCCP = "JNG7683",
-                                FechaCertificacionCCP = "2024-06-20T11:11:00",
+                                FechaCertificacionCCP = DateTime.Parse("2024-06-20T11:11:00"),
                                 RemolquesCCP = new List<RemolqueCCP>
                                 {
                                     new RemolqueCCP { SubTipoRemCCPId = "CTR001", PlacaCCP = "JNG7636" }
@@ -2625,7 +2625,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "02",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NombreFigura = "NombreFigura",
                             PartesTransporte = new List<ParteTransporte>
                             {
@@ -2680,8 +2680,8 @@ namespace FiscalApi.Samples.NetFramework
                     {
                         new Ubicacion
                         {
-                            TipoUbicacion = "Origen", IdUbicacion = "OR101010",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Origen", IDUbicacion = "OR101010",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                             NumEstacionId = "PM001", NombreEstacion = "Rosarito",
                             NavegacionTraficoId = "Altura",
@@ -2696,8 +2696,8 @@ namespace FiscalApi.Samples.NetFramework
                         },
                         new Ubicacion
                         {
-                            TipoUbicacion = "Destino", IdUbicacion = "DE202020",
-                            RfcRemitenteDestinatario = "EKU9003173C9",
+                            TipoUbicacion = "Destino", IDUbicacion = "DE202020",
+                            RFCRemitenteDestinatario = "EKU9003173C9",
                             NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                             NumEstacionId = "PM001", NombreEstacion = "Rosarito",
                             NavegacionTraficoId = "Altura",
@@ -2737,12 +2737,12 @@ namespace FiscalApi.Samples.NetFramework
                                 {
                                     TipoDocumentoId = "01",
                                     NumPedimento = "23  43  0472  8000448",
-                                    RfcImpo = "EKU9003173C9"
+                                    RFCImpo = "EKU9003173C9"
                                 }
                             },
                             CantidadTransporta = new List<CantidadTransporta>
                             {
-                                new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202020" }
+                                new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202020" }
                             },
                             DetalleMercancia = new DetalleMercancia
                             {
@@ -2785,7 +2785,7 @@ namespace FiscalApi.Samples.NetFramework
                                 TipoContenedorId = "CM011",
                                 IdCCPRelacionado = "CCCBCD94-870A-4332-A52A-A52AA52AA52A",
                                 PlacaVMCCP = "JNG7683",
-                                FechaCertificacionCCP = "2024-06-20T11:11:00",
+                                FechaCertificacionCCP = DateTime.Parse("2024-06-20T11:11:00"),
                                 RemolquesCCP = new List<RemolqueCCP>
                                 {
                                     new RemolqueCCP { SubTipoRemCCPId = "CTR001", PlacaCCP = "JNG7636" }
@@ -2798,7 +2798,7 @@ namespace FiscalApi.Samples.NetFramework
                         new TipoFigura
                         {
                             TipoFiguraId = "02",
-                            RfcFigura = "EKU9003173C9",
+                            RFCFigura = "EKU9003173C9",
                             NombreFigura = "NombreFigura",
                             PartesTransporte = new List<ParteTransporte>
                             {
@@ -2854,7 +2854,7 @@ namespace FiscalApi.Samples.NetFramework
             return new TipoFigura
             {
                 TipoFiguraId = "02",
-                RfcFigura = "EKU9003173C9",
+                RFCFigura = "EKU9003173C9",
                 NombreFigura = "NombreFigura",
                 PartesTransporte = new List<ParteTransporte>
                 {
@@ -2875,8 +2875,8 @@ namespace FiscalApi.Samples.NetFramework
             {
                 new Ubicacion
                 {
-                    TipoUbicacion = "Origen", IdUbicacion = "OR101010",
-                    RfcRemitenteDestinatario = "EKU9003173C9",
+                    TipoUbicacion = "Origen", IDUbicacion = "OR101010",
+                    RFCRemitenteDestinatario = "EKU9003173C9",
                     NombreRemitenteDestinatario = "NombreRemitenteDestinatario1",
                     NumEstacionId = "Q0736", NombreEstacion = "SANTO NINO",
                     FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T00:00:00"),
@@ -2890,8 +2890,8 @@ namespace FiscalApi.Samples.NetFramework
                 },
                 new Ubicacion
                 {
-                    TipoUbicacion = "Destino", IdUbicacion = "DE202021",
-                    RfcRemitenteDestinatario = "EKU9003173C9",
+                    TipoUbicacion = "Destino", IDUbicacion = "DE202021",
+                    RFCRemitenteDestinatario = "EKU9003173C9",
                     NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                     NumEstacionId = "SC283", NombreEstacion = "HUAXTITLA",
                     FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T01:00:01"),
@@ -2899,8 +2899,8 @@ namespace FiscalApi.Samples.NetFramework
                 },
                 new Ubicacion
                 {
-                    TipoUbicacion = "Destino", IdUbicacion = "DE202022",
-                    RfcRemitenteDestinatario = "EKU9003173C9",
+                    TipoUbicacion = "Destino", IDUbicacion = "DE202022",
+                    RFCRemitenteDestinatario = "EKU9003173C9",
                     NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                     NumEstacionId = "TG0", NombreEstacion = "NAVOJOA",
                     FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T02:00:01"),
@@ -2908,8 +2908,8 @@ namespace FiscalApi.Samples.NetFramework
                 },
                 new Ubicacion
                 {
-                    TipoUbicacion = "Destino", IdUbicacion = "DE202023",
-                    RfcRemitenteDestinatario = "EKU9003173C9",
+                    TipoUbicacion = "Destino", IDUbicacion = "DE202023",
+                    RFCRemitenteDestinatario = "EKU9003173C9",
                     NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                     NumEstacionId = "E0029", NombreEstacion = "TRES JAGUEYES",
                     FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T03:00:01"),
@@ -2917,8 +2917,8 @@ namespace FiscalApi.Samples.NetFramework
                 },
                 new Ubicacion
                 {
-                    TipoUbicacion = "Destino", IdUbicacion = "DE202024",
-                    RfcRemitenteDestinatario = "EKU9003173C9",
+                    TipoUbicacion = "Destino", IDUbicacion = "DE202024",
+                    RFCRemitenteDestinatario = "EKU9003173C9",
                     NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                     NumEstacionId = "TI032", NombreEstacion = "NAVOLATO",
                     FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T04:00:01"),
@@ -2926,8 +2926,8 @@ namespace FiscalApi.Samples.NetFramework
                 },
                 new Ubicacion
                 {
-                    TipoUbicacion = "Destino", IdUbicacion = "DE202025",
-                    RfcRemitenteDestinatario = "EKU9003173C9",
+                    TipoUbicacion = "Destino", IDUbicacion = "DE202025",
+                    RFCRemitenteDestinatario = "EKU9003173C9",
                     NombreRemitenteDestinatario = "NombreRemitenteDestinatario2",
                     NumEstacionId = "JM047", NombreEstacion = "HUEHUETOCA",
                     FechaHoraSalidaLlegada = DateTime.Parse("2023-08-01T05:00:01"),
@@ -2960,7 +2960,7 @@ namespace FiscalApi.Samples.NetFramework
                 PesoEnKg = 1,
                 CantidadTransporta = new List<CantidadTransporta>
                 {
-                    new CantidadTransporta { Cantidad = 1, IdOrigen = "OR101010", IdDestino = "DE202025" }
+                    new CantidadTransporta { Cantidad = 1, IDOrigen = "OR101010", IDDestino = "DE202025" }
                 }
             };
 
@@ -2978,7 +2978,7 @@ namespace FiscalApi.Samples.NetFramework
                     {
                         TipoDocumentoId = "01",
                         NumPedimento = "23  43  0472  8000448",
-                        RfcImpo = "EKU9003173C9"
+                        RFCImpo = "EKU9003173C9"
                     }
                 };
             }
