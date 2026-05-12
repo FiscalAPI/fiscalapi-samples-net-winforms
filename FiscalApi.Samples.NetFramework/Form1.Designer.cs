@@ -69,21 +69,6 @@
             this.CertDefaultRefs = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.BuscarSolicitud = new System.Windows.Forms.Button();
@@ -106,8 +91,23 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.ListarDownloadCatalogo = new System.Windows.Forms.Button();
             this.ListarDownloadCatalogos = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.FirmarButton = new System.Windows.Forms.Button();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -115,22 +115,22 @@
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.groupBox13.SuspendLayout();
-            this.groupBox12.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.groupBox14.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            this.groupBox12.SuspendLayout();
             this.SuspendLayout();
             // 
             // ObtenerFacturaById
             // 
             this.ObtenerFacturaById.Location = new System.Drawing.Point(10, 242);
-            this.ObtenerFacturaById.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ObtenerFacturaById.Margin = new System.Windows.Forms.Padding(6);
             this.ObtenerFacturaById.Name = "ObtenerFacturaById";
             this.ObtenerFacturaById.Size = new System.Drawing.Size(220, 94);
             this.ObtenerFacturaById.TabIndex = 0;
@@ -141,7 +141,7 @@
             // ObtenerFacturaXMLById
             // 
             this.ObtenerFacturaXMLById.Location = new System.Drawing.Point(243, 138);
-            this.ObtenerFacturaXMLById.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ObtenerFacturaXMLById.Margin = new System.Windows.Forms.Padding(6);
             this.ObtenerFacturaXMLById.Name = "ObtenerFacturaXMLById";
             this.ObtenerFacturaXMLById.Size = new System.Drawing.Size(220, 94);
             this.ObtenerFacturaXMLById.TabIndex = 11;
@@ -157,9 +157,9 @@
             this.groupBox2.Controls.Add(this.ObtenerFacturaById);
             this.groupBox2.Controls.Add(this.ObtenerFacturaXMLById);
             this.groupBox2.Location = new System.Drawing.Point(6, 12);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox2.Size = new System.Drawing.Size(480, 348);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
@@ -190,7 +190,7 @@
             // ObtenerListaPaginadaInvoices
             // 
             this.ObtenerListaPaginadaInvoices.Location = new System.Drawing.Point(243, 36);
-            this.ObtenerListaPaginadaInvoices.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ObtenerListaPaginadaInvoices.Margin = new System.Windows.Forms.Padding(6);
             this.ObtenerListaPaginadaInvoices.Name = "ObtenerListaPaginadaInvoices";
             this.ObtenerListaPaginadaInvoices.Size = new System.Drawing.Size(220, 94);
             this.ObtenerListaPaginadaInvoices.TabIndex = 14;
@@ -208,9 +208,9 @@
             this.groupBox1.Controls.Add(this.CrearPersona);
             this.groupBox1.Controls.Add(this.ObtenerPersonaPorID);
             this.groupBox1.Location = new System.Drawing.Point(6, 506);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox1.Size = new System.Drawing.Size(480, 491);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
@@ -219,7 +219,7 @@
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(10, 166);
-            this.button8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button8.Margin = new System.Windows.Forms.Padding(6);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(220, 94);
             this.button8.TabIndex = 12;
@@ -230,7 +230,7 @@
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(12, 62);
-            this.button7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button7.Margin = new System.Windows.Forms.Padding(6);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(220, 94);
             this.button7.TabIndex = 11;
@@ -241,7 +241,7 @@
             // ObtenerListaPaginada
             // 
             this.ObtenerListaPaginada.Location = new System.Drawing.Point(10, 272);
-            this.ObtenerListaPaginada.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ObtenerListaPaginada.Margin = new System.Windows.Forms.Padding(6);
             this.ObtenerListaPaginada.Name = "ObtenerListaPaginada";
             this.ObtenerListaPaginada.Size = new System.Drawing.Size(220, 94);
             this.ObtenerListaPaginada.TabIndex = 5;
@@ -252,7 +252,7 @@
             // BorrarPersona
             // 
             this.BorrarPersona.Location = new System.Drawing.Point(243, 272);
-            this.BorrarPersona.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.BorrarPersona.Margin = new System.Windows.Forms.Padding(6);
             this.BorrarPersona.Name = "BorrarPersona";
             this.BorrarPersona.Size = new System.Drawing.Size(220, 94);
             this.BorrarPersona.TabIndex = 4;
@@ -263,7 +263,7 @@
             // ActualizarPersona
             // 
             this.ActualizarPersona.Location = new System.Drawing.Point(243, 62);
-            this.ActualizarPersona.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ActualizarPersona.Margin = new System.Windows.Forms.Padding(6);
             this.ActualizarPersona.Name = "ActualizarPersona";
             this.ActualizarPersona.Size = new System.Drawing.Size(220, 94);
             this.ActualizarPersona.TabIndex = 3;
@@ -274,7 +274,7 @@
             // CrearPersona
             // 
             this.CrearPersona.Location = new System.Drawing.Point(243, 166);
-            this.CrearPersona.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CrearPersona.Margin = new System.Windows.Forms.Padding(6);
             this.CrearPersona.Name = "CrearPersona";
             this.CrearPersona.Size = new System.Drawing.Size(220, 94);
             this.CrearPersona.TabIndex = 2;
@@ -285,7 +285,7 @@
             // ObtenerPersonaPorID
             // 
             this.ObtenerPersonaPorID.Location = new System.Drawing.Point(10, 378);
-            this.ObtenerPersonaPorID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ObtenerPersonaPorID.Margin = new System.Windows.Forms.Padding(6);
             this.ObtenerPersonaPorID.Name = "ObtenerPersonaPorID";
             this.ObtenerPersonaPorID.Size = new System.Drawing.Size(220, 94);
             this.ObtenerPersonaPorID.TabIndex = 1;
@@ -296,7 +296,7 @@
             // EliEliminaCertificado
             // 
             this.EliEliminaCertificado.Location = new System.Drawing.Point(291, 142);
-            this.EliEliminaCertificado.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.EliEliminaCertificado.Margin = new System.Windows.Forms.Padding(6);
             this.EliEliminaCertificado.Name = "EliEliminaCertificado";
             this.EliEliminaCertificado.Size = new System.Drawing.Size(220, 94);
             this.EliEliminaCertificado.TabIndex = 8;
@@ -307,7 +307,7 @@
             // ObtenerCertificadoById
             // 
             this.ObtenerCertificadoById.Location = new System.Drawing.Point(10, 142);
-            this.ObtenerCertificadoById.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ObtenerCertificadoById.Margin = new System.Windows.Forms.Padding(6);
             this.ObtenerCertificadoById.Name = "ObtenerCertificadoById";
             this.ObtenerCertificadoById.Size = new System.Drawing.Size(220, 94);
             this.ObtenerCertificadoById.TabIndex = 7;
@@ -318,7 +318,7 @@
             // CargarCertificados
             // 
             this.CargarCertificados.Location = new System.Drawing.Point(291, 36);
-            this.CargarCertificados.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CargarCertificados.Margin = new System.Windows.Forms.Padding(6);
             this.CargarCertificados.Name = "CargarCertificados";
             this.CargarCertificados.Size = new System.Drawing.Size(220, 94);
             this.CargarCertificados.TabIndex = 6;
@@ -336,9 +336,9 @@
             this.groupBox3.Controls.Add(this.CrearProducto);
             this.groupBox3.Controls.Add(this.ObtenerProductoById);
             this.groupBox3.Location = new System.Drawing.Point(501, 771);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox3.Size = new System.Drawing.Size(560, 484);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
@@ -348,7 +348,7 @@
             // 
             this.ActualizarImpuestosProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ActualizarImpuestosProducto.Location = new System.Drawing.Point(298, 244);
-            this.ActualizarImpuestosProducto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ActualizarImpuestosProducto.Margin = new System.Windows.Forms.Padding(6);
             this.ActualizarImpuestosProducto.Name = "ActualizarImpuestosProducto";
             this.ActualizarImpuestosProducto.Size = new System.Drawing.Size(220, 94);
             this.ActualizarImpuestosProducto.TabIndex = 12;
@@ -360,7 +360,7 @@
             // 
             this.ObtenerImpuestosProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ObtenerImpuestosProducto.Location = new System.Drawing.Point(18, 244);
-            this.ObtenerImpuestosProducto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ObtenerImpuestosProducto.Margin = new System.Windows.Forms.Padding(6);
             this.ObtenerImpuestosProducto.Name = "ObtenerImpuestosProducto";
             this.ObtenerImpuestosProducto.Size = new System.Drawing.Size(220, 94);
             this.ObtenerImpuestosProducto.TabIndex = 11;
@@ -372,7 +372,7 @@
             // 
             this.ObtenerProductosPagedList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ObtenerProductosPagedList.Location = new System.Drawing.Point(18, 33);
-            this.ObtenerProductosPagedList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ObtenerProductosPagedList.Margin = new System.Windows.Forms.Padding(6);
             this.ObtenerProductosPagedList.Name = "ObtenerProductosPagedList";
             this.ObtenerProductosPagedList.Size = new System.Drawing.Size(220, 94);
             this.ObtenerProductosPagedList.TabIndex = 10;
@@ -384,7 +384,7 @@
             // 
             this.BorrarProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BorrarProducto.Location = new System.Drawing.Point(298, 138);
-            this.BorrarProducto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.BorrarProducto.Margin = new System.Windows.Forms.Padding(6);
             this.BorrarProducto.Name = "BorrarProducto";
             this.BorrarProducto.Size = new System.Drawing.Size(220, 94);
             this.BorrarProducto.TabIndex = 9;
@@ -396,7 +396,7 @@
             // 
             this.ActualizarProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ActualizarProducto.Location = new System.Drawing.Point(298, 34);
-            this.ActualizarProducto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ActualizarProducto.Margin = new System.Windows.Forms.Padding(6);
             this.ActualizarProducto.Name = "ActualizarProducto";
             this.ActualizarProducto.Size = new System.Drawing.Size(220, 94);
             this.ActualizarProducto.TabIndex = 8;
@@ -408,7 +408,7 @@
             // 
             this.CrearProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CrearProducto.Location = new System.Drawing.Point(20, 350);
-            this.CrearProducto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CrearProducto.Margin = new System.Windows.Forms.Padding(6);
             this.CrearProducto.Name = "CrearProducto";
             this.CrearProducto.Size = new System.Drawing.Size(220, 94);
             this.CrearProducto.TabIndex = 7;
@@ -420,7 +420,7 @@
             // 
             this.ObtenerProductoById.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ObtenerProductoById.Location = new System.Drawing.Point(18, 138);
-            this.ObtenerProductoById.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ObtenerProductoById.Margin = new System.Windows.Forms.Padding(6);
             this.ObtenerProductoById.Name = "ObtenerProductoById";
             this.ObtenerProductoById.Size = new System.Drawing.Size(220, 94);
             this.ObtenerProductoById.TabIndex = 6;
@@ -436,9 +436,9 @@
             this.groupBox4.Controls.Add(this.CrearApikey);
             this.groupBox4.Controls.Add(this.ObtenerApikeyByID);
             this.groupBox4.Location = new System.Drawing.Point(1068, 533);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox4.Size = new System.Drawing.Size(272, 722);
             this.groupBox4.TabIndex = 19;
             this.groupBox4.TabStop = false;
@@ -447,7 +447,7 @@
             // UpdateApiKey
             // 
             this.UpdateApiKey.Location = new System.Drawing.Point(10, 461);
-            this.UpdateApiKey.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.UpdateApiKey.Margin = new System.Windows.Forms.Padding(6);
             this.UpdateApiKey.Name = "UpdateApiKey";
             this.UpdateApiKey.Size = new System.Drawing.Size(220, 94);
             this.UpdateApiKey.TabIndex = 18;
@@ -458,7 +458,7 @@
             // ObtenerPagedListApikeys
             // 
             this.ObtenerPagedListApikeys.Location = new System.Drawing.Point(10, 355);
-            this.ObtenerPagedListApikeys.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ObtenerPagedListApikeys.Margin = new System.Windows.Forms.Padding(6);
             this.ObtenerPagedListApikeys.Name = "ObtenerPagedListApikeys";
             this.ObtenerPagedListApikeys.Size = new System.Drawing.Size(220, 94);
             this.ObtenerPagedListApikeys.TabIndex = 17;
@@ -469,7 +469,7 @@
             // RevocaApikey
             // 
             this.RevocaApikey.Location = new System.Drawing.Point(10, 248);
-            this.RevocaApikey.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.RevocaApikey.Margin = new System.Windows.Forms.Padding(6);
             this.RevocaApikey.Name = "RevocaApikey";
             this.RevocaApikey.Size = new System.Drawing.Size(220, 94);
             this.RevocaApikey.TabIndex = 15;
@@ -480,7 +480,7 @@
             // CrearApikey
             // 
             this.CrearApikey.Location = new System.Drawing.Point(10, 142);
-            this.CrearApikey.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CrearApikey.Margin = new System.Windows.Forms.Padding(6);
             this.CrearApikey.Name = "CrearApikey";
             this.CrearApikey.Size = new System.Drawing.Size(220, 94);
             this.CrearApikey.TabIndex = 14;
@@ -491,7 +491,7 @@
             // ObtenerApikeyByID
             // 
             this.ObtenerApikeyByID.Location = new System.Drawing.Point(10, 36);
-            this.ObtenerApikeyByID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ObtenerApikeyByID.Margin = new System.Windows.Forms.Padding(6);
             this.ObtenerApikeyByID.Name = "ObtenerApikeyByID";
             this.ObtenerApikeyByID.Size = new System.Drawing.Size(220, 94);
             this.ObtenerApikeyByID.TabIndex = 13;
@@ -507,9 +507,9 @@
             this.groupBox5.Controls.Add(this.BuscarCodigoUnidad);
             this.groupBox5.Controls.Add(this.BuscarCodigoProductoServicio);
             this.groupBox5.Location = new System.Drawing.Point(498, 12);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox5.Size = new System.Drawing.Size(560, 348);
             this.groupBox5.TabIndex = 20;
             this.groupBox5.TabStop = false;
@@ -518,7 +518,7 @@
             // ObtenerCatalogRecordPorId
             // 
             this.ObtenerCatalogRecordPorId.Location = new System.Drawing.Point(291, 138);
-            this.ObtenerCatalogRecordPorId.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ObtenerCatalogRecordPorId.Margin = new System.Windows.Forms.Padding(6);
             this.ObtenerCatalogRecordPorId.Name = "ObtenerCatalogRecordPorId";
             this.ObtenerCatalogRecordPorId.Size = new System.Drawing.Size(220, 94);
             this.ObtenerCatalogRecordPorId.TabIndex = 19;
@@ -529,7 +529,7 @@
             // ObtenerCatalogosDisponibles
             // 
             this.ObtenerCatalogosDisponibles.Location = new System.Drawing.Point(10, 244);
-            this.ObtenerCatalogosDisponibles.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ObtenerCatalogosDisponibles.Margin = new System.Windows.Forms.Padding(6);
             this.ObtenerCatalogosDisponibles.Name = "ObtenerCatalogosDisponibles";
             this.ObtenerCatalogosDisponibles.Size = new System.Drawing.Size(220, 94);
             this.ObtenerCatalogosDisponibles.TabIndex = 18;
@@ -540,7 +540,7 @@
             // BuscarCatalogo
             // 
             this.BuscarCatalogo.Location = new System.Drawing.Point(291, 33);
-            this.BuscarCatalogo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.BuscarCatalogo.Margin = new System.Windows.Forms.Padding(6);
             this.BuscarCatalogo.Name = "BuscarCatalogo";
             this.BuscarCatalogo.Size = new System.Drawing.Size(220, 94);
             this.BuscarCatalogo.TabIndex = 17;
@@ -551,7 +551,7 @@
             // BuscarCodigoUnidad
             // 
             this.BuscarCodigoUnidad.Location = new System.Drawing.Point(10, 138);
-            this.BuscarCodigoUnidad.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.BuscarCodigoUnidad.Margin = new System.Windows.Forms.Padding(6);
             this.BuscarCodigoUnidad.Name = "BuscarCodigoUnidad";
             this.BuscarCodigoUnidad.Size = new System.Drawing.Size(220, 94);
             this.BuscarCodigoUnidad.TabIndex = 14;
@@ -562,7 +562,7 @@
             // BuscarCodigoProductoServicio
             // 
             this.BuscarCodigoProductoServicio.Location = new System.Drawing.Point(10, 33);
-            this.BuscarCodigoProductoServicio.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.BuscarCodigoProductoServicio.Margin = new System.Windows.Forms.Padding(6);
             this.BuscarCodigoProductoServicio.Name = "BuscarCodigoProductoServicio";
             this.BuscarCodigoProductoServicio.Size = new System.Drawing.Size(220, 94);
             this.BuscarCodigoProductoServicio.TabIndex = 13;
@@ -578,9 +578,9 @@
             this.groupBox6.Controls.Add(this.ObtenerCertificadoById);
             this.groupBox6.Controls.Add(this.EliEliminaCertificado);
             this.groupBox6.Location = new System.Drawing.Point(498, 375);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox6.Size = new System.Drawing.Size(560, 383);
             this.groupBox6.TabIndex = 21;
             this.groupBox6.TabStop = false;
@@ -589,7 +589,7 @@
             // CertDefaultRefs
             // 
             this.CertDefaultRefs.Location = new System.Drawing.Point(12, 255);
-            this.CertDefaultRefs.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CertDefaultRefs.Margin = new System.Windows.Forms.Padding(6);
             this.CertDefaultRefs.Name = "CertDefaultRefs";
             this.CertDefaultRefs.Size = new System.Drawing.Size(220, 94);
             this.CertDefaultRefs.TabIndex = 11;
@@ -600,7 +600,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(10, 36);
-            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button2.Margin = new System.Windows.Forms.Padding(6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(220, 94);
             this.button2.TabIndex = 10;
@@ -614,11 +614,274 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1959, 1325);
             this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox9);
+            this.tabPage2.Controls.Add(this.groupBox8);
+            this.tabPage2.Controls.Add(this.groupBox7);
+            this.tabPage2.Location = new System.Drawing.Point(8, 39);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(6);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage2.Size = new System.Drawing.Size(1943, 1278);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "DESCARGA MASIVA XML";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.BuscarSolicitud);
+            this.groupBox9.Controls.Add(this.EliminarSolicitud);
+            this.groupBox9.Controls.Add(this.CrearSolicitud);
+            this.groupBox9.Controls.Add(this.ObtenerSATResponsePorSolicitudID);
+            this.groupBox9.Controls.Add(this.ObtenerSATRequestPorSolicitudID);
+            this.groupBox9.Controls.Add(this.DescargarPaquetePorSolicitudID);
+            this.groupBox9.Controls.Add(this.ListarMetaItemsPorSolicitudID);
+            this.groupBox9.Controls.Add(this.ListarXmlsPorSolicitudID);
+            this.groupBox9.Controls.Add(this.ObtenerSolicitudporID);
+            this.groupBox9.Controls.Add(this.ListarSolicitudes);
+            this.groupBox9.Location = new System.Drawing.Point(6, 266);
+            this.groupBox9.Margin = new System.Windows.Forms.Padding(6);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox9.Size = new System.Drawing.Size(1174, 316);
+            this.groupBox9.TabIndex = 2;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Solicitudes de descarga";
+            // 
+            // BuscarSolicitud
+            // 
+            this.BuscarSolicitud.Location = new System.Drawing.Point(892, 133);
+            this.BuscarSolicitud.Margin = new System.Windows.Forms.Padding(6);
+            this.BuscarSolicitud.Name = "BuscarSolicitud";
+            this.BuscarSolicitud.Size = new System.Drawing.Size(208, 84);
+            this.BuscarSolicitud.TabIndex = 11;
+            this.BuscarSolicitud.Text = "Buscar Solicitud";
+            this.BuscarSolicitud.UseVisualStyleBackColor = true;
+            this.BuscarSolicitud.Click += new System.EventHandler(this.BuscarSolicitud_Click);
+            // 
+            // EliminarSolicitud
+            // 
+            this.EliminarSolicitud.Location = new System.Drawing.Point(672, 133);
+            this.EliminarSolicitud.Margin = new System.Windows.Forms.Padding(6);
+            this.EliminarSolicitud.Name = "EliminarSolicitud";
+            this.EliminarSolicitud.Size = new System.Drawing.Size(208, 84);
+            this.EliminarSolicitud.TabIndex = 10;
+            this.EliminarSolicitud.Text = "Eliminar Solicitud";
+            this.EliminarSolicitud.UseVisualStyleBackColor = true;
+            this.EliminarSolicitud.Click += new System.EventHandler(this.EliminarSolicitud_Click);
+            // 
+            // CrearSolicitud
+            // 
+            this.CrearSolicitud.Location = new System.Drawing.Point(452, 133);
+            this.CrearSolicitud.Margin = new System.Windows.Forms.Padding(6);
+            this.CrearSolicitud.Name = "CrearSolicitud";
+            this.CrearSolicitud.Size = new System.Drawing.Size(208, 84);
+            this.CrearSolicitud.TabIndex = 9;
+            this.CrearSolicitud.Text = "Crear Solicitud";
+            this.CrearSolicitud.UseVisualStyleBackColor = true;
+            this.CrearSolicitud.Click += new System.EventHandler(this.CrearSolicitud_Click);
+            // 
+            // ObtenerSATResponsePorSolicitudID
+            // 
+            this.ObtenerSATResponsePorSolicitudID.Location = new System.Drawing.Point(232, 133);
+            this.ObtenerSATResponsePorSolicitudID.Margin = new System.Windows.Forms.Padding(6);
+            this.ObtenerSATResponsePorSolicitudID.Name = "ObtenerSATResponsePorSolicitudID";
+            this.ObtenerSATResponsePorSolicitudID.Size = new System.Drawing.Size(208, 84);
+            this.ObtenerSATResponsePorSolicitudID.TabIndex = 8;
+            this.ObtenerSATResponsePorSolicitudID.Text = "Obtener SAT response por solicitud ID";
+            this.ObtenerSATResponsePorSolicitudID.UseVisualStyleBackColor = true;
+            this.ObtenerSATResponsePorSolicitudID.Click += new System.EventHandler(this.ObtenerSATResponsePorSolicitudID_Click);
+            // 
+            // ObtenerSATRequestPorSolicitudID
+            // 
+            this.ObtenerSATRequestPorSolicitudID.Location = new System.Drawing.Point(12, 133);
+            this.ObtenerSATRequestPorSolicitudID.Margin = new System.Windows.Forms.Padding(6);
+            this.ObtenerSATRequestPorSolicitudID.Name = "ObtenerSATRequestPorSolicitudID";
+            this.ObtenerSATRequestPorSolicitudID.Size = new System.Drawing.Size(208, 84);
+            this.ObtenerSATRequestPorSolicitudID.TabIndex = 7;
+            this.ObtenerSATRequestPorSolicitudID.Text = "Obtener SAT request por solicitud ID";
+            this.ObtenerSATRequestPorSolicitudID.UseVisualStyleBackColor = true;
+            this.ObtenerSATRequestPorSolicitudID.Click += new System.EventHandler(this.ObtenerSATRequestPorSolicitudID_Click);
+            // 
+            // DescargarPaquetePorSolicitudID
+            // 
+            this.DescargarPaquetePorSolicitudID.Location = new System.Drawing.Point(892, 36);
+            this.DescargarPaquetePorSolicitudID.Margin = new System.Windows.Forms.Padding(6);
+            this.DescargarPaquetePorSolicitudID.Name = "DescargarPaquetePorSolicitudID";
+            this.DescargarPaquetePorSolicitudID.Size = new System.Drawing.Size(208, 84);
+            this.DescargarPaquetePorSolicitudID.TabIndex = 6;
+            this.DescargarPaquetePorSolicitudID.Text = "Descargar paquete por solicitud ID";
+            this.DescargarPaquetePorSolicitudID.UseVisualStyleBackColor = true;
+            this.DescargarPaquetePorSolicitudID.Click += new System.EventHandler(this.DescargarPaquetePorSolicitudID_Click);
+            // 
+            // ListarMetaItemsPorSolicitudID
+            // 
+            this.ListarMetaItemsPorSolicitudID.Location = new System.Drawing.Point(672, 36);
+            this.ListarMetaItemsPorSolicitudID.Margin = new System.Windows.Forms.Padding(6);
+            this.ListarMetaItemsPorSolicitudID.Name = "ListarMetaItemsPorSolicitudID";
+            this.ListarMetaItemsPorSolicitudID.Size = new System.Drawing.Size(208, 84);
+            this.ListarMetaItemsPorSolicitudID.TabIndex = 5;
+            this.ListarMetaItemsPorSolicitudID.Text = "Listar meta-items por solicitud ID";
+            this.ListarMetaItemsPorSolicitudID.UseVisualStyleBackColor = true;
+            this.ListarMetaItemsPorSolicitudID.Click += new System.EventHandler(this.ListarMetaItemsPorSolicitudID_Click);
+            // 
+            // ListarXmlsPorSolicitudID
+            // 
+            this.ListarXmlsPorSolicitudID.Location = new System.Drawing.Point(452, 36);
+            this.ListarXmlsPorSolicitudID.Margin = new System.Windows.Forms.Padding(6);
+            this.ListarXmlsPorSolicitudID.Name = "ListarXmlsPorSolicitudID";
+            this.ListarXmlsPorSolicitudID.Size = new System.Drawing.Size(208, 84);
+            this.ListarXmlsPorSolicitudID.TabIndex = 4;
+            this.ListarXmlsPorSolicitudID.Text = "Listar xmls por solicitud ID";
+            this.ListarXmlsPorSolicitudID.UseVisualStyleBackColor = true;
+            this.ListarXmlsPorSolicitudID.Click += new System.EventHandler(this.ListarXmlsPorSolicitudID_Click);
+            // 
+            // ObtenerSolicitudporID
+            // 
+            this.ObtenerSolicitudporID.Location = new System.Drawing.Point(232, 36);
+            this.ObtenerSolicitudporID.Margin = new System.Windows.Forms.Padding(6);
+            this.ObtenerSolicitudporID.Name = "ObtenerSolicitudporID";
+            this.ObtenerSolicitudporID.Size = new System.Drawing.Size(208, 84);
+            this.ObtenerSolicitudporID.TabIndex = 3;
+            this.ObtenerSolicitudporID.Text = "Obtener solicitud por ID";
+            this.ObtenerSolicitudporID.UseVisualStyleBackColor = true;
+            this.ObtenerSolicitudporID.Click += new System.EventHandler(this.ObtenerSolicitudPorID_Click);
+            // 
+            // ListarSolicitudes
+            // 
+            this.ListarSolicitudes.Location = new System.Drawing.Point(12, 36);
+            this.ListarSolicitudes.Margin = new System.Windows.Forms.Padding(6);
+            this.ListarSolicitudes.Name = "ListarSolicitudes";
+            this.ListarSolicitudes.Size = new System.Drawing.Size(208, 84);
+            this.ListarSolicitudes.TabIndex = 2;
+            this.ListarSolicitudes.Text = "Listar solicitudes";
+            this.ListarSolicitudes.UseVisualStyleBackColor = true;
+            this.ListarSolicitudes.Click += new System.EventHandler(this.ListarSolicitudes_Click);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.EliminarRegla);
+            this.groupBox8.Controls.Add(this.ActualizarRegla);
+            this.groupBox8.Controls.Add(this.CrearReglaSolicituddePrueba);
+            this.groupBox8.Controls.Add(this.CrearRegla);
+            this.groupBox8.Controls.Add(this.ObtenerReglaporID);
+            this.groupBox8.Controls.Add(this.ListarReglas);
+            this.groupBox8.Location = new System.Drawing.Point(504, 11);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(6);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox8.Size = new System.Drawing.Size(686, 242);
+            this.groupBox8.TabIndex = 1;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Reglas de descarga";
+            // 
+            // EliminarRegla
+            // 
+            this.EliminarRegla.Location = new System.Drawing.Point(452, 133);
+            this.EliminarRegla.Margin = new System.Windows.Forms.Padding(6);
+            this.EliminarRegla.Name = "EliminarRegla";
+            this.EliminarRegla.Size = new System.Drawing.Size(208, 84);
+            this.EliminarRegla.TabIndex = 6;
+            this.EliminarRegla.Text = "Eliminar Regla";
+            this.EliminarRegla.UseVisualStyleBackColor = true;
+            this.EliminarRegla.Click += new System.EventHandler(this.EliminarRegla_Click);
+            // 
+            // ActualizarRegla
+            // 
+            this.ActualizarRegla.Location = new System.Drawing.Point(232, 133);
+            this.ActualizarRegla.Margin = new System.Windows.Forms.Padding(6);
+            this.ActualizarRegla.Name = "ActualizarRegla";
+            this.ActualizarRegla.Size = new System.Drawing.Size(208, 84);
+            this.ActualizarRegla.TabIndex = 5;
+            this.ActualizarRegla.Text = "Actualizar Regla";
+            this.ActualizarRegla.UseVisualStyleBackColor = true;
+            this.ActualizarRegla.Click += new System.EventHandler(this.ActualizarRegla_Click);
+            // 
+            // CrearReglaSolicituddePrueba
+            // 
+            this.CrearReglaSolicituddePrueba.Location = new System.Drawing.Point(12, 133);
+            this.CrearReglaSolicituddePrueba.Margin = new System.Windows.Forms.Padding(6);
+            this.CrearReglaSolicituddePrueba.Name = "CrearReglaSolicituddePrueba";
+            this.CrearReglaSolicituddePrueba.Size = new System.Drawing.Size(208, 84);
+            this.CrearReglaSolicituddePrueba.TabIndex = 4;
+            this.CrearReglaSolicituddePrueba.Text = "Crear regla y solicitud de prueba";
+            this.CrearReglaSolicituddePrueba.UseVisualStyleBackColor = true;
+            this.CrearReglaSolicituddePrueba.Click += new System.EventHandler(this.CrearReglaSolicitudDePrueba_Click);
+            // 
+            // CrearRegla
+            // 
+            this.CrearRegla.Location = new System.Drawing.Point(452, 36);
+            this.CrearRegla.Margin = new System.Windows.Forms.Padding(6);
+            this.CrearRegla.Name = "CrearRegla";
+            this.CrearRegla.Size = new System.Drawing.Size(208, 84);
+            this.CrearRegla.TabIndex = 3;
+            this.CrearRegla.Text = "Crear Regla";
+            this.CrearRegla.UseVisualStyleBackColor = true;
+            this.CrearRegla.Click += new System.EventHandler(this.CrearRegla_Click);
+            // 
+            // ObtenerReglaporID
+            // 
+            this.ObtenerReglaporID.Location = new System.Drawing.Point(232, 36);
+            this.ObtenerReglaporID.Margin = new System.Windows.Forms.Padding(6);
+            this.ObtenerReglaporID.Name = "ObtenerReglaporID";
+            this.ObtenerReglaporID.Size = new System.Drawing.Size(208, 84);
+            this.ObtenerReglaporID.TabIndex = 2;
+            this.ObtenerReglaporID.Text = "Obtener Regla por ID";
+            this.ObtenerReglaporID.UseVisualStyleBackColor = true;
+            this.ObtenerReglaporID.Click += new System.EventHandler(this.ObtenerReglaPorID_Click);
+            // 
+            // ListarReglas
+            // 
+            this.ListarReglas.Location = new System.Drawing.Point(12, 36);
+            this.ListarReglas.Margin = new System.Windows.Forms.Padding(6);
+            this.ListarReglas.Name = "ListarReglas";
+            this.ListarReglas.Size = new System.Drawing.Size(208, 84);
+            this.ListarReglas.TabIndex = 1;
+            this.ListarReglas.Text = "Listar Reglas";
+            this.ListarReglas.UseVisualStyleBackColor = true;
+            this.ListarReglas.Click += new System.EventHandler(this.ListarReglas_Click);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.ListarDownloadCatalogo);
+            this.groupBox7.Controls.Add(this.ListarDownloadCatalogos);
+            this.groupBox7.Location = new System.Drawing.Point(16, 11);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(6);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox7.Size = new System.Drawing.Size(476, 242);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Catalogos descarga masiva";
+            // 
+            // ListarDownloadCatalogo
+            // 
+            this.ListarDownloadCatalogo.Location = new System.Drawing.Point(232, 36);
+            this.ListarDownloadCatalogo.Margin = new System.Windows.Forms.Padding(6);
+            this.ListarDownloadCatalogo.Name = "ListarDownloadCatalogo";
+            this.ListarDownloadCatalogo.Size = new System.Drawing.Size(208, 84);
+            this.ListarDownloadCatalogo.TabIndex = 1;
+            this.ListarDownloadCatalogo.Text = "Listar catálogo";
+            this.ListarDownloadCatalogo.UseVisualStyleBackColor = true;
+            this.ListarDownloadCatalogo.Click += new System.EventHandler(this.ListarDownloadCatalogo_Click);
+            // 
+            // ListarDownloadCatalogos
+            // 
+            this.ListarDownloadCatalogos.Location = new System.Drawing.Point(12, 36);
+            this.ListarDownloadCatalogos.Margin = new System.Windows.Forms.Padding(6);
+            this.ListarDownloadCatalogos.Name = "ListarDownloadCatalogos";
+            this.ListarDownloadCatalogos.Size = new System.Drawing.Size(208, 84);
+            this.ListarDownloadCatalogos.TabIndex = 0;
+            this.ListarDownloadCatalogos.Text = "Listar catálogos";
+            this.ListarDownloadCatalogos.UseVisualStyleBackColor = true;
+            this.ListarDownloadCatalogos.Click += new System.EventHandler(this.ListarDownloadCatalogos_Click);
             // 
             // tabPage1
             // 
@@ -633,13 +896,37 @@
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Location = new System.Drawing.Point(8, 39);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(6);
             this.tabPage1.Size = new System.Drawing.Size(1943, 1278);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "FACTURACION";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.FirmarButton);
+            this.groupBox14.Location = new System.Drawing.Point(1350, 22);
+            this.groupBox14.Margin = new System.Windows.Forms.Padding(6);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox14.Size = new System.Drawing.Size(257, 484);
+            this.groupBox14.TabIndex = 25;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Firmar manifiesto";
+            // 
+            // FirmarButton
+            // 
+            this.FirmarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FirmarButton.Location = new System.Drawing.Point(12, 36);
+            this.FirmarButton.Margin = new System.Windows.Forms.Padding(6);
+            this.FirmarButton.Name = "FirmarButton";
+            this.FirmarButton.Size = new System.Drawing.Size(220, 94);
+            this.FirmarButton.TabIndex = 10;
+            this.FirmarButton.Text = "Firmar";
+            this.FirmarButton.UseVisualStyleBackColor = true;
+            this.FirmarButton.Click += new System.EventHandler(this.FirmarButton_Click);
             // 
             // groupBox10
             // 
@@ -671,7 +958,7 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(10, 141);
-            this.button6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button6.Margin = new System.Windows.Forms.Padding(6);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(220, 94);
             this.button6.TabIndex = 19;
@@ -682,7 +969,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(10, 34);
-            this.button3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button3.Margin = new System.Windows.Forms.Padding(6);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(220, 94);
             this.button3.TabIndex = 18;
@@ -693,7 +980,7 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(21, 400);
-            this.button5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button5.Margin = new System.Windows.Forms.Padding(6);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(220, 94);
             this.button5.TabIndex = 20;
@@ -704,7 +991,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(21, 294);
-            this.button4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button4.Margin = new System.Windows.Forms.Padding(6);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(220, 94);
             this.button4.TabIndex = 19;
@@ -730,7 +1017,7 @@
             // button17
             // 
             this.button17.Location = new System.Drawing.Point(243, 141);
-            this.button17.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button17.Margin = new System.Windows.Forms.Padding(6);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(220, 94);
             this.button17.TabIndex = 17;
@@ -741,7 +1028,7 @@
             // button16
             // 
             this.button16.Location = new System.Drawing.Point(243, 34);
-            this.button16.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button16.Margin = new System.Windows.Forms.Padding(6);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(220, 94);
             this.button16.TabIndex = 16;
@@ -752,7 +1039,7 @@
             // button15
             // 
             this.button15.Location = new System.Drawing.Point(10, 141);
-            this.button15.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button15.Margin = new System.Windows.Forms.Padding(6);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(220, 94);
             this.button15.TabIndex = 15;
@@ -763,7 +1050,7 @@
             // button14
             // 
             this.button14.Location = new System.Drawing.Point(10, 34);
-            this.button14.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button14.Margin = new System.Windows.Forms.Padding(6);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(220, 94);
             this.button14.TabIndex = 14;
@@ -787,7 +1074,7 @@
             // button13
             // 
             this.button13.Location = new System.Drawing.Point(10, 23);
-            this.button13.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button13.Margin = new System.Windows.Forms.Padding(6);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(220, 94);
             this.button13.TabIndex = 13;
@@ -798,299 +1085,12 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(243, 23);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(220, 94);
             this.button1.TabIndex = 12;
             this.button1.Text = "Iniciar sesión";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox9);
-            this.tabPage2.Controls.Add(this.groupBox8);
-            this.tabPage2.Controls.Add(this.groupBox7);
-            this.tabPage2.Location = new System.Drawing.Point(8, 39);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage2.Size = new System.Drawing.Size(1343, 1278);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "DESCARGA MASIVA XML";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.BuscarSolicitud);
-            this.groupBox9.Controls.Add(this.EliminarSolicitud);
-            this.groupBox9.Controls.Add(this.CrearSolicitud);
-            this.groupBox9.Controls.Add(this.ObtenerSATResponsePorSolicitudID);
-            this.groupBox9.Controls.Add(this.ObtenerSATRequestPorSolicitudID);
-            this.groupBox9.Controls.Add(this.DescargarPaquetePorSolicitudID);
-            this.groupBox9.Controls.Add(this.ListarMetaItemsPorSolicitudID);
-            this.groupBox9.Controls.Add(this.ListarXmlsPorSolicitudID);
-            this.groupBox9.Controls.Add(this.ObtenerSolicitudporID);
-            this.groupBox9.Controls.Add(this.ListarSolicitudes);
-            this.groupBox9.Location = new System.Drawing.Point(6, 266);
-            this.groupBox9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.groupBox9.Size = new System.Drawing.Size(1174, 316);
-            this.groupBox9.TabIndex = 2;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Solicitudes de descarga";
-            // 
-            // BuscarSolicitud
-            // 
-            this.BuscarSolicitud.Location = new System.Drawing.Point(892, 133);
-            this.BuscarSolicitud.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.BuscarSolicitud.Name = "BuscarSolicitud";
-            this.BuscarSolicitud.Size = new System.Drawing.Size(208, 84);
-            this.BuscarSolicitud.TabIndex = 11;
-            this.BuscarSolicitud.Text = "Buscar Solicitud";
-            this.BuscarSolicitud.UseVisualStyleBackColor = true;
-            this.BuscarSolicitud.Click += new System.EventHandler(this.BuscarSolicitud_Click);
-            // 
-            // EliminarSolicitud
-            // 
-            this.EliminarSolicitud.Location = new System.Drawing.Point(672, 133);
-            this.EliminarSolicitud.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.EliminarSolicitud.Name = "EliminarSolicitud";
-            this.EliminarSolicitud.Size = new System.Drawing.Size(208, 84);
-            this.EliminarSolicitud.TabIndex = 10;
-            this.EliminarSolicitud.Text = "Eliminar Solicitud";
-            this.EliminarSolicitud.UseVisualStyleBackColor = true;
-            this.EliminarSolicitud.Click += new System.EventHandler(this.EliminarSolicitud_Click);
-            // 
-            // CrearSolicitud
-            // 
-            this.CrearSolicitud.Location = new System.Drawing.Point(452, 133);
-            this.CrearSolicitud.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.CrearSolicitud.Name = "CrearSolicitud";
-            this.CrearSolicitud.Size = new System.Drawing.Size(208, 84);
-            this.CrearSolicitud.TabIndex = 9;
-            this.CrearSolicitud.Text = "Crear Solicitud";
-            this.CrearSolicitud.UseVisualStyleBackColor = true;
-            this.CrearSolicitud.Click += new System.EventHandler(this.CrearSolicitud_Click);
-            // 
-            // ObtenerSATResponsePorSolicitudID
-            // 
-            this.ObtenerSATResponsePorSolicitudID.Location = new System.Drawing.Point(232, 133);
-            this.ObtenerSATResponsePorSolicitudID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.ObtenerSATResponsePorSolicitudID.Name = "ObtenerSATResponsePorSolicitudID";
-            this.ObtenerSATResponsePorSolicitudID.Size = new System.Drawing.Size(208, 84);
-            this.ObtenerSATResponsePorSolicitudID.TabIndex = 8;
-            this.ObtenerSATResponsePorSolicitudID.Text = "Obtener SAT response por solicitud ID";
-            this.ObtenerSATResponsePorSolicitudID.UseVisualStyleBackColor = true;
-            this.ObtenerSATResponsePorSolicitudID.Click += new System.EventHandler(this.ObtenerSATResponsePorSolicitudID_Click);
-            // 
-            // ObtenerSATRequestPorSolicitudID
-            // 
-            this.ObtenerSATRequestPorSolicitudID.Location = new System.Drawing.Point(12, 133);
-            this.ObtenerSATRequestPorSolicitudID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.ObtenerSATRequestPorSolicitudID.Name = "ObtenerSATRequestPorSolicitudID";
-            this.ObtenerSATRequestPorSolicitudID.Size = new System.Drawing.Size(208, 84);
-            this.ObtenerSATRequestPorSolicitudID.TabIndex = 7;
-            this.ObtenerSATRequestPorSolicitudID.Text = "Obtener SAT request por solicitud ID";
-            this.ObtenerSATRequestPorSolicitudID.UseVisualStyleBackColor = true;
-            this.ObtenerSATRequestPorSolicitudID.Click += new System.EventHandler(this.ObtenerSATRequestPorSolicitudID_Click);
-            // 
-            // DescargarPaquetePorSolicitudID
-            // 
-            this.DescargarPaquetePorSolicitudID.Location = new System.Drawing.Point(892, 36);
-            this.DescargarPaquetePorSolicitudID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.DescargarPaquetePorSolicitudID.Name = "DescargarPaquetePorSolicitudID";
-            this.DescargarPaquetePorSolicitudID.Size = new System.Drawing.Size(208, 84);
-            this.DescargarPaquetePorSolicitudID.TabIndex = 6;
-            this.DescargarPaquetePorSolicitudID.Text = "Descargar paquete por solicitud ID";
-            this.DescargarPaquetePorSolicitudID.UseVisualStyleBackColor = true;
-            this.DescargarPaquetePorSolicitudID.Click += new System.EventHandler(this.DescargarPaquetePorSolicitudID_Click);
-            // 
-            // ListarMetaItemsPorSolicitudID
-            // 
-            this.ListarMetaItemsPorSolicitudID.Location = new System.Drawing.Point(672, 36);
-            this.ListarMetaItemsPorSolicitudID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.ListarMetaItemsPorSolicitudID.Name = "ListarMetaItemsPorSolicitudID";
-            this.ListarMetaItemsPorSolicitudID.Size = new System.Drawing.Size(208, 84);
-            this.ListarMetaItemsPorSolicitudID.TabIndex = 5;
-            this.ListarMetaItemsPorSolicitudID.Text = "Listar meta-items por solicitud ID";
-            this.ListarMetaItemsPorSolicitudID.UseVisualStyleBackColor = true;
-            this.ListarMetaItemsPorSolicitudID.Click += new System.EventHandler(this.ListarMetaItemsPorSolicitudID_Click);
-            // 
-            // ListarXmlsPorSolicitudID
-            // 
-            this.ListarXmlsPorSolicitudID.Location = new System.Drawing.Point(452, 36);
-            this.ListarXmlsPorSolicitudID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.ListarXmlsPorSolicitudID.Name = "ListarXmlsPorSolicitudID";
-            this.ListarXmlsPorSolicitudID.Size = new System.Drawing.Size(208, 84);
-            this.ListarXmlsPorSolicitudID.TabIndex = 4;
-            this.ListarXmlsPorSolicitudID.Text = "Listar xmls por solicitud ID";
-            this.ListarXmlsPorSolicitudID.UseVisualStyleBackColor = true;
-            this.ListarXmlsPorSolicitudID.Click += new System.EventHandler(this.ListarXmlsPorSolicitudID_Click);
-            // 
-            // ObtenerSolicitudporID
-            // 
-            this.ObtenerSolicitudporID.Location = new System.Drawing.Point(232, 36);
-            this.ObtenerSolicitudporID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.ObtenerSolicitudporID.Name = "ObtenerSolicitudporID";
-            this.ObtenerSolicitudporID.Size = new System.Drawing.Size(208, 84);
-            this.ObtenerSolicitudporID.TabIndex = 3;
-            this.ObtenerSolicitudporID.Text = "Obtener solicitud por ID";
-            this.ObtenerSolicitudporID.UseVisualStyleBackColor = true;
-            this.ObtenerSolicitudporID.Click += new System.EventHandler(this.ObtenerSolicitudPorID_Click);
-            // 
-            // ListarSolicitudes
-            // 
-            this.ListarSolicitudes.Location = new System.Drawing.Point(12, 36);
-            this.ListarSolicitudes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.ListarSolicitudes.Name = "ListarSolicitudes";
-            this.ListarSolicitudes.Size = new System.Drawing.Size(208, 84);
-            this.ListarSolicitudes.TabIndex = 2;
-            this.ListarSolicitudes.Text = "Listar solicitudes";
-            this.ListarSolicitudes.UseVisualStyleBackColor = true;
-            this.ListarSolicitudes.Click += new System.EventHandler(this.ListarSolicitudes_Click);
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.EliminarRegla);
-            this.groupBox8.Controls.Add(this.ActualizarRegla);
-            this.groupBox8.Controls.Add(this.CrearReglaSolicituddePrueba);
-            this.groupBox8.Controls.Add(this.CrearRegla);
-            this.groupBox8.Controls.Add(this.ObtenerReglaporID);
-            this.groupBox8.Controls.Add(this.ListarReglas);
-            this.groupBox8.Location = new System.Drawing.Point(504, 11);
-            this.groupBox8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.groupBox8.Size = new System.Drawing.Size(686, 242);
-            this.groupBox8.TabIndex = 1;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Reglas de descarga";
-            // 
-            // EliminarRegla
-            // 
-            this.EliminarRegla.Location = new System.Drawing.Point(452, 133);
-            this.EliminarRegla.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.EliminarRegla.Name = "EliminarRegla";
-            this.EliminarRegla.Size = new System.Drawing.Size(208, 84);
-            this.EliminarRegla.TabIndex = 6;
-            this.EliminarRegla.Text = "Eliminar Regla";
-            this.EliminarRegla.UseVisualStyleBackColor = true;
-            this.EliminarRegla.Click += new System.EventHandler(this.EliminarRegla_Click);
-            // 
-            // ActualizarRegla
-            // 
-            this.ActualizarRegla.Location = new System.Drawing.Point(232, 133);
-            this.ActualizarRegla.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.ActualizarRegla.Name = "ActualizarRegla";
-            this.ActualizarRegla.Size = new System.Drawing.Size(208, 84);
-            this.ActualizarRegla.TabIndex = 5;
-            this.ActualizarRegla.Text = "Actualizar Regla";
-            this.ActualizarRegla.UseVisualStyleBackColor = true;
-            this.ActualizarRegla.Click += new System.EventHandler(this.ActualizarRegla_Click);
-            // 
-            // CrearReglaSolicituddePrueba
-            // 
-            this.CrearReglaSolicituddePrueba.Location = new System.Drawing.Point(12, 133);
-            this.CrearReglaSolicituddePrueba.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.CrearReglaSolicituddePrueba.Name = "CrearReglaSolicituddePrueba";
-            this.CrearReglaSolicituddePrueba.Size = new System.Drawing.Size(208, 84);
-            this.CrearReglaSolicituddePrueba.TabIndex = 4;
-            this.CrearReglaSolicituddePrueba.Text = "Crear regla y solicitud de prueba";
-            this.CrearReglaSolicituddePrueba.UseVisualStyleBackColor = true;
-            this.CrearReglaSolicituddePrueba.Click += new System.EventHandler(this.CrearReglaSolicitudDePrueba_Click);
-            // 
-            // CrearRegla
-            // 
-            this.CrearRegla.Location = new System.Drawing.Point(452, 36);
-            this.CrearRegla.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.CrearRegla.Name = "CrearRegla";
-            this.CrearRegla.Size = new System.Drawing.Size(208, 84);
-            this.CrearRegla.TabIndex = 3;
-            this.CrearRegla.Text = "Crear Regla";
-            this.CrearRegla.UseVisualStyleBackColor = true;
-            this.CrearRegla.Click += new System.EventHandler(this.CrearRegla_Click);
-            // 
-            // ObtenerReglaporID
-            // 
-            this.ObtenerReglaporID.Location = new System.Drawing.Point(232, 36);
-            this.ObtenerReglaporID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.ObtenerReglaporID.Name = "ObtenerReglaporID";
-            this.ObtenerReglaporID.Size = new System.Drawing.Size(208, 84);
-            this.ObtenerReglaporID.TabIndex = 2;
-            this.ObtenerReglaporID.Text = "Obtener Regla por ID";
-            this.ObtenerReglaporID.UseVisualStyleBackColor = true;
-            this.ObtenerReglaporID.Click += new System.EventHandler(this.ObtenerReglaPorID_Click);
-            // 
-            // ListarReglas
-            // 
-            this.ListarReglas.Location = new System.Drawing.Point(12, 36);
-            this.ListarReglas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.ListarReglas.Name = "ListarReglas";
-            this.ListarReglas.Size = new System.Drawing.Size(208, 84);
-            this.ListarReglas.TabIndex = 1;
-            this.ListarReglas.Text = "Listar Reglas";
-            this.ListarReglas.UseVisualStyleBackColor = true;
-            this.ListarReglas.Click += new System.EventHandler(this.ListarReglas_Click);
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.ListarDownloadCatalogo);
-            this.groupBox7.Controls.Add(this.ListarDownloadCatalogos);
-            this.groupBox7.Location = new System.Drawing.Point(16, 11);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.groupBox7.Size = new System.Drawing.Size(476, 242);
-            this.groupBox7.TabIndex = 0;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Catalogos descarga masiva";
-            // 
-            // ListarDownloadCatalogo
-            // 
-            this.ListarDownloadCatalogo.Location = new System.Drawing.Point(232, 36);
-            this.ListarDownloadCatalogo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.ListarDownloadCatalogo.Name = "ListarDownloadCatalogo";
-            this.ListarDownloadCatalogo.Size = new System.Drawing.Size(208, 84);
-            this.ListarDownloadCatalogo.TabIndex = 1;
-            this.ListarDownloadCatalogo.Text = "Listar catálogo";
-            this.ListarDownloadCatalogo.UseVisualStyleBackColor = true;
-            this.ListarDownloadCatalogo.Click += new System.EventHandler(this.ListarDownloadCatalogo_Click);
-            // 
-            // ListarDownloadCatalogos
-            // 
-            this.ListarDownloadCatalogos.Location = new System.Drawing.Point(12, 36);
-            this.ListarDownloadCatalogos.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.ListarDownloadCatalogos.Name = "ListarDownloadCatalogos";
-            this.ListarDownloadCatalogos.Size = new System.Drawing.Size(208, 84);
-            this.ListarDownloadCatalogos.TabIndex = 0;
-            this.ListarDownloadCatalogos.Text = "Listar catálogos";
-            this.ListarDownloadCatalogos.UseVisualStyleBackColor = true;
-            this.ListarDownloadCatalogos.Click += new System.EventHandler(this.ListarDownloadCatalogos_Click);
-            // 
-            // groupBox14
-            // 
-            this.groupBox14.Controls.Add(this.FirmarButton);
-            this.groupBox14.Location = new System.Drawing.Point(1350, 22);
-            this.groupBox14.Margin = new System.Windows.Forms.Padding(6);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox14.Size = new System.Drawing.Size(257, 484);
-            this.groupBox14.TabIndex = 25;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "Firmar manifiesto";
-            // 
-            // FirmarButton
-            // 
-            this.FirmarButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FirmarButton.Location = new System.Drawing.Point(12, 36);
-            this.FirmarButton.Margin = new System.Windows.Forms.Padding(6);
-            this.FirmarButton.Name = "FirmarButton";
-            this.FirmarButton.Size = new System.Drawing.Size(220, 94);
-            this.FirmarButton.TabIndex = 10;
-            this.FirmarButton.Text = "Obtener lista paginada";
-            this.FirmarButton.UseVisualStyleBackColor = true;
-            this.FirmarButton.Click += new System.EventHandler(this.FirmarButton_Click);
             // 
             // Form1
             // 
@@ -1098,7 +1098,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1959, 1325);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -1109,16 +1109,16 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox12.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.groupBox14.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
