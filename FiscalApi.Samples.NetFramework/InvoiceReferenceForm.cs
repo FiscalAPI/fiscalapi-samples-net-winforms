@@ -173,7 +173,14 @@ namespace FiscalApi.Samples.NetFramework
 
         private void button14_Click(object sender, EventArgs e)
         {
+            BillOfLadingReferenceForm billOfLadingReferenceForm = new BillOfLadingReferenceForm(_settings);
+            billOfLadingReferenceForm.ShowDialog();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ComercioExteriorReferenceForm comercioExteriorReferenceForm = new ComercioExteriorReferenceForm(_settings);
+            comercioExteriorReferenceForm.Show();
         }
     }
 }

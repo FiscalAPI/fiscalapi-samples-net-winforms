@@ -717,7 +717,8 @@ namespace FiscalApi.Samples.NetFramework
 
         private void button13_Click_1(object sender, EventArgs e)
         {
-
+            BillOfLadingValueForm cartaporteForm = new BillOfLadingValueForm(_settings);
+            cartaporteForm.ShowDialog();
         }
 
         private void button10_Click_1(object sender, EventArgs e)
@@ -775,6 +776,12 @@ namespace FiscalApi.Samples.NetFramework
         {
             LocalTaxesComplementValueForm localTaxesComplementForm = new LocalTaxesComplementValueForm(_settings);
             localTaxesComplementForm.ShowDialog();
+        }
+
+        private void ComplementoComercioExteriorButton_Click(object sender, EventArgs e)
+        {
+            ComercioExteriorValuesForm comercioExteriorValuesForm = new ComercioExteriorValuesForm(_settings);
+            comercioExteriorValuesForm.ShowDialog();
         }
     }
 }
