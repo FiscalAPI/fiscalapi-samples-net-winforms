@@ -777,5 +777,11 @@ namespace FiscalApi.Samples.NetFramework
             LocalTaxesComplementValueForm localTaxesComplementForm = new LocalTaxesComplementValueForm(_settings);
             localTaxesComplementForm.ShowDialog();
         }
+
+        private void ComplementoComercioExteriorButton_Click(object sender, EventArgs e)
+        {
+            ComercioExteriorValuesForm comercioExteriorValuesForm = new ComercioExteriorValuesForm(_settings);
+            comercioExteriorValuesForm.ShowDialog();
+        }
     }
 }

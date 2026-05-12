@@ -1,0 +1,1219 @@
+
+
+Ejemplos facturas comercio exterior
+
+
+
+## Por Valores
+
+Factura CE Ingreso Con Carta Porte 31
+curl --location 'https://test.fiscalapi.com/api/v4/invoices' \
+--header 'X-TENANT-KEY: 102e5f13-e114-41dd-bea7-507fce177281' \
+--header 'X-TIME-ZONE: America/Mexico_City' \
+--header 'Content-Type: application/json' \
+--header 'X-API-KEY: sk_test_4e7ca2f5_6c02_4571_9767_212f32cebd59' \
+--data '{
+    "versionCode": "4.0",
+    "paymentFormCode": "99",
+    "paymentMethodCode": "PUE",
+    "currencyCode": "USD",
+    "typeCode": "I",
+    "expeditionZipCode": "42501",
+    "series": "CCE",
+    "date": "2026-05-08T08:56:40",
+    "paymentConditions": "CondicionesDePago",
+    "exportCode": "02",
+    "issuer": {
+        "tin": "EKU9003173C9",
+        "legalName": "ESCUELA KEMPER URGATE",
+        "taxRegimeCode": "601",
+        "taxCredentials": [
+            {
+                "base64File": "omited...",
+                "fileType": 0,
+                "password": "12345678a"
+            },
+            {
+                "base64File": "omited...",
+                "fileType": 1,
+                "password": "12345678a"
+            }
+        ]
+    },
+    "recipient": {
+        "tin": "XEXX010101000",
+        "legalName": "Persona Fisica Extranjera",
+        "zipCode": "42501",
+        "taxRegimeCode": "616",
+        "cfdiUseCode": "S01",
+        "countryId": "USA",
+        "foreignTin": "123456789"
+    },
+    "items": [
+        {
+            "itemCode": "78101800",
+            "itemSku": "SERV02",
+            "quantity": 1.000000,
+            "unitOfMeasurementCode": "HUR",
+            "description": "FLETE",
+            "unitPrice": 2300.000000,
+            "discount": 0,
+            "taxObjectCode": "02",
+            "itemTaxes": [
+                {
+                    "taxCode": "002",
+                    "taxTypeCode": "Tasa",
+                    "taxRate": 0.160000,
+                    "taxFlagCode": "T"
+                },
+                {
+                    "taxCode": "003",
+                    "taxTypeCode": "Tasa",
+                    "taxRate": 0.300000,
+                    "taxFlagCode": "R"
+                }
+            ]
+        },
+        {
+            "itemCode": "50161509",
+            "itemSku": "A0001",
+            "quantity": 1.000000,
+            "unitOfMeasurementCode": "H87",
+            "description": "Gomitas",
+            "unitPrice": 120.000000,
+            "discount": 0,
+            "taxObjectCode": "02",
+            "itemTaxes": [
+                {
+                    "taxCode": "002",
+                    "taxTypeCode": "Tasa",
+                    "taxRate": 0.160000,
+                    "taxFlagCode": "T"
+                }
+            ]
+        },
+        {
+            "itemCode": "50307037",
+            "itemSku": "A0002",
+            "quantity": 1.000000,
+            "unitOfMeasurementCode": "H87",
+            "description": "Pulparindo",
+            "unitPrice": 100.000000,
+            "discount": 0,
+            "taxObjectCode": "02",
+            "itemTaxes": [
+                {
+                    "taxCode": "002",
+                    "taxTypeCode": "Tasa",
+                    "taxRate": 0.160000,
+                    "taxFlagCode": "T"
+                }
+            ]
+        }
+    ],
+    "complement": {
+        "cartaPorte": {
+            "transpInternacId": "S\u00ED",
+            "entradaSalidaMercId": "Salida",
+            "paisOrigenDestinoId": "ALB",
+            "viaEntradaSalidaId": "01",
+            "totalDistRec": 120.00,
+            "unidadPesoId": "KGM",
+            "regimenAduaneros": [
+                {
+                    "regimenAduaneroId": "EXD"
+                }
+            ],
+            "ubicaciones": [
+                {
+                    "tipoUbicacion": "Origen",
+                    "idUbicacion": "OR000001",
+                    "rfcRemitenteDestinatario": "XAXX010101000",
+                    "nombreRemitenteDestinatario": "Origen Nacional",
+                    "fechaHoraSalidaLlegada": "2026-04-27T08:00:00",
+                    "domicilio": {
+                        "calle": "xola",
+                        "numeroExterior": "531",
+                        "coloniaId": "0496",
+                        "localidadId": "03",
+                        "municipioId": "014",
+                        "estadoId": "CMX",
+                        "paisId": "MEX",
+                        "codigoPostalId": "03100"
+                    }
+                },
+                {
+                    "tipoUbicacion": "Destino",
+                    "idUbicacion": "DE000001",
+                    "rfcRemitenteDestinatario": "XAXX010101000",
+                    "nombreRemitenteDestinatario": "Destino Nacional",
+                    "fechaHoraSalidaLlegada": "2026-04-27T20:00:00",
+                    "distanciaRecorrida": 120.00,
+                    "domicilio": {
+                        "calle": "Av Coyoacan",
+                        "numeroExterior": "120",
+                        "coloniaId": "2624",
+                        "localidadId": "03",
+                        "municipioId": "014",
+                        "estadoId": "CMX",
+                        "paisId": "MEX",
+                        "codigoPostalId": "03100"
+                    }
+                }
+            ],
+            "mercancias": [
+                {
+                    "bienesTranspId": "50433238",
+                    "descripcion": "Gomitas",
+                    "cantidad": 1,
+                    "claveUnidadId": "XPK",
+                    "pesoEnKg": 10.000,
+                    "valorMercancia": 1200.00,
+                    "monedaId": "USD",
+                    "fraccionArancelariaId": "2005800100",
+                    "tipoMateriaId": "04"
+                },
+                {
+                    "bienesTranspId": "50433238",
+                    "descripcion": "Pulparindo",
+                    "cantidad": 1,
+                    "claveUnidadId": "XPK",
+                    "pesoEnKg": 10.000,
+                    "valorMercancia": 1000.00,
+                    "monedaId": "USD",
+                    "fraccionArancelariaId": "2005800100",
+                    "tipoMateriaId": "04"
+                }
+            ],
+            "autotransporte": {
+                "permSCTId": "TPAF02",
+                "numPermisoSCT": "123456",
+                "configVehicularId": "C2",
+                "pesoBrutoVehicular": 1,
+                "placaVM": "555TTT",
+                "anioModeloVM": 2023,
+                "aseguraRespCivil": "ODISEA",
+                "polizaRespCivil": "3456YUHNB234RT"
+            },
+            "tiposFigura": [
+                {
+                    "tipoFiguraId": "01",
+                    "rfcFigura": "KAHO641101B39",
+                    "numLicencia": "D0908240",
+                    "nombreFigura": "OSCAR KALA HAAK"
+                }
+            ]
+        },
+        "comercioExterior": {
+            "claveDePedimentoId": "A1",
+            "certificadoOrigen": 0,
+            "incotermId": "CIF",
+            "tipoCambioUSD": 17.2530,
+            "emisor": {
+                "domicilio": {
+                    "calle": "Av Siempre viva",
+                    "numeroExterior": "123",
+                    "coloniaId": "0001",
+                    "localidadId": "06",
+                    "municipioId": "025",
+                    "estadoId": "COA",
+                    "paisId": "MEX",
+                    "codigoPostalId": "26015"
+                }
+            },
+            "receptor": {
+                "numRegIdTrib": "123456789",
+                "domicilio": {
+                    "calle": "Clinton ST",
+                    "numeroExterior": "10002",
+                    "estado": "NY",
+                    "paisId": "USA",
+                    "codigoPostal": "10002-0000"
+                }
+            },
+            "mercancias": [
+                {
+                    "noIdentificacion": "A0001",
+                    "fraccionArancelariaId": "4011101099",
+                    "cantidadAduana": 1.000,
+                    "unidadAduanaId": "06",
+                    "valorUnitarioAduana": 120.00,
+                    "valorDolares": 120.00
+                },
+                {
+                    "noIdentificacion": "A0002",
+                    "fraccionArancelariaId": "8407210299",
+                    "cantidadAduana": 1.000,
+                    "unidadAduanaId": "06",
+                    "valorUnitarioAduana": 100.00,
+                    "valorDolares": 100.00
+                }
+            ]
+        }
+    }
+}'
+
+---
+Factura CE Ingreso Diferentes Monedas
+curl --location 'https://live.fiscalapi.com/api/v4/invoices' \
+--header 'X-TENANT-KEY: <my-tenant>' \
+--header 'X-TIME-ZONE: America/Mexico_City' \
+--header 'Content-Type: application/json' \
+--header 'X-API-KEY: <my-api-key>' \
+--data '{
+    "versionCode": "4.0",
+    "paymentFormCode": "99",
+    "paymentMethodCode": "PPD",
+    "currencyCode": "MXN",
+    "typeCode": "I",
+    "expeditionZipCode": "42501",
+    "series": "CCE",
+    "date": "2026-05-08T08:56:40",
+    "paymentConditions": "CondicionesDePago",
+    "exportCode": "02",
+    "issuer": {
+        "tin": "EKU9003173C9",
+        "legalName": "ESCUELA KEMPER URGATE",
+        "taxRegimeCode": "601",
+        "taxCredentials": [
+            {
+                "base64File": "Omited...",
+                "fileType": 0,
+                "password": "12345678a"
+            },
+            {
+                "base64File": "Omited...",
+                "fileType": 1,
+                "password": "12345678a"
+            }
+        ]
+    },
+    "recipient": {
+        "tin": "XEXX010101000",
+        "legalName": "Persona Fisica Extranjera",
+        "zipCode": "42501",
+        "taxRegimeCode": "616",
+        "cfdiUseCode": "S01",
+        "countryId": "USA",
+        "foreignTin": "123456789"
+    },
+    "items": [
+        {
+            "itemCode": "50211503",
+            "itemSku": "131494-1055",
+            "quantity": 2,
+            "unitOfMeasurementCode": "H87",
+            "description": "Cigarros",
+            "unitPrice": 200.00,
+            "discount": 0,
+            "taxObjectCode": "02",
+            "itemTaxes": [
+                {
+                    "taxCode": "002",
+                    "taxTypeCode": "Tasa",
+                    "taxRate": 0.160000,
+                    "taxFlagCode": "T"
+                },
+                {
+                    "taxCode": "001",
+                    "taxTypeCode": "Tasa",
+                    "taxRate": 0.100000,
+                    "taxFlagCode": "R"
+                },
+                {
+                    "taxCode": "002",
+                    "taxTypeCode": "Tasa",
+                    "taxRate": 0.106666,
+                    "taxFlagCode": "R"
+                }
+            ]
+        }
+    ],
+    "complement": {
+        "comercioExterior": {
+            "claveDePedimentoId": "A1",
+            "certificadoOrigen": 0,
+            "incotermId": "FOB",
+            "tipoCambioUSD": 17.2530,
+            "emisor": {
+                "domicilio": {
+                    "calle": "CALLE DEL PAPEL",
+                    "coloniaId": "0214",
+                    "localidadId": "01",
+                    "municipioId": "014",
+                    "estadoId": "QUE",
+                    "paisId": "MEX",
+                    "codigoPostalId": "76199"
+                }
+            },
+            "receptor": {
+                "numRegIdTrib":"123456789",
+                "domicilio": {
+                    "calle": "ST. A",
+                    "estado": "TX",
+                    "paisId": "USA",
+                    "codigoPostal": "00000"
+                }
+            },
+            "mercancias": [
+                {
+                    "noIdentificacion": "131494-1055",
+                    "fraccionArancelariaId": "2402200100",
+                    "cantidadAduana": 2.00,
+                    "unidadAduanaId": "01",
+                    "valorUnitarioAduana": 11.74,
+                    "valorDolares": 23.47
+                }
+            ]
+        }
+    }
+}'
+
+---
+Factura CE Kit Parte
+curl --location 'https://live.fiscalapi.com/api/v4/invoices' \
+--header 'X-TENANT-KEY: <my-tenant>' \
+--header 'X-TIME-ZONE: America/Mexico_City' \
+--header 'Content-Type: application/json' \
+--header 'X-API-KEY: <my-api-key>' \
+--data '{
+    "versionCode": "4.0",
+    "paymentFormCode": "01",
+    "paymentMethodCode": "PUE",
+    "currencyCode": "MXN",
+    "typeCode": "I",
+    "expeditionZipCode": "42501",
+    "series": "CCE",
+    "date": "2026-05-08T08:56:40",
+    "paymentConditions": "CondicionesDePago",
+    "exportCode": "02",
+    "issuer": {
+        "tin": "EKU9003173C9",
+        "legalName": "ESCUELA KEMPER URGATE",
+        "taxRegimeCode": "601",
+        "taxCredentials": [
+            {
+                "base64File": "Omited...",
+                "fileType": 0,
+                "password": "12345678a"
+            },
+            {
+                "base64File": "Omited...",
+                "fileType": 1,
+                "password": "12345678a"
+            }
+        ]
+    },
+    "recipient": {
+        "tin": "XEXX010101000",
+        "legalName": "U.S. 0026 SW",
+        "zipCode": "42501",
+        "taxRegimeCode": "616",
+        "cfdiUseCode": "CP01",
+        "countryId": "USA",
+        "foreignTin": "123456789"
+    },
+    "items": [
+        {
+            "itemCode": "51241200",
+            "itemSku": "131494-1055",
+            "quantity": 1.0,
+            "unitOfMeasurementCode": "H87",
+            "description": "FORMULA MAGISTRAL",
+            "unitPrice": 200.00,
+            "discount": 0,
+            "taxObjectCode": "01",
+            "itemTaxes": []
+        },
+        {
+            "itemCode": "51241200",
+            "itemSku": "131494-1055",
+            "quantity": 1.0,
+            "unitOfMeasurementCode": "H87",
+            "description": "FORMULA MAGISTRAL",
+            "unitPrice": 200.00,
+            "discount": 0,
+            "taxObjectCode": "01",
+            "itemTaxes": []
+        }
+    ],
+    "complement": {
+        "comercioExterior": {
+            "claveDePedimentoId": "A1",
+            "certificadoOrigen": 0,
+            "incotermId": "FOB",
+            "tipoCambioUSD": 17.2530,
+            "emisor": {
+                "domicilio": {
+                    "calle": "CALLE DEL PAPEL",
+                    "coloniaId": "0214",
+                    "localidadId": "01",
+                    "municipioId": "014",
+                    "estadoId": "QUE",
+                    "paisId": "MEX",
+                    "codigoPostalId": "76199"
+                }
+            },
+            "receptor": {
+                "numRegIdTrib": "123456789",
+                "domicilio": {
+                    "calle": "ST. A",
+                    "estado": "TX",
+                    "paisId": "USA",
+                    "codigoPostal": "00000"
+                }
+            },
+            "mercancias": [
+                {
+                    "noIdentificacion": "131494-1055",
+                    "fraccionArancelariaId": "2402200100",
+                    "cantidadAduana": 2,
+                    "unidadAduanaId": "01",
+                    "valorUnitarioAduana": 10.00,
+                    "valorDolares": 20.00
+                }
+            ]
+        }
+    }
+}'
+
+---
+Factura CE Receptor Extranjero
+curl --location 'https://live.fiscalapi.com/api/v4/invoices' \
+--header 'X-TENANT-KEY: <my-tenant>' \
+--header 'X-TIME-ZONE: America/Mexico_City' \
+--header 'Content-Type: application/json' \
+--header 'X-API-KEY: <my-api-key>' \
+--data '{
+    "versionCode": "4.0",
+    "paymentFormCode": "99",
+    "paymentMethodCode": "PPD",
+    "currencyCode": "USD",
+    "typeCode": "I",
+    "expeditionZipCode": "42501",
+    "series": "CCE",
+    "date": "2026-05-08T08:56:40",
+    "paymentConditions": "CondicionesDePago",
+    "exportCode": "02",
+    "issuer": {
+        "tin": "EKU9003173C9",
+        "legalName": "ESCUELA KEMPER URGATE",
+        "taxRegimeCode": "601",
+        "taxCredentials": [
+            {
+                "base64File": "Omited...",
+                "fileType": 0,
+                "password": "12345678a"
+            },
+            {
+                "base64File": "Omited...",
+                "fileType": 1,
+                "password": "12345678a"
+            }
+        ]
+    },
+    "recipient": {
+        "tin": "XEXX010101000",
+        "legalName": "U.S. 0026 SW",
+        "zipCode": "42501",
+        "taxRegimeCode": "616",
+        "cfdiUseCode": "CP01",
+        "countryId": "USA",
+        "foreignTin": "123456789"
+    },
+    "items": [
+        {
+            "itemCode": "50211503",
+            "itemSku": "131494-1055",
+            "quantity": 2,
+            "unitOfMeasurementCode": "H87",
+            "description": "Cigarros",
+            "unitPrice": 200.00,
+            "discount": 0,
+            "taxObjectCode": "02",
+            "itemTaxes": [
+                {
+                    "taxCode": "002",
+                    "taxTypeCode": "Tasa",
+                    "taxRate": 0.160000,
+                    "taxFlagCode": "T"
+                },
+                {
+                    "taxCode": "001",
+                    "taxTypeCode": "Tasa",
+                    "taxRate": 0.100000,
+                    "taxFlagCode": "R"
+                }
+            ]
+        }
+    ],
+    "complement": {
+        "comercioExterior": {
+            "claveDePedimentoId": "A1",
+            "certificadoOrigen": 0,
+            "incotermId": "FOB",
+            "tipoCambioUSD": 17.2530,
+            "emisor": {
+                "domicilio": {
+                    "calle": "CALLE DEL PAPEL",
+                    "coloniaId": "0214",
+                    "localidadId": "01",
+                    "municipioId": "014",
+                    "estadoId": "QUE",
+                    "paisId": "MEX",
+                    "codigoPostalId": "76199"
+                }
+            },
+            "receptor": {
+                "numRegIdTrib": "123456789",
+                "domicilio": {
+                    "calle": "ST. A",
+                    "estado": "TX",
+                    "paisId": "USA",
+                    "codigoPostal": "00000"
+                }
+            },
+            "mercancias": [
+                {
+                    "noIdentificacion": "131494-1055",
+                    "fraccionArancelariaId": "2402200100",
+                    "cantidadAduana": 117.64,
+                    "unidadAduanaId": "01",
+                    "valorUnitarioAduana": 3.40,
+                    "valorDolares": 400.00
+                }
+            ]
+        }
+    }
+}'
+
+
+---
+Factura CE Receptor Nacional
+curl --location 'https://live.fiscalapi.com/api/v4/invoices' \
+--header 'X-TENANT-KEY: <my-tenant>' \
+--header 'X-TIME-ZONE: America/Mexico_City' \
+--header 'Content-Type: application/json' \
+--header 'X-API-KEY: <my-api-key>' \
+--data '{
+    "versionCode": "4.0",
+    "paymentFormCode": "99",
+    "paymentMethodCode": "PPD",
+    "currencyCode": "USD",
+    "typeCode": "I",
+    "expeditionZipCode": "42501",
+    "series": "CCE",
+    "date": "2026-05-08T08:56:40",
+    "paymentConditions": "CondicionesDePago",
+    "exportCode": "02",
+    "issuer": {
+        "tin": "EKU9003173C9",
+        "legalName": "ESCUELA KEMPER URGATE",
+        "taxRegimeCode": "601",
+        "taxCredentials": [
+            {
+                "base64File": "Omited...",
+                "fileType": 0,
+                "password": "12345678a"
+            },
+            {
+                "base64File": "Omited...",
+                "fileType": 1,
+                "password": "12345678a"
+            }
+        ]
+    },
+    "recipient": {
+        "tin": "URE180429TM6",
+        "legalName": "UNIVERSIDAD ROBOTICA ESPAÑOLA",
+        "zipCode": "86991",
+        "taxRegimeCode": "601",
+        "cfdiUseCode": "G01"
+    },
+    "items": [
+        {
+            "itemCode": "50211503",
+            "itemSku": "131494-1055",
+            "quantity": 2,
+            "unitOfMeasurementCode": "H87",
+            "description": "Cigarros",
+            "unitPrice": 200.00,
+            "discount": 0,
+            "taxObjectCode": "02",
+            "itemTaxes": [
+                {
+                    "taxCode": "002",
+                    "taxTypeCode": "Tasa",
+                    "taxRate": 0.160000,
+                    "taxFlagCode": "T"
+                },
+                {
+                    "taxCode": "001",
+                    "taxTypeCode": "Tasa",
+                    "taxRate": 0.100000,
+                    "taxFlagCode": "R"
+                },
+                {
+                    "taxCode": "002",
+                    "taxTypeCode": "Tasa",
+                    "taxRate": 0.106666,
+                    "taxFlagCode": "R"
+                }
+            ]
+        }
+    ],
+    "complement": {
+        "comercioExterior": {
+            "claveDePedimentoId": "A1",
+            "certificadoOrigen": 0,
+            "incotermId": "FOB",
+            "tipoCambioUSD": 17.2530,
+            "emisor": {
+                "domicilio": {
+                    "calle": "CALLE DEL PAPEL",
+                    "coloniaId": "0214",
+                    "localidadId": "01",
+                    "municipioId": "014",
+                    "estadoId": "QUE",
+                    "paisId": "MEX",
+                    "codigoPostalId": "76199"
+                }
+            },
+            "receptor": {
+                "domicilio": {
+                    "calle": "CALLE DEL PAPEL",
+                    "colonia": "0214",
+                    "localidad": "01",
+                    "municipio": "014",
+                    "estado": "QUE",
+                    "paisId": "MEX",
+                    "codigoPostal": "76199"
+                }
+            },
+            "mercancias": [
+                {
+                    "noIdentificacion": "131494-1055",
+                    "fraccionArancelariaId": "2402200100",
+                    "cantidadAduana": 117.64,
+                    "unidadAduanaId": "01",
+                    "valorUnitarioAduana": 3.40,
+                    "valorDolares": 400.00
+                }
+            ]
+        }
+    }
+}'
+
+---
+Factura CE Traslado Con Carta Porte 31
+curl --location 'https://live.fiscalapi.com/api/v4/invoices' \
+--header 'X-TENANT-KEY: <my-tenant>' \
+--header 'X-TIME-ZONE: America/Mexico_City' \
+--header 'Content-Type: application/json' \
+--header 'X-API-KEY: <my-api-key>' \
+--data '{
+    "versionCode": "4.0",
+    "currencyCode": "XXX",
+    "typeCode": "T",
+    "expeditionZipCode": "42501",
+    "series": "CCE",
+    "date": "2026-05-08T08:56:40",
+    "exportCode": "02",
+    "issuer": {
+        "tin": "EKU9003173C9",
+        "legalName": "ESCUELA KEMPER URGATE",
+        "taxRegimeCode": "601",
+        "taxCredentials": [
+            {
+                "base64File": "Omited...",
+                "fileType": 0,
+                "password": "12345678a"
+            },
+            {
+                "base64File": "Omited...",
+                "fileType": 1,
+                "password": "12345678a"
+            }
+        ]
+    },
+    "recipient": {
+        "tin": "EKU9003173C9",
+        "legalName": "ESCUELA KEMPER URGATE",
+        "zipCode": "42501",
+        "taxRegimeCode": "601",
+        "cfdiUseCode": "S01"
+    },
+    "items": [
+        {
+            "itemCode": "78101800",
+            "itemSku": "TR01",
+            "quantity": 1.0,
+            "unitOfMeasurementCode": "H87",
+            "description": "TRANSPORTE DE CARGA",
+            "unitPrice": 0.00,
+            "discount": 0,
+            "taxObjectCode": "01",
+            "itemTaxes": []
+        },
+        {
+            "itemCode": "32101622",
+            "itemSku": "UT421511",
+            "quantity": 100.00,
+            "unitOfMeasurementCode": "XBX",
+            "description": "MEMORIA FLASH",
+            "unitPrice": 0.00,
+            "discount": 0,
+            "taxObjectCode": "01",
+            "itemTaxes": []
+        }
+    ],
+    "complement": {
+        "cartaPorte": {
+            "transpInternacId": "S\u00ED",
+            "entradaSalidaMercId": "Salida",
+            "paisOrigenDestinoId": "ALB",
+            "viaEntradaSalidaId": "01",
+            "totalDistRec": 120.00,
+            "unidadPesoId": "KGM",
+            "regimenAduaneros": [
+                {
+                    "regimenAduaneroId": "EXD"
+                }
+            ],
+            "ubicaciones": [
+                {
+                    "tipoUbicacion": "Origen",
+                    "idUbicacion": "OR000001",
+                    "rfcRemitenteDestinatario": "XAXX010101000",
+                    "nombreRemitenteDestinatario": "Origen Nacional",
+                    "fechaHoraSalidaLlegada": "2026-04-27T08:00:00",
+                    "domicilio": {
+                        "calle": "xola",
+                        "numeroExterior": "531",
+                        "coloniaId": "0496",
+                        "localidadId": "03",
+                        "municipioId": "014",
+                        "estadoId": "CMX",
+                        "paisId": "MEX",
+                        "codigoPostalId": "03100"
+                    }
+                },
+                {
+                    "tipoUbicacion": "Destino",
+                    "idUbicacion": "DE000001",
+                    "rfcRemitenteDestinatario": "XAXX010101000",
+                    "nombreRemitenteDestinatario": "Destino Nacional",
+                    "fechaHoraSalidaLlegada": "2026-04-27T20:00:00",
+                    "distanciaRecorrida": 120.00,
+                    "domicilio": {
+                        "calle": "Av Coyoacan",
+                        "numeroExterior": "120",
+                        "coloniaId": "2624",
+                        "localidadId": "03",
+                        "municipioId": "014",
+                        "estadoId": "CMX",
+                        "paisId": "MEX",
+                        "codigoPostalId": "03100"
+                    }
+                }
+            ],
+            "mercancias": [
+                {
+                    "bienesTranspId": "50433238",
+                    "descripcion": "Gomitas",
+                    "cantidad": 1,
+                    "claveUnidadId": "XPK",
+                    "pesoEnKg": 10.000,
+                    "valorMercancia": 1200.00,
+                    "monedaId": "USD",
+                    "fraccionArancelariaId": "2005800100",
+                    "tipoMateriaId": "04"
+                },
+                {
+                    "bienesTranspId": "50433238",
+                    "descripcion": "Pulparindo",
+                    "cantidad": 1,
+                    "claveUnidadId": "XPK",
+                    "pesoEnKg": 10.000,
+                    "valorMercancia": 1000.00,
+                    "monedaId": "USD",
+                    "fraccionArancelariaId": "2005800100",
+                    "tipoMateriaId": "04"
+                }
+            ],
+            "autotransporte": {
+                "permSCTId": "TPAF02",
+                "numPermisoSCT": "123456",
+                "configVehicularId": "C2",
+                "pesoBrutoVehicular": 1,
+                "placaVM": "555TTT",
+                "anioModeloVM": 2023,
+                "aseguraRespCivil": "ODISEA",
+                "polizaRespCivil": "3456YUHNB234RT"
+            },
+            "tiposFigura": [
+                {
+                    "tipoFiguraId": "01",
+                    "rfcFigura": "KAHO641101B39",
+                    "numLicencia": "D0908240",
+                    "nombreFigura": "OSCAR KALA HAAK"
+                }
+            ]
+        },
+        "comercioExterior": {
+            "claveDePedimentoId": "A1",
+            "certificadoOrigen": 0,
+            "incotermId": "FOB",
+            "tipoCambioUSD": 17.2530,
+            "emisor": {
+                "domicilio": {
+                    "calle": "CALLE DEL PAPEL",
+                    "coloniaId": "0214",
+                    "localidadId": "01",
+                    "municipioId": "014",
+                    "estadoId": "QUE",
+                    "paisId": "MEX",
+                    "codigoPostalId": "76199"
+                }
+            },
+            "receptor": {
+                "domicilio": {
+                    "calle": "ST. A",
+                    "estado": "TX",
+                    "paisId": "USA",
+                    "codigoPostal": "00000"
+                }
+            },
+            "mercancias": [
+                {
+                    "noIdentificacion": "UT421511",
+                    "fraccionArancelariaId": "2402200100",
+                    "cantidadAduana": 100.00,
+                    "unidadAduanaId": "01",
+                    "valorUnitarioAduana": 1.00,
+                    "valorDolares": 0.00
+                }
+            ]
+        }
+    }
+}'
+
+
+---
+Factura CE Traslado Traslado Mercancia Propia
+curl --location 'https://live.fiscalapi.com/api/v4/invoices' \
+--header 'X-TENANT-KEY: <my-tenant>' \
+--header 'X-TIME-ZONE: America/Mexico_City' \
+--header 'Content-Type: application/json' \
+--header 'X-API-KEY: <my-api-key>' \
+--data '{
+    "versionCode": "4.0",
+    "currencyCode": "USD",
+    "typeCode": "T",
+    "expeditionZipCode": "42501",
+    "series": "CCE",
+    "date": "2026-05-08T08:56:40",
+    "exportCode": "02",
+    "issuer": {
+        "tin": "EKU9003173C9",
+        "legalName": "ESCUELA KEMPER URGATE",
+        "taxRegimeCode": "601",
+        "taxCredentials": [
+            {
+                "base64File": "Omited...",
+                "fileType": 0,
+                "password": "12345678a"
+            },
+            {
+                "base64File": "Omited...",
+                "fileType": 1,
+                "password": "12345678a"
+            }
+        ]
+    },
+    "recipient": {
+        "tin": "EKU9003173C9",
+        "legalName": "ESCUELA KEMPER URGATE",
+        "zipCode": "42501",
+        "taxRegimeCode": "601",
+        "cfdiUseCode": "S01"
+    },
+    "items": [
+        {
+            "itemCode": "50211503",
+            "itemSku": "131494-1055",
+            "quantity": 1.0,
+            "unitOfMeasurementCode": "H87",
+            "description": "My description...",
+            "unitPrice": 0.00,
+            "discount": 0,
+            "taxObjectCode": "01",
+            "itemTaxes": []
+        }
+    ],
+    "complement": {
+        "comercioExterior": {
+            "motivoTrasladoId": "02",
+            "claveDePedimentoId": "A1",
+            "certificadoOrigen": 0,
+            "incotermId": "FCA",
+            "tipoCambioUSD": 17.2530,
+            "emisor": {
+                "domicilio": {
+                    "calle": "CALLE DEL PAPEL",
+                    "coloniaId": "0214",
+                    "localidadId": "01",
+                    "municipioId": "014",
+                    "estadoId": "QUE",
+                    "paisId": "MEX",
+                    "codigoPostalId": "76199"
+                }
+            },
+            "receptor": {
+                "domicilio": {
+                    "calle": "SW Street.",
+                    "numeroExterior": "12345",
+                    "localidad": "Oregon",
+                    "estado": "OR",
+                    "paisId": "USA",
+                    "codigoPostal": "12345"
+                }
+            },
+            "destinatarios": [
+                {
+                    "numRegIdTrib": "123456789",
+                    "nombre": "EKU9003173C9",
+                    "domicilios": [
+                        {
+                            "calle": "SW Street.",
+                            "numeroExterior": "12345",
+                            "localidad": "Oregon",
+                            "estado": "OR",
+                            "paisId": "USA",
+                            "codigoPostal": "12345"
+                        }
+                    ]
+                }
+            ],
+            "mercancias": [
+                {
+                    "noIdentificacion": "131494-1055",
+                    "fraccionArancelariaId": "0101210100",
+                    "cantidadAduana": 1,
+                    "unidadAduanaId": "07",
+                    "valorUnitarioAduana": 22.64,
+                    "valorDolares": 22.64
+                }
+            ]
+        }
+    }
+}'
+
+
+---
+Factura CE Traslado Traslado
+curl --location 'https://live.fiscalapi.com/api/v4/invoices' \
+--header 'X-TENANT-KEY: <my-tenant>' \
+--header 'X-TIME-ZONE: America/Mexico_City' \
+--header 'Content-Type: application/json' \
+--header 'X-API-KEY: <my-api-key>' \
+--data '{
+    "versionCode": "4.0",
+    "currencyCode": "USD",
+    "typeCode": "T",
+    "expeditionZipCode": "42501",
+    "series": "CCE",
+    "date": "2026-05-08T08:56:40",
+    "exportCode": "02",
+    "issuer": {
+        "tin": "EKU9003173C9",
+        "legalName": "ESCUELA KEMPER URGATE",
+        "taxRegimeCode": "601",
+        "taxCredentials": [
+            {
+                "base64File": "Omited...",
+                "fileType": 0,
+                "password": "12345678a"
+            },
+            {
+                "base64File": "Omited...",
+                "fileType": 1,
+                "password": "12345678a"
+            }
+        ]
+    },
+    "recipient": {
+        "tin": "EKU9003173C9",
+        "legalName": "ESCUELA KEMPER URGATE",
+        "zipCode": "42501",
+        "taxRegimeCode": "601",
+        "cfdiUseCode": "G01"
+    },
+    "items": [
+        {
+            "itemCode": "50211503",
+            "itemSku": "131494-1055",
+            "quantity": 2,
+            "unitOfMeasurementCode": "H87",
+            "description": "Cigarros",
+            "unitPrice": 200.00,
+            "discount": 0,
+            "taxObjectCode": "01",
+            "itemTaxes": []
+        }
+    ],
+    "complement": {
+        "comercioExterior": {
+            "claveDePedimentoId": "A1",
+            "certificadoOrigen": 0,
+            "incotermId": "FOB",
+            "tipoCambioUSD": 17.2530,
+            "emisor": {
+                "domicilio": {
+                    "calle": "CALLE DEL PAPEL",
+                    "coloniaId": "0214",
+                    "localidadId": "01",
+                    "municipioId": "014",
+                    "estadoId": "QUE",
+                    "paisId": "MEX",
+                    "codigoPostalId": "76199"
+                }
+            },
+            "receptor": {
+                "domicilio": {
+                    "calle": "ST. A",
+                    "estado": "TX",
+                    "paisId": "USA",
+                    "codigoPostal": "00000"
+                }
+            },
+            "mercancias": [
+                {
+                    "noIdentificacion": "131494-1055",
+                    "fraccionArancelariaId": "2402200100",
+                    "cantidadAduana": 117.64,
+                    "unidadAduanaId": "01",
+                    "valorUnitarioAduana": 3.40,
+                    "valorDolares": 400.00
+                }
+            ]
+        }
+    }
+}'
+
+---
+Factura CE Unidades De Medida No Equivalentes
+
+curl --location 'https://live.fiscalapi.com/api/v4/invoices' \
+--header 'X-TENANT-KEY: <my-tenant>' \
+--header 'X-TIME-ZONE: America/Mexico_City' \
+--header 'Content-Type: application/json' \
+--header 'X-API-KEY: <my-api-key>' \
+--data '{
+    "versionCode": "4.0",
+    "paymentFormCode": "99",
+    "paymentMethodCode": "PPD",
+    "currencyCode": "USD",
+    "typeCode": "I",
+    "expeditionZipCode": "42501",
+    "series": "CCE",
+    "date": "2026-05-08T08:56:40",
+    "paymentConditions": "CondicionesDePago",
+    "exportCode": "02",
+    "issuer": {
+        "tin": "EKU9003173C9",
+        "legalName": "ESCUELA KEMPER URGATE",
+        "taxRegimeCode": "601",
+        "taxCredentials": [
+            {
+                "base64File": "Omited...",
+                "fileType": 0,
+                "password": "12345678a"
+            },
+            {
+                "base64File": "Omited...",
+                "fileType": 1,
+                "password": "12345678a"
+            }
+        ]
+    },
+    "recipient": {
+        "tin": "XEXX010101000",
+        "legalName": "U.S. 0026 SW",
+        "zipCode": "42501",
+        "taxRegimeCode": "616",
+        "cfdiUseCode": "CP01",
+        "countryId": "USA",
+        "foreignTin": "123456789"
+    },
+    "items": [
+        {
+            "itemCode": "50201708",
+            "itemSku": "131494-1055",
+            "quantity": 1.000,
+            "unitOfMeasurementCode": "H87",
+            "description": "Bebida",
+            "unitPrice": 100.00,
+            "discount": 0,
+            "taxObjectCode": "02",
+            "itemTaxes": [
+                {
+                    "taxCode": "002",
+                    "taxTypeCode": "Tasa",
+                    "taxRate": 0.160000,
+                    "taxFlagCode": "T"
+                },
+                {
+                    "taxCode": "001",
+                    "taxTypeCode": "Tasa",
+                    "taxRate": 0.100000,
+                    "taxFlagCode": "R"
+                },
+                {
+                    "taxCode": "002",
+                    "taxTypeCode": "Tasa",
+                    "taxRate": 0.106666,
+                    "taxFlagCode": "R"
+                }
+            ]
+        }
+    ],
+    "complement": {
+        "comercioExterior": {
+            "claveDePedimentoId": "A1",
+            "certificadoOrigen": 0,
+            "incotermId": "FOB",
+            "tipoCambioUSD": 17.2530,
+            "emisor": {
+                "domicilio": {
+                    "calle": "CALLE DEL PAPEL",
+                    "coloniaId": "0214",
+                    "localidadId": "01",
+                    "municipioId": "014",
+                    "estadoId": "QUE",
+                    "paisId": "MEX",
+                    "codigoPostalId": "76199"
+                }
+            },
+            "receptor": {
+                "numRegIdTrib": "123456789",
+                "domicilio": {
+                    "calle": "ST. A",
+                    "estado": "TX",
+                    "paisId": "USA",
+                    "codigoPostal": "00000"
+                }
+            },
+            "mercancias": [
+                {
+                    "noIdentificacion": "131494-1055",
+                    "fraccionArancelariaId": "2009310201",
+                    "cantidadAduana": 0.500,
+                    "unidadAduanaId": "08",
+                    "valorUnitarioAduana": 200.00,
+                    "valorDolares": 100.00
+                }
+            ]
+        }
+    }
+}'

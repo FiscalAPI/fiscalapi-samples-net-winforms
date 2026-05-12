@@ -32,6 +32,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ComplementoComercioExteriorButton = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -44,10 +45,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(152, 71);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Location = new System.Drawing.Point(304, 137);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(142, 49);
+            this.button5.Size = new System.Drawing.Size(284, 94);
             this.button5.TabIndex = 4;
             this.button5.Text = "Cancelar factura";
             this.button5.UseVisualStyleBackColor = true;
@@ -55,10 +56,10 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(152, 124);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Location = new System.Drawing.Point(304, 238);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(142, 49);
+            this.button6.Size = new System.Drawing.Size(284, 94);
             this.button6.TabIndex = 5;
             this.button6.Text = "Consultar estado de factura";
             this.button6.UseVisualStyleBackColor = true;
@@ -66,10 +67,10 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(152, 232);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Location = new System.Drawing.Point(304, 446);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(142, 49);
+            this.button7.Size = new System.Drawing.Size(284, 94);
             this.button7.TabIndex = 6;
             this.button7.Text = "Enviar factura por Email";
             this.button7.UseVisualStyleBackColor = true;
@@ -80,6 +81,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.ComplementoComercioExteriorButton);
             this.groupBox1.Controls.Add(this.button13);
             this.groupBox1.Controls.Add(this.button12);
             this.groupBox1.Controls.Add(this.button11);
@@ -90,21 +92,32 @@
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(18, 19);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(300, 288);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(600, 798);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Facturación por valores";
             // 
+            // ComplementoComercioExteriorButton
+            // 
+            this.ComplementoComercioExteriorButton.Location = new System.Drawing.Point(0, 548);
+            this.ComplementoComercioExteriorButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ComplementoComercioExteriorButton.Name = "ComplementoComercioExteriorButton";
+            this.ComplementoComercioExteriorButton.Size = new System.Drawing.Size(284, 94);
+            this.ComplementoComercioExteriorButton.TabIndex = 14;
+            this.ComplementoComercioExteriorButton.Text = "Complemento Comercio Exterior";
+            this.ComplementoComercioExteriorButton.UseVisualStyleBackColor = true;
+            this.ComplementoComercioExteriorButton.Click += new System.EventHandler(this.ComplementoComercioExteriorButton_Click);
+            // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(152, 17);
-            this.button13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button13.Location = new System.Drawing.Point(304, 33);
+            this.button13.Margin = new System.Windows.Forms.Padding(4);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(142, 49);
+            this.button13.Size = new System.Drawing.Size(284, 94);
             this.button13.TabIndex = 13;
             this.button13.Text = "Complemento carta porte";
             this.button13.UseVisualStyleBackColor = true;
@@ -112,10 +125,10 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(4, 232);
-            this.button12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button12.Location = new System.Drawing.Point(8, 446);
+            this.button12.Margin = new System.Windows.Forms.Padding(4);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(142, 49);
+            this.button12.Size = new System.Drawing.Size(284, 94);
             this.button12.TabIndex = 12;
             this.button12.Text = "Complemento impuestos locales";
             this.button12.UseVisualStyleBackColor = true;
@@ -123,10 +136,10 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(4, 178);
-            this.button11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button11.Location = new System.Drawing.Point(8, 342);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(142, 49);
+            this.button11.Size = new System.Drawing.Size(284, 94);
             this.button11.TabIndex = 11;
             this.button11.Text = "Complemento de nómina";
             this.button11.UseVisualStyleBackColor = true;
@@ -134,10 +147,10 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(4, 124);
-            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button10.Location = new System.Drawing.Point(8, 238);
+            this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(142, 49);
+            this.button10.Size = new System.Drawing.Size(284, 94);
             this.button10.TabIndex = 10;
             this.button10.Text = "Complemento de pago";
             this.button10.UseVisualStyleBackColor = true;
@@ -145,10 +158,10 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(4, 71);
-            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button9.Location = new System.Drawing.Point(8, 137);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(142, 49);
+            this.button9.Size = new System.Drawing.Size(284, 94);
             this.button9.TabIndex = 9;
             this.button9.Text = "Facturas de egreso";
             this.button9.UseVisualStyleBackColor = true;
@@ -156,10 +169,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(4, 17);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(8, 33);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 49);
+            this.button1.Size = new System.Drawing.Size(284, 94);
             this.button1.TabIndex = 8;
             this.button1.Text = "Facturas de ingreso";
             this.button1.UseVisualStyleBackColor = true;
@@ -167,10 +180,10 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(152, 178);
-            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button8.Location = new System.Drawing.Point(304, 342);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(142, 49);
+            this.button8.Size = new System.Drawing.Size(284, 94);
             this.button8.TabIndex = 7;
             this.button8.Text = "Generar PDF";
             this.button8.UseVisualStyleBackColor = true;
@@ -178,12 +191,13 @@
             // 
             // InvoiceValueForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 307);
+            this.ClientSize = new System.Drawing.Size(636, 834);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "InvoiceValueForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InvoiceValueForm";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -202,5 +216,6 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button ComplementoComercioExteriorButton;
     }
 }
