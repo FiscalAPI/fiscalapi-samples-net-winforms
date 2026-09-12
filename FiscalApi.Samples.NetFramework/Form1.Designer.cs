@@ -108,6 +108,13 @@
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.button13 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.ValidarButton = new System.Windows.Forms.Button();
+            this.ListarTiposValidacionesButton = new System.Windows.Forms.Button();
+            this.ObtenerTipoValidacionporIDButton = new System.Windows.Forms.Button();
+            this.TransferirCreditosButton = new System.Windows.Forms.Button();
+            this.ObtenerEstadosXTipoValidaciónButton = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -125,6 +132,8 @@
             this.groupBox11.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox15.SuspendLayout();
             this.SuspendLayout();
             // 
             // ObtenerFacturaById
@@ -612,6 +621,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(6);
@@ -1092,6 +1102,88 @@
             this.button1.Text = "Iniciar sesión";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox15);
+            this.tabPage3.Location = new System.Drawing.Point(8, 39);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1943, 1278);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "VALIDACIONES XML";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.ObtenerEstadosXTipoValidaciónButton);
+            this.groupBox15.Controls.Add(this.ValidarButton);
+            this.groupBox15.Controls.Add(this.ListarTiposValidacionesButton);
+            this.groupBox15.Controls.Add(this.ObtenerTipoValidacionporIDButton);
+            this.groupBox15.Controls.Add(this.TransferirCreditosButton);
+            this.groupBox15.Location = new System.Drawing.Point(9, 9);
+            this.groupBox15.Margin = new System.Windows.Forms.Padding(6);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox15.Size = new System.Drawing.Size(930, 348);
+            this.groupBox15.TabIndex = 17;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "VALIDACIONES";
+            // 
+            // ValidarButton
+            // 
+            this.ValidarButton.Location = new System.Drawing.Point(10, 138);
+            this.ValidarButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ValidarButton.Name = "ValidarButton";
+            this.ValidarButton.Size = new System.Drawing.Size(220, 94);
+            this.ValidarButton.TabIndex = 22;
+            this.ValidarButton.Text = "Validar";
+            this.ValidarButton.UseVisualStyleBackColor = true;
+            this.ValidarButton.Click += new System.EventHandler(this.ValidarButton_Click);
+            // 
+            // ListarTiposValidacionesButton
+            // 
+            this.ListarTiposValidacionesButton.Location = new System.Drawing.Point(10, 34);
+            this.ListarTiposValidacionesButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ListarTiposValidacionesButton.Name = "ListarTiposValidacionesButton";
+            this.ListarTiposValidacionesButton.Size = new System.Drawing.Size(220, 94);
+            this.ListarTiposValidacionesButton.TabIndex = 21;
+            this.ListarTiposValidacionesButton.Text = "Listar Tipos de validaciones";
+            this.ListarTiposValidacionesButton.UseVisualStyleBackColor = true;
+            this.ListarTiposValidacionesButton.Click += new System.EventHandler(this.ListarTiposValidacionesButton_Click);
+            // 
+            // ObtenerTipoValidacionporIDButton
+            // 
+            this.ObtenerTipoValidacionporIDButton.Location = new System.Drawing.Point(243, 36);
+            this.ObtenerTipoValidacionporIDButton.Margin = new System.Windows.Forms.Padding(6);
+            this.ObtenerTipoValidacionporIDButton.Name = "ObtenerTipoValidacionporIDButton";
+            this.ObtenerTipoValidacionporIDButton.Size = new System.Drawing.Size(220, 94);
+            this.ObtenerTipoValidacionporIDButton.TabIndex = 14;
+            this.ObtenerTipoValidacionporIDButton.Text = "Obtener Tipo de validación por ID";
+            this.ObtenerTipoValidacionporIDButton.UseVisualStyleBackColor = true;
+            this.ObtenerTipoValidacionporIDButton.Click += new System.EventHandler(this.ObtenerTipoValidacionporIDButton_Click);
+            // 
+            // TransferirCreditosButton
+            // 
+            this.TransferirCreditosButton.Location = new System.Drawing.Point(475, 36);
+            this.TransferirCreditosButton.Margin = new System.Windows.Forms.Padding(6);
+            this.TransferirCreditosButton.Name = "TransferirCreditosButton";
+            this.TransferirCreditosButton.Size = new System.Drawing.Size(220, 196);
+            this.TransferirCreditosButton.TabIndex = 11;
+            this.TransferirCreditosButton.Text = "Transferir creditos de validaciones";
+            this.TransferirCreditosButton.UseVisualStyleBackColor = true;
+            this.TransferirCreditosButton.Click += new System.EventHandler(this.TransferirCreditosButton_Click);
+            // 
+            // ObtenerEstadosXTipoValidaciónButton
+            // 
+            this.ObtenerEstadosXTipoValidaciónButton.Location = new System.Drawing.Point(243, 138);
+            this.ObtenerEstadosXTipoValidaciónButton.Margin = new System.Windows.Forms.Padding(6);
+            this.ObtenerEstadosXTipoValidaciónButton.Name = "ObtenerEstadosXTipoValidaciónButton";
+            this.ObtenerEstadosXTipoValidaciónButton.Size = new System.Drawing.Size(220, 94);
+            this.ObtenerEstadosXTipoValidaciónButton.TabIndex = 23;
+            this.ObtenerEstadosXTipoValidaciónButton.Text = "Obtener Estados X Tipo de validación";
+            this.ObtenerEstadosXTipoValidaciónButton.UseVisualStyleBackColor = true;
+            this.ObtenerEstadosXTipoValidaciónButton.Click += new System.EventHandler(this.ObtenerEstadosXTipoValidaciónButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1119,6 +1211,8 @@
             this.groupBox11.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox15.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1205,6 +1299,13 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.Button FirmarButton;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.Button ValidarButton;
+        private System.Windows.Forms.Button ListarTiposValidacionesButton;
+        private System.Windows.Forms.Button ObtenerTipoValidacionporIDButton;
+        private System.Windows.Forms.Button TransferirCreditosButton;
+        private System.Windows.Forms.Button ObtenerEstadosXTipoValidaciónButton;
     }
 }
 

@@ -2959,10 +2959,10 @@ namespace FiscalApi.Samples.NetFramework
 
             var requestModel = new StampTransactionParams
             {
-                FromPersonId = "",
-                ToPersonId = "",
+                FromPersonId = "bef71183-89c9-4224-955a-efe66a423e67",
+                ToPersonId = "14704773-3418-4442-89f6-535563b59601",
                 Amount = 1,
-                Comments = ""
+                Comments = "Orden compra com_123456"
             };
 
             var apiResponse = await fiscalapi.Stamps.TransferStamps(requestModel);
@@ -3062,5 +3062,187 @@ namespace FiscalApi.Samples.NetFramework
                 MessageBox.Show(apiResponse.Details);
             }
         }
+
+        #region Validaciones SAT
+
+        private async void ListarTiposValidacionesButton_Click(object sender, EventArgs e)
+        {
+            // Listar los tipos de validación SAT disponibles (en el orden del catálogo)
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request (GET /api/v4/sat-validations)
+            var apiResponse = await fiscalApi.SatValidations.GetTypesAsync();
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+                foreach (var type in apiResponse.Data)
+                    MessageBox.Show($@"{type.Id}: {type.Description}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void ObtenerTipoValidacionporIDButton_Click(object sender, EventArgs e)
+        {
+            // Obtener un tipo de validación por ID
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request (GET /api/v4/sat-validations/{id}). Los ids están en SatValidationTypeIds.
+            var apiResponse = await fiscalApi.SatValidations.GetTypeByIdAsync(SatValidationTypeIds.CfdiStatus);
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+                MessageBox.Show($@"{apiResponse.Data.Id}: {apiResponse.Data.Description}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void ObtenerEstadosXTipoValidaciónButton_Click(object sender, EventArgs e)
+        {
+            // Obtener los estatus que un tipo de validación puede tomar al ejecutarse (solo lectura, no consume créditos)
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            // Send request (GET /api/v4/sat-validations/{id}/statuses). Los ids están en SatValidationTypeIds.
+            var apiResponse = await fiscalApi.SatValidations.GetStatusesAsync(SatValidationTypeIds.CfdiStatus);
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+                foreach (var item in apiResponse.Data)
+                    MessageBox.Show($@"{item.Id}: {item.Description}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void ValidarButton_Click(object sender, EventArgs e)
+        {
+            // Validar un CFDI timbrado ante el SAT. Cada tipo solicitado consume un crédito de validación;
+            // el cobro es todo o nada (402 si el saldo no alcanza) y los resultados vienen en el orden del catálogo.
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            SatValidationRequest requestModel;
+
+            // Con Xml (CFDI timbrado en Base64) puedes solicitar cualquier tipo de validación.
+            // El archivo se genera con el ejemplo "Obtener XML por ID" (C:\facturas\FacturaXml.XML).
+            var xmlPath = @"C:\facturas\FacturaXml.XML";
+
+            if (File.Exists(xmlPath))
+            {
+                requestModel = new SatValidationRequest
+                {
+                    Xml = Convert.ToBase64String(File.ReadAllBytes(xmlPath)),
+                    ValidationTypes = new List<string>
+                    {
+                        SatValidationTypeIds.XmlStructure,
+                        SatValidationTypeIds.CertificateValidity,
+                        SatValidationTypeIds.CfdiSello,
+                        SatValidationTypeIds.TfdSello,
+                        SatValidationTypeIds.CfdiStatus,
+                        SatValidationTypeIds.Blacklist69B,
+                        SatValidationTypeIds.Blacklist69BBis
+                    }
+                };
+            }
+            else
+            {
+                // Con Tin (RFC) y sin Xml solo se pueden solicitar listas negras (69-B y 69-B Bis).
+                MessageBox.Show($@"No existe {xmlPath}; se validarán únicamente listas negras por RFC.");
+
+                requestModel = new SatValidationRequest
+                {
+                    Tin = "XAXX010101000",
+                    ValidationTypes = new List<string>
+                    {
+                        SatValidationTypeIds.Blacklist69B,
+                        SatValidationTypeIds.Blacklist69BBis
+                    }
+                };
+            }
+
+            // Send request (POST /api/v4/sat-validations)
+            var apiResponse = await fiscalApi.SatValidations.ValidateAsync(requestModel);
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+                foreach (var result in apiResponse.Data)
+                    MessageBox.Show($@"{result.Type.Id}: {result.Status.Id} (passed: {result.Passed}){Environment.NewLine}{result.Status.Details}");
+            }
+            else
+            {
+                // 400: solicitud inválida (sin cobro). 402: créditos de validación insuficientes (sin cobro).
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        private async void TransferirCreditosButton_Click(object sender, EventArgs e)
+        {
+            // Transferir créditos de validación entre personas de tu organización.
+            // CreditType.Validation transfiere créditos de validación; CreditType.Stamp (por defecto) transfiere timbres.
+
+            // Create instance of FiscalApiClient
+            var fiscalApi = FiscalApiClient.Create(Settings);
+
+            var requestModel = new StampTransactionParams
+            {
+                FromPersonId = "bef71183-89c9-4224-955a-efe66a423e67", // Persona origen (debe tener saldo de validaciones)
+                ToPersonId = "bef71183-89c9-4224-955a-efe66a423e68",   // Persona destino
+                Amount = 10,
+                Comments = "Créditos para validar CFDI",
+                CreditType = CreditType.Validation
+            };
+
+            // Send request (POST /api/v4/stamps)
+            var apiResponse = await fiscalApi.Stamps.TransferStamps(requestModel);
+
+            // Check response
+            if (apiResponse.Succeeded)
+            {
+                MessageBox.Show("OK");
+
+                // El saldo de validaciones de cada persona está en AvailableValidationBalance (el de timbres en AvailableBalance)
+                var personResponse = await fiscalApi.Persons.GetByIdAsync(requestModel.ToPersonId);
+                if (personResponse.Succeeded)
+                    MessageBox.Show($@"Validaciones disponibles de {personResponse.Data.LegalName}: {personResponse.Data.AvailableValidationBalance}");
+            }
+            else
+            {
+                MessageBox.Show($@"HttpStatusCode: {apiResponse.HttpStatusCode}");
+                MessageBox.Show(apiResponse.Message);
+                MessageBox.Show(apiResponse.Details);
+            }
+        }
+
+        #endregion
     }
 }
