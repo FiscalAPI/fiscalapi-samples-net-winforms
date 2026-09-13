@@ -14,6 +14,9 @@ namespace FiscalApi.Samples.NetFramework
     {
         private FiscalapiSettings _settings;
 
+        // Id del emisor dado de alta en el dashboard. Sustituyelo por el de tu tenant.
+        private const string IssuerPersonId = "2e7b988f-3a2a-4f67-86e9-3f931dd48581";
+
         public ComercioExteriorReferenceForm(FiscalapiSettings settings)
         {
             InitializeComponent();
@@ -364,6 +367,97 @@ namespace FiscalApi.Samples.NetFramework
                                 NoIdentificacion = "131494-1055", FraccionArancelariaId = "2402200100",
                                 CantidadAduana = 2, UnidadAduanaId = "01",
                                 ValorUnitarioAduana = 10.00m, ValorDolares = 20.00m
+                            }
+                        }
+                    }
+                }
+            };
+
+            var apiResponse = await fiscalApi.Invoices.CreateAsync(invoice);
+            ShowResult(apiResponse);
+        }
+
+        // Alta del receptor extranjero + Factura CE por referencias (USD, PPD)
+        // Muestra como crear la persona extranjera con CountryId y ForeignTin, y usar su id
+        // como Recipient.Id. CountryId es obligatorio cuando se envia ForeignTin.
+        private async void FacturaCEReceptorExtranjeroNuevaPersonaButton_Click(object sender, EventArgs e)
+        {
+            var fiscalApi = FiscalApiClient.Create(_settings);
+
+            var personRequest = new Person
+            {
+                LegalName = "Persona Fisica Extranjera",
+                Email = string.Format("extranjero.{0:N}@somewhere.com", Guid.NewGuid()),
+                Password = "YourStrongPassword123!",
+                Tin = "XEXX010101000",
+                ZipCode = "42501",
+                SatTaxRegimeId = "616",
+                SatCfdiUseId = "S01",
+                CountryId = "USA",       // Residencia fiscal, catalogo c_Pais
+                ForeignTin = "123456789" // NumRegIdTrib
+            };
+
+            var personResponse = await fiscalApi.Persons.CreateAsync(personRequest);
+
+            if (!personResponse.Succeeded)
+            {
+                MessageBox.Show(personResponse.Message);
+                MessageBox.Show(personResponse.Details);
+                return;
+            }
+
+            MessageBox.Show(string.Format(
+                "Persona extranjera creada{0}Id: {1}{0}Pais: {2}{0}NumRegIdTrib: {3}",
+                Environment.NewLine,
+                personResponse.Data.Id,
+                personResponse.Data.CountryId,
+                personResponse.Data.ForeignTin));
+
+            var invoice = new Invoice
+            {
+                VersionCode = "4.0",
+                PaymentFormCode = "99",
+                PaymentMethodCode = "PPD",
+                CurrencyCode = "USD",
+                TypeCode = "I",
+                ExpeditionZipCode = "42501",
+                Series = "CCE",
+                Date = DateTime.Now,
+                PaymentConditions = "CondicionesDePago",
+                ExportCode = "02",
+                Issuer = new InvoiceIssuer { Id = IssuerPersonId },
+                Recipient = new InvoiceRecipient { Id = personResponse.Data.Id },
+                Items = new List<InvoiceItem>
+                {
+                    new InvoiceItem
+                    {
+                        ItemCode = "50211503", ItemSku = "131494-1055", Quantity = 2,
+                        UnitOfMeasurementCode = "H87", Description = "Cigarros", UnitPrice = 200.00m,
+                        Discount = 0, TaxObjectCode = "02",
+                        ItemTaxes = new List<InvoiceItemTax>
+                        {
+                            new InvoiceItemTax { TaxCode = "002", TaxTypeCode = "Tasa", TaxRate = 0.160000m, TaxFlagCode = "T" },
+                            new InvoiceItemTax { TaxCode = "001", TaxTypeCode = "Tasa", TaxRate = 0.100000m, TaxFlagCode = "R" }
+                        }
+                    }
+                },
+                Complement = new Complement
+                {
+                    ComercioExterior = new ComercioExterior
+                    {
+                        ClaveDePedimentoId = "A1",
+                        CertificadoOrigen = 0,
+                        IncotermId = "FOB",
+                        TipoCambioUSD = 16.9722m, // Tipo de cambio del DOF para la fecha del comprobante
+                        Emisor = CreateCommonEmisor(),
+                        Receptor = CreateCommonReceptorTX(includeNumRegIdTrib: true),
+                        Mercancias = new List<Fiscalapi.Models.ForeignTrade.Mercancia>
+                        {
+                            new Fiscalapi.Models.ForeignTrade.Mercancia
+                            {
+                                NoIdentificacion = "131494-1055", FraccionArancelariaId = "2402200100",
+                                CantidadAduana = 117.64m, UnidadAduanaId = "01",
+                                ValorUnitarioAduana = 3.40m, ValorDolares = 400.00m
                             }
                         }
                     }
