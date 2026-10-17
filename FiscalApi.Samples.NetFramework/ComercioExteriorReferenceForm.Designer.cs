@@ -38,6 +38,7 @@
             this.FacturaCETrasladoTrasladoButton = new System.Windows.Forms.Button();
             this.FacturaCEUnidadesDeMedidaNoEquivalentesButton = new System.Windows.Forms.Button();
             this.FacturaCETrasladoConCartaPorte31Button = new System.Windows.Forms.Button();
+            this.FacturaCEReceptorExtranjeroNuevaPersonaButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             this.groupBox1.Controls.Add(this.FacturaCEIngresoDiferentesMonedasButton);
             this.groupBox1.Controls.Add(this.FacturaCEIngresoConCartaPorte31Button);
             this.groupBox1.Controls.Add(this.FacturaCETrasladoConCartaPorte31Button);
+            this.groupBox1.Controls.Add(this.FacturaCEReceptorExtranjeroNuevaPersonaButton);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -162,6 +164,17 @@
             this.FacturaCETrasladoConCartaPorte31Button.UseVisualStyleBackColor = true;
             this.FacturaCETrasladoConCartaPorte31Button.Click += new System.EventHandler(this.FacturaCETrasladoConCartaPorte31Button_Click);
             //
+            // FacturaCEReceptorExtranjeroNuevaPersonaButton
+            //
+            this.FacturaCEReceptorExtranjeroNuevaPersonaButton.Location = new System.Drawing.Point(8, 333);
+            this.FacturaCEReceptorExtranjeroNuevaPersonaButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.FacturaCEReceptorExtranjeroNuevaPersonaButton.Name = "FacturaCEReceptorExtranjeroNuevaPersonaButton";
+            this.FacturaCEReceptorExtranjeroNuevaPersonaButton.Size = new System.Drawing.Size(284, 94);
+            this.FacturaCEReceptorExtranjeroNuevaPersonaButton.TabIndex = 10;
+            this.FacturaCEReceptorExtranjeroNuevaPersonaButton.Text = "Alta Receptor Extranjero + Factura CE";
+            this.FacturaCEReceptorExtranjeroNuevaPersonaButton.UseVisualStyleBackColor = true;
+            this.FacturaCEReceptorExtranjeroNuevaPersonaButton.Click += new System.EventHandler(this.FacturaCEReceptorExtranjeroNuevaPersonaButton_Click);
+            //
             // ComercioExteriorReferenceForm
             //
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -184,6 +197,7 @@
         private System.Windows.Forms.Button FacturaCETrasladoTrasladoMercanciaPropiaButton;
         private System.Windows.Forms.Button FacturaCEReceptorNacionalButton;
         private System.Windows.Forms.Button FacturaCEReceptorExtranjeroButton;
+        private System.Windows.Forms.Button FacturaCEReceptorExtranjeroNuevaPersonaButton;
         private System.Windows.Forms.Button FacturaCEKitParteButton;
         private System.Windows.Forms.Button FacturaCEIngresoDiferentesMonedasButton;
         private System.Windows.Forms.Button FacturaCEIngresoConCartaPorte31Button;
